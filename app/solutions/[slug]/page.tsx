@@ -145,8 +145,8 @@ type PageProps = {
   params: { slug: string };
 };
 
-export default function ProductPage({ params }: PageProps) {
-  const { slug } = params;
+export default async function ProductPage({ params }: PageProps) {
+  const { slug } = (await params) as { slug: string };
   const product = products[slug];
 
   if (!product) {
