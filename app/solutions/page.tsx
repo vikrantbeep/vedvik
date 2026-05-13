@@ -87,12 +87,6 @@ function Footer() {
   );
 }
 
-const filterCategories = [
-  { label: "Packaging", items: ["Pick Fill Seal", "Pouch Packing", "Bulk Packing", "Bottling"] },
-  { label: "Inspection", items: ["Inspection Machines", "Metal Detectors", "Rollers", "Coding"] },
-  { label: "Manufacturing", items: ["Bakery", "Potato Frying", "Coffee Roasters"] },
-];
-
 const products = [
   {
     slug: "hb-14-pouch-master",
@@ -142,6 +136,22 @@ const products = [
     origin: "Italy",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
   },
+  {
+    slug: "roller-unwinders",
+    category: "Inspection",
+    name: "Roller Unwinders",
+    brand: "Vedvik Machinery",
+    origin: "India",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+  },
+  {
+    slug: "pick-fill-seal",
+    category: "Packaging",
+    name: "Pick Fill Seal",
+    brand: "Vedvik Machinery",
+    origin: "India",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtZ5yRuj22JmhL1ZJHXb2sJCHUAC_UecQO4nb9v_tZX237QZoveFHjoOijZnY78SCIA-s9h5HulDqOdjQvbTRib2XvmU0ykqVbiQv9Y8e7RCiFQY8WAUawZAFsLw3YAwMROss4DoaRjaxNJBnFXw8DtzOZd9rT1KvAvY7LX2aY8307tK1Se-GHXFmexfhLUncFYg_hQZBbji79pKF8MLub6NofRzZ4ixurOv6ny_m3Z65CHwYZDfrwii9ank4nZrw6INF8-1JoNVc",
+  },
 ];
 
 export default function SolutionsPage() {
@@ -156,32 +166,9 @@ export default function SolutionsPage() {
             ENGINEERED<br />SOLUTIONS
           </h1>
           <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
-            A curated selection of high-precision industrial machinery, designed for seamless
-            integration and silent operation.
+            A curated selection of high-precision industrial machinery, designed for seamless integration and silent operation.
           </p>
         </header>
-
-        <section className="mb-12 md:mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-outline-variant/20 pt-8 md:pt-12">
-            {filterCategories.map((cat) => (
-              <div key={cat.label}>
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-secondary rounded-full" />
-                  {cat.label}
-                </h3>
-                <ul className="space-y-2">
-                  {cat.items.map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-on-surface-variant hover:text-secondary transition-colors text-sm font-medium">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {products.map((product, i) => (
