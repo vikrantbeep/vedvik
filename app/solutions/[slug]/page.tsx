@@ -100,10 +100,6 @@ function Footer() {
   );
 }
 
-// ─── Product Data ─────────────────────────────────────────────────────────────
-// Add a new object here for each product. The slug must match the URL.
-// e.g. /solutions/hp-500 → slug: "hp-500"
-
 const products: Record<string, {
   badge: string;
   name: string;
@@ -121,13 +117,10 @@ const products: Record<string, {
     badge: "Precision Series",
     name: "HP-Series 500",
     subtitle: "Horizontal Form Fill Seal",
-    description:
-      "An architectural marvel in mechanical engineering. Designed for quiet precision, the HP-500 delivers high-speed pouching with zero material waste and surgical accuracy.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAOvMpK3M5VFxjZk-P7OmiDhQrH-cHycmYWKaNUJEek-zW4ySCC5g2G1AX_g54UaBr9wMJxwNLB5ihvGp_GVSyta4CRZn4DDRcujtU21PSqZmSW8O3wNmVzqObIjXsNeNkRCbHPQAySGSYPDea-bvHSqaBn9Ha-cS-gZKDIXC6_gQiVBF1nSzOSBkDzVPcb3KvSfGUyA19GPHIYBxW3bN1YEWcXNlHZCUA_lUMCo7Xp77XsHYey-RVr6BkeDuymBMlfaaFkAv2SdZI",
+    description: "An architectural marvel in mechanical engineering. Designed for quiet precision, the HP-500 delivers high-speed pouching with zero material waste and surgical accuracy.",
+    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAOvMpK3M5VFxjZk-P7OmiDhQrH-cHycmYWKaNUJEek-zW4ySCC5g2G1AX_g54UaBr9wMJxwNLB5ihvGp_GVSyta4CRZn4DDRcujtU21PSqZmSW8O3wNmVzqObIjXsNeNkRCbHPQAySGSYPDea-bvHSqaBn9Ha-cS-gZKDIXC6_gQiVBF1nSzOSBkDzVPcb3KvSfGUyA19GPHIYBxW3bN1YEWcXNlHZCUA_lUMCo7Xp77XsHYey-RVr6BkeDuymBMlfaaFkAv2SdZI",
     efficiencyRating: "99.8%",
-    demoImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCnPht-w3d7uiOaB8i2SXw57gE1A15IEMplFMKttpvF4zVe_uLVjX3-i-ETOzqEG7gWxugpm1c0sDmdn-2nOGnUeg9-e8GBsvFyzT3y6ZOkHqVUlFdpddoTynllxG19mNq3BC9druE5GmUc04cizMSGTJSOGB1888Gq_8goIRIZ7alM9uFry4lcz7VDMqHGGl8ZNbwifpUN3Yjeq65e-kedtGg7HeRXskANRO7BN-TY_5zcBLRCKtGtFJGLojbSr7OkA77xrOSdqyk",
+    demoImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCnPht-w3d7uiOaB8i2SXw57gE1A15IEMplFMKttpvF4zVe_uLVjX3-i-ETOzqEG7gWxugpm1c0sDmdn-2nOGnUeg9-e8GBsvFyzT3y6ZOkHqVUlFdpddoTynllxG19mNq3BC9druE5GmUc04cizMSGTJSOGB1888Gq_8goIRIZ7alM9uFry4lcz7VDMqHGGl8ZNbwifpUN3Yjeq65e-kedtGg7HeRXskANRO7BN-TY_5zcBLRCKtGtFJGLojbSr7OkA77xrOSdqyk",
     brand: "Effytec, Spain",
     brandDesc: "Advanced HFFS systems since 1992.",
     specs: [
@@ -146,13 +139,15 @@ const products: Record<string, {
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCd4q2UinzZZOH-_bZODrsStRe-ejRhvH4nob8ieCJybE_EnWHJ8off8ek-PWtcioYBz1yiI4EfwM__UjON14JMTe9afCB8Ly6Flf7wUeywfzwiHQCeCUzY2E3gG5O6OMBNj1tw3ldZM-4Wji2Pg0-lppP5mccEIQfmJvtME02LbUb97VHZvk6Kfut9Mpyi6nIXBklJLJzmHuJexyyuvG_qUX9cMz6Piyl6vqRJNsvEmU0el4kwGBz6L6KYVdwgycEwqSOZEGxjqmQ",
     ],
   },
-  // Add more products here following the same structure
 };
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+type PageProps = {
+  params: { slug: string };
+};
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = products[params.slug];
+export default function ProductPage({ params }: PageProps) {
+  const { slug } = params;
+  const product = products[slug];
 
   if (!product) {
     return (
@@ -190,10 +185,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               {product.description}
             </p>
             <div className="flex gap-4">
-              <Link
-                href="/contact"
-                className="bg-primary-container text-on-primary px-8 py-4 rounded-md font-headline font-bold tracking-tight shadow-sm"
-              >
+              <Link href="/contact" className="bg-primary-container text-on-primary px-8 py-4 rounded-md font-headline font-bold tracking-tight shadow-sm">
                 Request Technical Quote
               </Link>
               <button className="border border-outline-variant/20 text-secondary px-8 py-4 rounded-md font-headline font-bold tracking-tight hover:bg-surface-container transition-colors">
@@ -240,11 +232,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <section className="py-32 max-w-screen-2xl mx-auto px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
 
-            {/* Specs */}
             <div>
-              <h3 className="text-2xl font-headline font-bold mb-12 text-primary border-l-4 border-secondary pl-6">
-                Technical Specifications
-              </h3>
+              <h3 className="text-2xl font-headline font-bold mb-12 text-primary border-l-4 border-secondary pl-6">Technical Specifications</h3>
               <div className="bg-surface-container-lowest border border-outline-variant/20 rounded-lg overflow-hidden">
                 <table className="w-full text-left font-body text-sm">
                   <thead className="bg-surface-container-low border-b border-outline-variant/20">
@@ -273,11 +262,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
 
-            {/* Showcase */}
             <div>
-              <h3 className="text-2xl font-headline font-bold mb-12 text-primary border-l-4 border-secondary pl-6">
-                Packaging Showcase
-              </h3>
+              <h3 className="text-2xl font-headline font-bold mb-12 text-primary border-l-4 border-secondary pl-6">Packaging Showcase</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {product.showcaseImages.map((src, i) => (
                   <div key={i} className="aspect-square bg-surface-container-low rounded-lg overflow-hidden">
