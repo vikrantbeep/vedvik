@@ -1,26 +1,37 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Hind', sans-serif;
+  background-color: #fafaf5;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.btn-machined {
+  background: linear-gradient(to bottom right, #0054a2, #106ccb);
+}
+
+.hero-title-block {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.hero-title-main {
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+.hero-title-sub {
+  font-size: clamp(0.75rem, 2.5vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0.52em;
+  text-align: justify;
+  text-align-last: justify;
+  width: 100%;
 }
