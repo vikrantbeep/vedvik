@@ -43,10 +43,9 @@ export default function Home() {
               <div className="inline-block px-3 py-1 bg-primary/20 border border-primary/30 text-primary-fixed text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
               </div>
-              <div className="hero-title-block font-['Montserrat'] font-black mb-8">
-                <span className="hero-title-main">VEDVIK</span>
-                <span className="hero-title-sub">MACHINERY</span>
-              </div>
+              <div className="mb-8">
+  <Image src="/Logomark_01.png" alt="Vedvik Machinery" width={320} height={100} className="object-contain" />
+</div>
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.
               </p>
