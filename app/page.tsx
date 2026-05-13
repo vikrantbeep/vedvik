@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -44,8 +45,8 @@ export default function Home() {
                 Precision Engineering
               </div>
               <div className="mb-8">
-  <Image src="/Logomark_01.png" alt="Vedvik Machinery" width={320} height={100} className="object-contain" />
-</div>
+                <Image src="/Logomark_01.png" alt="Vedvik Machinery" width={320} height={100} className="object-contain" />
+              </div>
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.
               </p>
