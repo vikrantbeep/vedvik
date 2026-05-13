@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo.png" alt="Vedvik Machinery" width={120} height={40} className="object-contain" />
+          <Image src="/Logomark_1.jpg" alt="Vedvik Machinery" width={120} height={40} className="object-contain" />
         </Link>
 
         {/* Hamburger */}
