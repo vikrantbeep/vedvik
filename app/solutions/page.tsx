@@ -1,140 +1,295 @@
+"use client";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCuTGjp6zgEXir_vdfa3dxl8gTYxALj0wHObrT0wPSzmp0TFWjkwmrmHLs2GwYAooRRG642yjvigEBoEXw9F2IX2XIlS-3VmQmAzlgEQe0MVz03T08wY1-MJolPzk6d6orbkTnFB3OnSMIbCWkEBXXs7rFbPvq20PaRaf-yzHxwdTwOlDbNjpw6sqq8S4iKKAkZuCN63Xnho_EtKRTjCdSKYR4Ge6UBUS8UcqoqB65ygRaK-I8gHaJXvNjoftqZcKOI_Nrqyfz5IxgJ";
+// ─── Navbar ───────────────────────────────────────────────────────────────────
 
-const packagingMachines = [
-  {
-    title: "Liquid Filling",
-    description: "Aseptic rotary filling systems with 0.1% accuracy. CIP/SIP ready for pharma applications.",
-    image: HERO_IMAGE,
-  },
-  {
-    title: "Pouch Packing",
-    description: "High-speed vertical form-fill-seal (VFFS) systems for granular and liquid goods.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5d4-nUdzb6C0Us7hUc4JICEbqO0f5y2f2Vka92j0_TzM_cQfEooIRmjdR7xND9OCWwixKSliOh9O9L-arpL65DWddJrQgoAadh8BGcY3sdpxTuxWYwXb5Ut3OfcCX7haPs_Hc8cuzJdFs2qZU89XiheiO1jroGDidS_yt4AKd3rT1IkC9hNqCSMDH1lhszqKczMmQ1wlIPTF6zNAY69kx46-unGGop_Hk_Xxtg9DpECll5i1mwcGQDNUXCfnUufaZr9wkCXmk8sRD",
-  },
-  {
-    title: "Bulk Packing",
-    description: "Automated weighing and discharge systems for industrial bulk container loading.",
-    icon: "precision_manufacturing",
-  },
-];
+function Navbar() {
+  const pathname = usePathname();
 
-const inspectionSystems = [
-  { title: "Inspection Machines", description: "Vision-based quality control systems for surface defects and label integrity." },
-  { title: "Check Weighers", description: "Dynamic inline weighing with automatic reject systems for high-speed lines." },
-  { title: "Metal Detectors", description: "Multi-frequency detection technology for ferrous and non-ferrous contaminants." },
-];
+  const links = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Contact Us", href: "/contact" },
+  ];
 
-export default function Home() {
   return (
-    <>
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/20">
+      <div className="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+        <Link href="/" className="text-2xl font-bold tracking-tighter text-primary font-headline">
+          Vedvik Machinery
+        </Link>
+
+        <div className="hidden md:flex items-center space-x-12">
+          {links.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-headline font-bold tracking-tight transition-colors duration-200 ${
+                  isActive
+                    ? "text-secondary border-b-2 border-secondary pb-1"
+                    : "text-on-surface-variant hover:text-secondary"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/contact"
+            className="bg-primary-container text-on-primary px-8 py-3 rounded-lg font-headline font-bold tracking-tight scale-95 active:scale-90 transition-transform"
+          >
+            Request Quote
+          </Link>
+        </div>
+
+        <button className="md:hidden">
+          <span className="material-symbols-outlined text-on-surface">menu</span>
+        </button>
+      </div>
+    </nav>
+  );
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
+function Footer() {
+  return (
+    <footer className="bg-zinc-50 border-t border-zinc-200">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 px-12 py-16 max-w-screen-2xl mx-auto">
+        <div className="lg:col-span-2">
+          <div className="text-lg font-bold text-zinc-900 mb-6 font-headline">Vedvik Machinery</div>
+          <p className="text-zinc-500 max-w-sm font-body text-sm leading-relaxed mb-6">
+            Official Indian representative of Effytec, Spain. Distributing and manufacturing
+            precision packaging machinery across India.
+          </p>
+          <div className="text-sm uppercase tracking-widest text-zinc-400 font-body">
+            © {new Date().getFullYear()} Vedvik Machinery. All rights reserved.
+          </div>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-zinc-900 mb-6 text-sm uppercase tracking-widest">Navigation</h4>
+          <ul className="space-y-4">
+            {[
+              { label: "Home", href: "/" },
+              { label: "Solutions", href: "/solutions" },
+              { label: "About Us", href: "/about" },
+              { label: "Contact Us", href: "/contact" },
+            ].map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-zinc-500 hover:underline decoration-secondary decoration-2 underline-offset-4 text-sm uppercase tracking-widest transition-all duration-300"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-zinc-900 mb-6 text-sm uppercase tracking-widest">Legal</h4>
+          <ul className="space-y-4">
+            {["Technical Support", "Privacy Policy", "Terms of Service"].map((item) => (
+              <li key={item}>
+                
+                  href="#"
+                  className="text-zinc-500 hover:underline decoration-secondary decoration-2 underline-offset-4 text-sm uppercase tracking-widest transition-all duration-300"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-zinc-900 mb-6 text-sm uppercase tracking-widest">Connect</h4>
+          <div className="flex gap-4">
+            <button className="w-10 h-10 flex items-center justify-center bg-zinc-200 rounded-lg hover:bg-secondary hover:text-white transition-colors">
+              <span className="material-symbols-outlined text-[18px]">share</span>
+            </button>
+            <button className="w-10 h-10 flex items-center justify-center bg-zinc-200 rounded-lg hover:bg-secondary hover:text-white transition-colors">
+              <span className="material-symbols-outlined text-[18px]">mail</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+const filterCategories = [
+  {
+    label: "Packaging",
+    items: ["Pick Fill Seal", "Pouch Packing", "Bulk Packing", "Bottling"],
+  },
+  {
+    label: "Inspection",
+    items: ["Inspection Machines", "Metal Detectors", "Rollers", "Coding"],
+  },
+  {
+    label: "Manufacturing",
+    items: ["Bakery", "Potato Frying", "Coffee Roasters"],
+  },
+];
+
+const products = [
+  {
+    category: "Packaging",
+    name: "HB-14 Pouch Master",
+    brand: "Effytec",
+    origin: "Spain",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+    offset: false,
+  },
+  {
+    category: "Inspection",
+    name: "X-Ray Clarity 500",
+    brand: "Ishida",
+    origin: "Japan",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAjaUfaI189h7y5hMuXRmmvvvCM1bCaQYpRGkaFzAT8MTPBQtiLo091cOM3sZZchjfiDJl1Xi1HiVqkQ91sigAKf9jdCoAJJMuIQl2_oalzY_r4Gu-M6rAilfOXXOcXUKmB6cpIlZbPbyja00kUbR3RuXb7FuT8LxNDUgPC9I0pYdapceISuU-5H6WuNpifFCJfTUe49iYy6er0JYr3khoaTaMqJz3CsGD69fjh3YepsNc5Aotma0cRiQ49FLxKdfhULkKVakv4apk",
+    offset: false,
+  },
+  {
+    category: "Manufacturing",
+    name: "Aero-Roast Elite",
+    brand: "Brambati",
+    origin: "Italy",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCcN-bXfDgugrZZA-NYmFbDDXhuEP3CllefMJs99e1Mcbi6mmIm9go_tStux-WAQe2Y4HNbir8c7Qpo-uBdUdDr1Y9rzwfNvLmH5yiSuOCfhAIQyxzvUDzvHvZoM5sk6qQMqwcfqsjgh9aCpalQzgYqo6H480vC0D2Mep64mZTJEXZU212HM7v1z7lFC_XK6sE66U7f9I9p-c6AGEDHvGkn3JengqVTCQlVHyqCixAnlWY_73UQrunV_QDKgzoHh-XKdv0vLoZlxJo",
+    offset: false,
+  },
+  {
+    category: "Packaging",
+    name: "Aqua-Fill Linear",
+    brand: "Krones",
+    origin: "Germany",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtZ5yRuj22JmhL1ZJHXb2sJCHUAC_UecQO4nb9v_tZX237QZoveFHjoOijZnY78SCIA-s9h5HulDqOdjQvbTRib2XvmU0ykqVbiQv9Y8e7RCiFQY8WAUawZAFsLw3YAwMROss4DoaRjaxNJBnFXw8DtzOZd9rT1KvAvY7LX2aY8307tK1Se-GHXFmexfhLUncFYg_hQZBbji79pKF8MLub6NofRzZ4ixurOv6ny_m3Z65CHwYZDfrwii9ank4nZrw6INF8-1JoNVc",
+    offset: true,
+  },
+  {
+    category: "Manufacturing",
+    name: "Crisp-Flow FRY-20",
+    brand: "Heat & Control",
+    origin: "USA",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCGQlkjWxKqj6UvtrYvIkjTcNtTSrZ2MYctGL64Syj8g8K1TNOdzZJC2RLIpaph4NrFYlwS0Iif85m8T9rBG3VRs-A-YdAENlMwWQGueeJ7t14wJiHwk6-eTLYe8DsGa4JiANG4hYtVNGW7ILgzfp2bcmB-WHMIK3JxK9oz2ABl0pKt21ViZlKNXH8rHi10V_9krTg4B25547gjxLAZsfY4U4olbUf5dUDmcKKGs_lJ05r3bLNVoLmTQOaROzRxdLqws669gzOQWmk",
+    offset: false,
+  },
+  {
+    category: "Inspection",
+    name: "Duo-Code Mark-V",
+    brand: "Videojet",
+    origin: "Italy",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
+    offset: true,
+  },
+];
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
+export default function SolutionsPage() {
+  return (
+    <div className="bg-background text-on-surface min-h-screen flex flex-col">
       <Navbar />
-      <main>
-        <section className="relative min-h-[80vh] flex items-center pt-16">
-          <div className="absolute inset-0 z-0">
-            <img alt="Background Machine" className="w-full h-full object-cover grayscale-[0.4] brightness-[0.3]" src={HERO_IMAGE} />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-            <div className="max-w-2xl text-white">
-              <div className="inline-block px-3 py-1 bg-primary/20 border border-primary/30 text-primary-fixed text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
-                Precision Engineering
-              </div>
-              <div className="hero-title-block font-['Montserrat'] font-black mb-8">
-                <span className="hero-title-main">VEDVIK</span>
-                <span className="hero-title-sub">MACHINERY</span>
-              </div>
-              <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
-                Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="btn-machined text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest shadow-xl">
-                  Solutions
-                </button>
-                <button className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <span className="text-primary font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#020062] mt-2">PACKAGING MACHINES</h2>
-              </div>
-              <a className="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary pb-1" href="/solutions">All Systems</a>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {packagingMachines.map((machine) => (
-                <div key={machine.title} className="group bg-surface-container-lowest border border-surface-container-highest p-8 flex flex-col gap-4 hover:shadow-lg transition-all">
-                  <div className="aspect-video bg-surface-container-low overflow-hidden mb-2">
-                    {machine.image ? (
-                      <img alt={machine.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={machine.image} />
-                    ) : (
-                      <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-                        <span className="material-symbols-outlined text-4xl text-slate-400">{machine.icon}</span>
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="font-['Montserrat'] font-bold text-xl text-[#020062]">{machine.title}</h3>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">{machine.description}</p>
-                  <div className="mt-auto pt-4 flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-tighter">
-                    Specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <main className="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full">
 
-        <section className="py-12 bg-surface-container-low">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <span className="text-primary font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#020062] mt-2">INSPECTION SYSTEMS</h2>
-              </div>
-              <a className="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary pb-1" href="/solutions">All Systems</a>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {inspectionSystems.map((system) => (
-                <div key={system.title} className="group bg-surface-container-lowest border border-surface-container-highest p-8 flex flex-col gap-4 hover:shadow-lg transition-all">
-                  <h3 className="font-['Montserrat'] font-bold text-xl text-[#020062]">{system.title}</h3>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">{system.description}</p>
-                  <div className="mt-auto pt-4 flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-tighter">
-                    Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Hero */}
+        <header className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div className="lg:col-span-7">
+            <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">
+              Master Gallery
+            </p>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-6 font-headline">
+              ENGINEERED<br />SOLUTIONS
+            </h1>
+            <p className="text-on-surface-variant max-w-xl text-lg leading-relaxed font-light">
+              A curated selection of high-precision industrial machinery, designed for seamless
+              integration and silent operation. Filter by application or manufacturer expertise.
+            </p>
           </div>
-        </section>
 
-        <section className="py-16 bg-[#020062] text-white">
-          <div className="max-w-7xl mx-auto px-8 text-center">
-            <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-8">
-              DISCUSS YOUR FACILITY REQUIREMENTS.
-            </h2>
-            <div className="flex flex-col md:flex-row justify-center gap-6">
-              <button className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors">
-                Request Consultation
+          <div className="lg:col-span-5 flex lg:justify-end">
+            <div className="bg-surface-container-low p-1 rounded-full flex gap-1">
+              <button className="px-6 py-2 bg-white rounded-full text-sm font-semibold shadow-sm text-primary">
+                All Systems
               </button>
-              <button className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors">
-                Technical Catalog
+              <button className="px-6 py-2 hover:bg-white/50 rounded-full text-sm font-medium text-on-surface-variant transition-all">
+                New Arrivals
               </button>
             </div>
           </div>
+        </header>
+
+        {/* Filter Categories */}
+        <section className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-outline-variant/20 pt-12">
+            {filterCategories.map((cat) => (
+              <div key={cat.label}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-secondary rounded-full" />
+                  {cat.label}
+                </h3>
+                <ul className="space-y-3">
+                  {cat.items.map((item) => (
+                    <li key={item}>
+                      <a href="#" className="text-on-surface-variant hover:text-secondary transition-colors text-sm font-medium">
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </section>
+
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
+          {products.map((product, i) => (
+            <div key={i} className={`group ${product.offset ? "md:mt-12" : ""}`}>
+              <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-8 rounded-lg">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute top-6 left-6">
+                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">
+                    {product.category}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-2xl font-bold tracking-tight text-primary mb-2 font-headline">
+                    {product.name}
+                  </h2>
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-secondary">{product.brand}</span>
+                    <span className="w-1 h-1 bg-outline-variant rounded-full" />
+                    <span className="text-sm text-on-surface-variant">{product.origin}</span>
+                  </div>
+                </div>
+                <button className="w-12 h-12 flex items-center justify-center border border-outline-variant/30 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+                  <span className="material-symbols-outlined">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </main>
+
       <Footer />
-    </>
+    </div>
   );
 }
