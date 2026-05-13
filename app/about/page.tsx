@@ -13,8 +13,8 @@ export default function About() {
               <span className="inline-block py-1 px-4 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
                 Our Mission
               </span>
-              <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tighter text-primary mb-12 leading-[1.1]">
-                Precision Craft. <br />Global Intelligence.
+              <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
+            PRECISION<br />PACKAGING
               </h1>
               <div className="space-y-8 text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
                 <p>
