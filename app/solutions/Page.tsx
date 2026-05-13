@@ -1,5 +1,6 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCuTGjp6zgEXir_vdfa3dxl8gTYxALj0wHObrT0wPSzmp0TFWjkwmrmHLs2GwYAooRRG642yjvigEBoEXw9F2IX2XIlS-3VmQmAzlgEQe0MVz03T08wY1-MJolPzk6d6orbkTnFB3OnSMIbCWkEBXXs7rFbPvq20PaRaf-yzHxwdTwOlDbNjpw6sqq8S4iKKAkZuCN63Xnho_EtKRTjCdSKYR4Ge6UBUS8UcqoqB65ygRaK-I8gHaJXvNjoftqZcKOI_Nrqyfz5IxgJ";
