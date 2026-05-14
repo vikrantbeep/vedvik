@@ -41,7 +41,7 @@ const packagingMachines: Machine[] = [
   },
   {
     title: "Bulk Packing",
-    description: "5 to 50 kg product packing in HFFS & VFFS format.",
+    description: "5 to 50 kg product packing in HFFS & VFFS format with options for stitch sealing and palletising.",
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
   },
   {
@@ -58,12 +58,12 @@ const inspectionSystems: InspectionSystem[] = [
     icon: "search",
   },
   {
-    title: "Checkweighers and Metal Detectors",
+    title: "Checkweighers",
     description: "Dynamic inline weighing with automatic reject systems for high-speed lines.",
     icon: "scale",
   },
   {
-    title: "X-Ray Systems",
+    title: "X-Ray and Metal Detectors",
     description: "High-sensitivity X-ray inspection for detecting foreign bodies, voids, and fill-level anomalies.",
     icon: "visibility",
   },
