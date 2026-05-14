@@ -4,28 +4,42 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 
+const LOGO_URL =
+  "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/contact", label: "Contact Us" },
+];
+
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/solutions", label: "Solutions" },
-    { href: "/contact", label: "Contact Us" },
-  ];
-
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md">
+    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-16">
 
         {/* Logo */}
-        <Link href="/">
-          <Image src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1778772616/Primary_Logo_1_copy_sdsrpz.jpg" alt="Vedvik Machinery" width={80} height={28} className="object-contain" />
+        <Link href="/" className="flex items-center">
+          <Image
+            src={LOGO_URL}
+            alt="Vedvik Machinery"
+            width={120}
+            height={40}
+            className="object-contain"
+            style={{ filter: "brightness(0) saturate(100%) invert(8%) sepia(97%) saturate(3000%) hue-rotate(228deg) brightness(80%)" }}
+          />
         </Link>
 
         {/* Hamburger */}
-        <button onClick={() => setOpen(!open)} className="flex flex-col justify-center items-center gap-1.5 w-8 h-8">
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          className="flex flex-col justify-center items-center gap-1.5 w-8 h-8"
+        >
           <span className={`block w-6 h-0.5 bg-[#020062] transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
           <span className={`block w-6 h-0.5 bg-[#020062] transition-all duration-300 ${open ? "opacity-0" : ""}`} />
           <span className={`block w-6 h-0.5 bg-[#020062] transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
