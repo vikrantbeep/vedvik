@@ -14,14 +14,15 @@ export default function About() {
                 Our Mission
               </span>
               <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-            PRECISION<br />PACKAGING
+                PRECISION<br />PACKAGING
               </h1>
               <div className="space-y-8 text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
                 <p>
-                 Vedvik Machinery is a trusted Indian packaging machinery company with over 30 years of industry experience, delivering advanced automation and packaging solutions to manufacturers across diverse industries. Combining strong engineering expertise with globally proven technologies, we provide reliable, high-performance machinery designed to improve efficiency, accuracy, and long-term productivity. Our solutions are built around the evolving needs of modern manufacturing while maintaining the flexibility and understanding that comes from being deeply connected to the Indian market.
+                  Vedvik Machinery is a trusted Indian packaging machinery company with over 30 years of industry experience, delivering advanced automation and packaging solutions to manufacturers across diverse industries. Combining strong engineering expertise with globally proven technologies, we provide reliable, high-performance machinery designed to improve efficiency, accuracy, and long-term productivity. Our solutions are built around the evolving needs of modern manufacturing while maintaining the flexibility and understanding that comes from being deeply connected to the Indian market.
                 </p>
                 <p>
-                 With a focus on bringing international machinery standards together with dependable local support, Vedvik Machinery represents leading global technology partners while ensuring responsive service, technical assistance, and customer-focused solutions within India. From consultation and installation to after-sales support, our team is committed to building long-term partnerships and delivering machinery solutions that businesses can rely on with confidence.
+                  With a focus on bringing international machinery standards together with dependable local support, Vedvik Machinery represents leading global technology partners while ensuring responsive service, technical assistance, and customer-focused solutions within India. From consultation and installation to after-sales support, our team is committed to building long-term partnerships and delivering machinery solutions that businesses can rely on with confidence.
+                </p>
               </div>
             </div>
             <div className="lg:col-span-5 relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden">
@@ -55,6 +56,7 @@ export default function About() {
                 <h3 className="text-2xl font-bold text-primary mb-4">Service Support</h3>
                 <p className="text-on-surface-variant leading-relaxed max-w-md">
                   Dedicated local service and technical support backed by industry expertise and quick response times.
+                </p>
               </div>
 
               <div className="group relative bg-primary-container p-12 rounded-xl overflow-hidden">
@@ -103,12 +105,12 @@ export default function About() {
             Join the network of forward-thinking Indian factories leveraging Vedvik's engineering prowess.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="bg-primary-container text-on-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-primary transition-all">
+            <a href="/contact" className="bg-primary-container text-on-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-primary transition-all">
               Consult Us
-            </button>
-            <button className="text-secondary font-bold text-lg px-10 py-4 border border-outline-variant/30 rounded-lg hover:bg-surface-container-low transition-all">
+            </a>
+            <a href="/solutions" className="text-secondary font-bold text-lg px-10 py-4 border border-outline-variant/30 rounded-lg hover:bg-surface-container-low transition-all">
               View Solutions
-            </button>
+            </a>
           </div>
         </section>
       </main>
