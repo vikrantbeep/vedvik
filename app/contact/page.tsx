@@ -108,6 +108,7 @@ export default function ContactPage() {
                   <select
                     className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 appearance-none outline-none"
                     id="requirement"
+                    defaultValue=""
                   >
                     <option disabled value="">Select machinery category</option>
                     <option value="flow-wrap">Vertical Flow Wrap Systems</option>
@@ -190,10 +191,10 @@ export default function ContactPage() {
 
               <div className="p-6 bg-surface-container-highest/30">
                 <p className="text-sm font-medium text-on-surface-variant italic leading-snug">
-                  "We look forward to fulfilling your packaging requirements witht the best solution."
+                  "We look forward to fulfilling your packaging requirements with the best solution."
                 </p>
                 <p className="text-xs font-bold uppercase tracking-widest mt-4 text-[#020062] font-label">
-                  - Vedvik Machinery 
+                  - Vedvik Machinery
                 </p>
               </div>
             </div>
