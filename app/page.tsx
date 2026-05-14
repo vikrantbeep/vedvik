@@ -4,6 +4,9 @@ import Footer from "./components/Footer";
 const HERO_IMAGE =
   "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png";
 
+const LOGO =
+  "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 interface Machine {
@@ -41,6 +44,11 @@ const packagingMachines: Machine[] = [
     description: "5 to 50 kg product packing in HFFS & VFFS format.",
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
   },
+  {
+    title: "Secondary Packaging",
+    description: "End-of-line secondary packaging systems including cartoning, case packing, and shrink wrapping.",
+    image: HERO_IMAGE, // replace with your actual image URL
+  },
 ];
 
 const inspectionSystems: InspectionSystem[] = [
@@ -50,9 +58,14 @@ const inspectionSystems: InspectionSystem[] = [
     icon: "search",
   },
   {
-    title: "Checkweighers, X-ray and Metal Detectors",
+    title: "Checkweighers and Metal Detectors",
     description: "Dynamic inline weighing with automatic reject systems for high-speed lines.",
     icon: "scale",
+  },
+  {
+    title: "X-Ray Systems",
+    description: "High-sensitivity X-ray inspection for detecting foreign bodies, voids, and fill-level anomalies.",
+    icon: "visibility",
   },
   {
     title: "Printer and Coder",
@@ -108,6 +121,30 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
   );
 }
 
+// ─── 3+2 Grid Layout ─────────────────────────────────────────────────────────
+
+function ThreeTwoGrid<T>({ items, renderCard }: { items: T[]; renderCard: (item: T) => React.ReactNode }) {
+  const firstRow = items.slice(0, 3);
+  const secondRow = items.slice(3);
+
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {firstRow.map((item, i) => (
+          <div key={i}>{renderCard(item)}</div>
+        ))}
+      </div>
+      {secondRow.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:w-2/3">
+          {secondRow.map((item, i) => (
+            <div key={i}>{renderCard(item)}</div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function Home() {
@@ -127,13 +164,21 @@ export default function Home() {
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
             <div className="max-w-2xl text-white">
+              {/* Badge */}
               <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
               </div>
+
+              {/* Logo in place of text title */}
               <div className="mb-8">
-                <p className="font-['Montserrat'] font-black text-6xl md:text-8xl leading-none tracking-tight text-white">VEDVIK</p>
-                <p className="font-['Montserrat'] font-black text-3xl md:text-5xl leading-none tracking-[0.15em] text-slate-300">MACHINERY</p>
+                <img
+                  src={LOGO}
+                  alt="Vedvik Machinery"
+                  className="h-28 md:h-40 w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
               </div>
+
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and inspection systems engineered for high-speed FMCG &amp; pharmaceutical applications.
               </p>
@@ -161,11 +206,10 @@ export default function Home() {
                 All Systems
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {packagingMachines.map((machine) => (
-                <MachineCard key={machine.title} machine={machine} />
-              ))}
-            </div>
+            <ThreeTwoGrid
+              items={packagingMachines}
+              renderCard={(machine) => <MachineCard machine={machine} />}
+            />
           </div>
         </section>
 
@@ -181,11 +225,10 @@ export default function Home() {
                 All Systems
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {inspectionSystems.map((system) => (
-                <InspectionCard key={system.title} system={system} />
-              ))}
-            </div>
+            <ThreeTwoGrid
+              items={inspectionSystems}
+              renderCard={(system) => <InspectionCard system={system} />}
+            />
           </div>
         </section>
 
