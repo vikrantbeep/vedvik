@@ -5,16 +5,16 @@ const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCuTGjp6zgEXir_vdfa3dxl8gTYxALj0wHObrT0wPSzmp0TFWjkwmrmHLs2GwYAooRRG642yjvigEBoEXw9F2IX2XIlS-3VmQmAzlgEQe0MVz03T08wY1-MJolPzk6d6orbkTnFB3OnSMIbCWkEBXXs7rFbPvq20PaRaf-yzHxwdTwOlDbNjpw6sqq8S4iKKAkZuCN63Xnho_EtKRTjCdSKYR4Ge6UBUS8UcqoqB65ygRaK-I8gHaJXvNjoftqZcKOI_Nrqyfz5IxgJ";
 
 const packagingMachines = [
-  { title: "Liquid Filling", description: "Aseptic rotary filling systems with 0.1% accuracy. CIP/SIP ready for pharma applications.", image: HERO_IMAGE },
-  { title: "Pouch Packing", description: "High-speed vertical form-fill-seal (VFFS) systems for granular and liquid goods.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5d4-nUdzb6C0Us7hUc4JICEbqO0f5y2f2Vka92j0_TzM_cQfEooIRmjdR7xND9OCWwixKSliOh9O9L-arpL65DWddJrQgoAadh8BGcY3sdpxTuxWYwXb5Ut3OfcCX7haPs_Hc8cuzJdFs2qZU89XiheiO1jroGDidS_yt4AKd3rT1IkC9hNqCSMDH1lhszqKczMmQ1wlIPTF6zNAY69kx46-unGGop_Hk_Xxtg9DpECll5i1mwcGQDNUXCfnUufaZr9wkCXmk8sRD" },
-  { title: "Bulk Packing", description: "Automated weighing and discharge systems for industrial bulk container loading.", icon: "precision_manufacturing" },
-  { title: "Pick Fill Seal", description: "Automated pick, fill and seal systems for precise and hygienic packaging of products.", icon: "inventory_2" },
+  { title: "Liquid Filling", description: "Aseptic rotary filling systems with high accuracy. CIP/SIP ready for FMCG & pharma applications.", image: HERO_IMAGE },
+  { title: "Pouch Packing", description: "High-speed horizontal form-fill-seal (HFFS) systems with spouts for granular and liquid products.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5d4-nUdzb6C0Us7hUc4JICEbqO0f5y2f2Vka92j0_TzM_cQfEooIRmjdR7xND9OCWwixKSliOh9O9L-arpL65DWddJrQgoAadh8BGcY3sdpxTuxWYwXb5Ut3OfcCX7haPs_Hc8cuzJdFs2qZU89XiheiO1jroGDidS_yt4AKd3rT1IkC9hNqCSMDH1lhszqKczMmQ1wlIPTF6zNAY69kx46-unGGop_Hk_Xxtg9DpECll5i1mwcGQDNUXCfnUufaZr9wkCXmk8sRD" },
+  { title: "Pick Fill Seal", description: "Automated pick, fill and seal systems for precise and hygienic packaging of products.", icon: "precision_manufacturing" },
+  { title: "Bulk Packing", description: "5 to 50 kg product packing in HFFS & VFFS format.", icon: "inventory_2" },
 ];
 
 const inspectionSystems = [
-  { title: "Inspection Machines", description: "Vision-based quality control systems for surface defects and label integrity.", icon: "search" },
-  { title: "Check Weighers", description: "Dynamic inline weighing with automatic reject systems for high-speed lines.", icon: "scale" },
-  { title: "Metal Detectors", description: "Multi-frequency detection technology for ferrous and non-ferrous contaminants.", icon: "sensors" },
+  { title: "Inspection Machines", description: "Vision-based quality control systems for cap defects and label integrity.", icon: "search" },
+  { title: "Checkweighers, X-ray and Metal Detectors", description: "Dynamic inline weighing with automatic reject systems for high-speed lines.", icon: "scale" },
+  { title: "Printer and Coder", description: "Thermal Inkjet (TIJ) printers to advanced IoT and Industry 4.0 enabled models", icon: "sensors" },
   { title: "Roller Unwinders", description: "Precision film unwinding systems for consistent tension control in packaging lines.", icon: "rotate_right" },
 ];
 
@@ -35,7 +35,7 @@ export default function Home() {
                 <span className="hero-title-main">VEDVIK</span>
                 <span className="hero-title-sub">MACHINERY</span>
               </div>
-              <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.</p>
+              <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">Advanced packaging and inspection systems engineered for high-speed FMCG & pharmaceutical applications.</p>
               <div className="flex flex-wrap gap-4">
                 <a href="/solutions" className="btn-machined text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest shadow-xl">Solutions</a>
                 <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors">Contact Us</a>
@@ -100,9 +100,9 @@ export default function Home() {
 
         <section className="py-16 bg-[#020062] text-white">
           <div className="max-w-7xl mx-auto px-8 text-center">
-            <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-8">DISCUSS YOUR FACILITY REQUIREMENTS.</h2>
+            <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-8">DISCUSS YOUR REQUIREMENTS.</h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a href="/contact" className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors">Request Consultation</a>
+              <a href="/contact" className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors">Know More</a>
               <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors">Technical Catalog</a>
             </div>
           </div>
