@@ -78,14 +78,14 @@ export default function Home() {
                 Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.
               </p>
               <div className="flex flex-wrap gap-4">
-                
-                  href="/solutions"
+              
+                  <a href="/solutions"
                   className="btn-machined text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest shadow-xl"
                 >
                   Solutions
                 </a>
                 
-                  href="/contact"
+                  <a href="/contact"
                   className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors"
                 >
                   Contact Us
