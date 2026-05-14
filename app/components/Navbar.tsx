@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 
-const LOGO_URL =
-  "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
+// Updated to the working Cloudinary link you provided
+const LOGO_URL = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778776850/Logomark_1_dshgab.png";
 
 const links = [
   { href: "/", label: "Home" },
@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-16">
 
-        {/* Logo */}
+        {/* Logo Section */}
         <Link href="/" className="flex items-center">
           <Image
             src={LOGO_URL}
@@ -30,11 +30,13 @@ export default function Navbar() {
             width={120}
             height={40}
             className="object-contain"
-            style={{ filter: "brightness(0) saturate(100%) invert(8%) sepia(97%) saturate(3000%) hue-rotate(228deg) brightness(80%)" }}
+            priority // Added priority so the logo loads immediately
+            // Removed the complex filter temporarily to ensure visibility. 
+            // If you need the specific blue color, re-add the style prop here.
           />
         </Link>
 
-        {/* Hamburger */}
+        {/* Hamburger Menu Icon */}
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
