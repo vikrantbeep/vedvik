@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCuTGjp6zgEXir_vdfa3dxl8gTYxALj0wHObrT0wPSzmp0TFWjkwmrmHLs2GwYAooRRG642yjvigEBoEXw9F2IX2XIlS-3VmQmAzlgEQe0MVz03T08wY1-MJolPzk6d6orbkTnFB3OnSMIbCWkEBXXs7rFbPvq20PaRaf-yzHxwdTwOlDbNjpw6sqq8S4iKKAkZuCN63Xnho_EtKRTjCdSKYR4Ge6UBUS8UcqoqB65ygRaK-I8gHaJXvNjoftqZcKOI_Nrqyfz5IxgJ";
+  "https://res.cloudinary.com/dnts8gzbh/image/upload/f_auto,q_auto/ChatGPT_Image_May_8_2026_07_51_42_PM_mer5br";
 
 const packagingMachines = [
   { title: "Liquid Filling", description: "Aseptic rotary filling systems with high accuracy. CIP/SIP ready for FMCG & pharma applications.", image: HERO_IMAGE },
