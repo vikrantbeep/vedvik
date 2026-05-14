@@ -79,11 +79,11 @@ export default function ContactPage() {
                 Inquiry Channel
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-[#020062] tracking-tighter leading-none mb-6 font-headline">
-                CONNECT WITH <br />OUR ENGINEERS.
+                CONNECT WITH <br />US.
               </h1>
               <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
                 Direct communication for high-specification packaging systems. Submit your
-                technical requirements for a tailored consultation.
+                requirements for a call back.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ export default function ContactPage() {
 
               <div className="pt-4">
                 <button className="group flex items-center gap-4 bg-[#2563EB] hover:bg-blue-700 text-white px-10 py-5 font-bold transition-all duration-300 shadow-xl shadow-blue-900/10 active:scale-[0.98] uppercase tracking-widest font-label">
-                  <span>Initialize Consultation</span>
+                  <span>Submit Form</span>
                   <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </button>
               </div>
@@ -148,27 +148,27 @@ export default function ContactPage() {
             <div className="bg-surface-container-low p-10 md:p-14 space-y-12">
               <div>
                 <h3 className="text-sm font-black text-[#020062] mb-8 uppercase tracking-widest font-label">
-                  Technical HQ
+                  Factory Contact
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">location_on</span>
                     <div>
                       <p className="font-bold text-lg leading-tight">Ahmedabad, Gujarat, India</p>
-                      <p className="text-on-surface-variant font-medium">GIDC, Sanand, Ahmedabad</p>
+                      <p className="text-on-surface-variant font-medium">Bakrol, Indore-Ahmedabad Highway, Ahmedabad</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">mail</span>
                     <div>
-                      <p className="font-bold text-lg leading-tight">info@vedvikmachinery.com</p>
-                      <p className="text-on-surface-variant font-medium">Standard Response: &lt; 4 Hours</p>
+                      <p className="font-bold text-lg leading-tight">vikrant@vedvikmachinery.com</p>
+                      <p className="text-on-surface-variant font-medium">Call if Urgent</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">call</span>
                     <div>
-                      <p className="font-bold text-lg leading-tight">+91 XXXXX XXXXX</p>
+                      <p className="font-bold text-lg leading-tight">+91 81558 92080</p>
                       <p className="text-on-surface-variant font-medium">Mon - Sat: 09:00 - 18:00 IST</p>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ export default function ContactPage() {
 
               <div className="pt-8 border-t border-outline-variant/20">
                 <h3 className="text-xs font-black text-outline mb-6 uppercase tracking-widest font-label">
-                  Global Presence
+                  Works
                 </h3>
                 <div className="aspect-video w-full bg-surface-container overflow-hidden">
                   <img
@@ -190,11 +190,10 @@ export default function ContactPage() {
 
               <div className="p-6 bg-surface-container-highest/30">
                 <p className="text-sm font-medium text-on-surface-variant italic leading-snug">
-                  "Precision is the only metric that matters in high-speed packaging. Our engineering
-                  team handles inquiries directly — no sales buffers."
+                  "We look forward to fulfilling your packaging requirements witht the best solution."
                 </p>
                 <p className="text-xs font-bold uppercase tracking-widest mt-4 text-[#020062] font-label">
-                  Vedvik Machinery — Engineering Team
+                  - Vedvik Machinery 
                 </p>
               </div>
             </div>
