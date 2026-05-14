@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -71,14 +70,9 @@ export default function Home() {
               <div className="inline-block px-3 py-1 bg-primary/20 border border-primary/30 text-primary-fixed text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
               </div>
-              <div className="mb-8">
-                <Image
-                  src="/Logomark_01.png"
-                  alt="Vedvik Machinery"
-                  width={320}
-                  height={100}
-                  className="object-contain"
-                />
+              <div className="hero-title-block font-['Montserrat'] font-black mb-8">
+                <span className="hero-title-main">VEDVIK</span>
+                <span className="hero-title-sub">MACHINERY</span>
               </div>
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.
@@ -113,19 +107,13 @@ export default function Home() {
                   PACKAGING MACHINES
                 </h2>
               </div>
-              
-                className="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary pb-1"
-                href="/solutions"
-              >
+              <a className="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary pb-1" href="/solutions">
                 All Systems
               </a>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packagingMachines.map((machine) => (
-                <div
-                  key={machine.title}
-                  className="group bg-surface-container-lowest border border-surface-container-highest p-6 flex flex-col gap-4 hover:shadow-lg transition-all"
-                >
+                <div key={machine.title} className="group bg-surface-container-lowest border border-surface-container-highest p-6 flex flex-col gap-4 hover:shadow-lg transition-all">
                   <div className="aspect-video bg-surface-container-low overflow-hidden mb-2">
                     {machine.image ? (
                       <img
@@ -141,15 +129,10 @@ export default function Home() {
                       </div>
                     )}
                   </div>
-                  <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">
-                    {machine.title}
-                  </h3>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">
-                    {machine.description}
-                  </p>
+                  <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">{machine.title}</h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed">{machine.description}</p>
                   <div className="mt-auto pt-4 flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-tighter">
-                    Specifications{" "}
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    Specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               ))}
@@ -169,33 +152,22 @@ export default function Home() {
                   INSPECTION SYSTEMS
                 </h2>
               </div>
-              
-                className="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary pb-1"
-                href="/solutions"
-              >
+              <a className="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary pb-1" href="/solutions">
                 All Systems
               </a>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {inspectionSystems.map((system) => (
-                <div
-                  key={system.title}
-                  className="group bg-surface-container-lowest border border-surface-container-highest p-6 flex flex-col gap-4 hover:shadow-lg transition-all"
-                >
+                <div key={system.title} className="group bg-surface-container-lowest border border-surface-container-highest p-6 flex flex-col gap-4 hover:shadow-lg transition-all">
                   <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-2">
                     <span className="material-symbols-outlined text-2xl text-primary">
                       {system.icon}
                     </span>
                   </div>
-                  <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">
-                    {system.title}
-                  </h3>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">
-                    {system.description}
-                  </p>
+                  <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">{system.title}</h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed">{system.description}</p>
                   <div className="mt-auto pt-4 flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-tighter">
-                    Details{" "}
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               ))}
