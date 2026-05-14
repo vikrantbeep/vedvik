@@ -2,13 +2,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const HERO_IMAGE =
-  "https://res.cloudinary.com/dnts8gzbh/image/upload/f_auto,q_auto/ChatGPT_Image_May_8_2026_07_51_42_PM_mer5br";
+  "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png";
 
 const packagingMachines = [
   { title: "Liquid Filling", description: "Aseptic rotary filling systems with high accuracy. CIP/SIP ready for FMCG & pharma applications.", image: HERO_IMAGE },
-  { title: "Pouch Packing", description: "High-speed horizontal form-fill-seal (HFFS) systems with spouts for granular and liquid products.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5d4-nUdzb6C0Us7hUc4JICEbqO0f5y2f2Vka92j0_TzM_cQfEooIRmjdR7xND9OCWwixKSliOh9O9L-arpL65DWddJrQgoAadh8BGcY3sdpxTuxWYwXb5Ut3OfcCX7haPs_Hc8cuzJdFs2qZU89XiheiO1jroGDidS_yt4AKd3rT1IkC9hNqCSMDH1lhszqKczMmQ1wlIPTF6zNAY69kx46-unGGop_Hk_Xxtg9DpECll5i1mwcGQDNUXCfnUufaZr9wkCXmk8sRD" },
-  { title: "Pick Fill Seal", description: "Automated pick, fill and seal systems for precise and hygienic packaging of products.", icon: "precision_manufacturing" },
-  { title: "Bulk Packing", description: "5 to 50 kg product packing in HFFS & VFFS format.", icon: "inventory_2" },
+  { title: "Pouch Packing", description: "High-speed horizontal form-fill-seal (HFFS) systems with spouts for granular and liquid products.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png" },
+  { title: "Pick Fill Seal", description: "Automated pick, fill and seal systems for precise and hygienic packaging of products.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png" },
+  { title: "Bulk Packing", description: "5 to 50 kg product packing in HFFS & VFFS format.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png" },
 ];
 
 const inspectionSystems = [
