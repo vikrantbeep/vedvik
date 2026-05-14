@@ -48,7 +48,7 @@ function Footer() {
         <div className="col-span-2 lg:col-span-2">
           <div className="text-lg font-bold text-zinc-900 mb-4 font-headline">Vedvik Machinery</div>
           <p className="text-zinc-500 max-w-sm text-sm leading-relaxed mb-4">
-            Official Indian representative of Effytec, Spain.
+            Manufacturer of Packaging Machines.
           </p>
           <div className="text-xs uppercase tracking-widest text-zinc-400">
             © {new Date().getFullYear()} Vedvik Machinery. All rights reserved.
