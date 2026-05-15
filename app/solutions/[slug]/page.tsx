@@ -197,7 +197,7 @@ const products: Record<string, {
     name: "Roller Unwinders",
     subtitle: "Precision Film Tension Control",
     description: "Precision film unwinding systems for consistent tension control in packaging lines. Ensures smooth, uninterrupted film feed for high-speed operations.",
-    heroImage: "",
+    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
     youtubeId: "dQw4w9WgXcQ",
     brand: "Vedvik Machinery, India",
     brandDesc: "In-house designed film handling systems.",
@@ -205,7 +205,12 @@ const products: Record<string, {
       { parameter: "Tension Control", rating: "Dancer / Servo" },
       { parameter: "Splicing", rating: "Manual / Auto Splice" },
     ],
-    showcaseImages: [],
+    showcaseImages: [
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+    ],
   },
 
   "Printing": {
@@ -289,7 +294,7 @@ export default async function ProductPage({ params }: PageProps) {
         <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mb-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-8">
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="mb-4">
-              <span className="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[0.6875rem] font-bold tracking-widest uppercase">{product.badge}</span>
+              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{product.badge}</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
               {product.name} <br />{product.subtitle}
@@ -363,8 +368,6 @@ export default async function ProductPage({ params }: PageProps) {
 
             <div>
               <h3 className="text-2xl font-bold mb-12 text-primary border-l-4 border-secondary pl-6">Packaging Showcase</h3>
-
-              {/* Label boxes for Inspection */}
               {product.showcaseLabels && product.showcaseLabels.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {product.showcaseLabels.map((label, i) => (
