@@ -1,91 +1,6 @@
-"use client";
-
-import { usePathname } from "next/navigation";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Link from "next/link";
-
-function Navbar() {
-  const pathname = usePathname();
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Solutions", href: "/solutions" },
-    { label: "Contact Us", href: "/contact" },
-  ];
-  return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md">
-      <div className="flex justify-between items-center px-6 md:px-12 py-4 md:py-6 max-w-screen-2xl mx-auto">
-        <Link href="/" className="text-xl md:text-2xl font-bold tracking-tighter text-primary font-headline">
-          Vedvik Machinery
-        </Link>
-        <div className="hidden md:flex items-center space-x-12">
-          {links.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link key={link.href} href={link.href}
-                className={`font-headline font-bold tracking-tight transition-colors duration-200 ${
-                  isActive ? "text-secondary border-b-2 border-secondary pb-1" : "text-on-surface-variant hover:text-secondary"
-                }`}>
-                {link.label}
-              </Link>
-            );
-          })}
-          <Link href="/contact" className="bg-primary-container text-on-primary px-8 py-3 rounded-lg font-headline font-bold tracking-tight">
-            Request Quote
-          </Link>
-        </div>
-        <button className="md:hidden">
-          <span className="material-symbols-outlined text-on-surface">menu</span>
-        </button>
-      </div>
-    </nav>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-zinc-50 border-t border-zinc-200">
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 px-6 md:px-12 py-12 md:py-16 max-w-screen-2xl mx-auto">
-        <div className="col-span-2 lg:col-span-2">
-          <div className="text-lg font-bold text-zinc-900 mb-4 font-headline">Vedvik Machinery</div>
-          <p className="text-zinc-500 max-w-sm text-sm leading-relaxed mb-4">
-            Manufacturer of Packaging Machines.
-          </p>
-          <div className="text-xs uppercase tracking-widest text-zinc-400">
-            © {new Date().getFullYear()} Vedvik Machinery. All rights reserved.
-          </div>
-        </div>
-        <div>
-          <h4 className="font-bold text-zinc-900 mb-4 text-xs uppercase tracking-widest">Navigation</h4>
-          <ul className="space-y-3">
-            {[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "About Us", href: "/about" }, { label: "Contact Us", href: "/contact" }].map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="text-zinc-500 text-sm hover:text-secondary transition-colors">{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-zinc-900 mb-4 text-xs uppercase tracking-widest">Legal</h4>
-          <ul className="space-y-3">
-            {["Technical Support", "Privacy Policy", "Terms of Service"].map((item) => (
-              <li key={item}><a href="#" className="text-zinc-500 text-sm hover:text-secondary transition-colors">{item}</a></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-zinc-900 mb-4 text-xs uppercase tracking-widest">Connect</h4>
-          <div className="flex gap-3">
-            {["share", "mail"].map((icon) => (
-              <button key={icon} className="w-10 h-10 flex items-center justify-center bg-zinc-200 rounded-lg hover:bg-secondary hover:text-white transition-colors">
-                <span className="material-symbols-outlined text-[18px]">{icon}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 const products = [
   {
@@ -174,15 +89,9 @@ export default function SolutionsPage() {
           {products.map((product, i) => (
             <Link key={i} href={`/solutions/${product.slug}`} className="group block">
               <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute top-6 left-6">
-                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">
-                    {product.category}
-                  </span>
+                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
                 </div>
               </div>
               <div className="flex justify-between items-start">
