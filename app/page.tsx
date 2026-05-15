@@ -7,8 +7,6 @@ const HERO_IMAGE =
 const LOGO =
   "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
 
-// ─── Types ───────────────────────────────────────────────────────────────────
-
 interface Machine {
   title: string;
   description: string;
@@ -20,8 +18,6 @@ interface InspectionSystem {
   description: string;
   icon: string;
 }
-
-// ─── Data ────────────────────────────────────────────────────────────────────
 
 const packagingMachines: Machine[] = [
   {
@@ -47,7 +43,7 @@ const packagingMachines: Machine[] = [
   {
     title: "Secondary Packaging",
     description: "End-of-line secondary packaging systems including cartoning, case packing, and shrink wrapping.",
-    image: HERO_IMAGE, // replace with your actual image URL
+    image: HERO_IMAGE,
   },
 ];
 
@@ -78,8 +74,6 @@ const inspectionSystems: InspectionSystem[] = [
     icon: "rotate_right",
   },
 ];
-
-// ─── Card Components ──────────────────────────────────────────────────────────
 
 function MachineCard({ machine }: { machine: Machine }) {
   return (
@@ -121,8 +115,6 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
   );
 }
 
-// ─── 3+2 Grid Layout ─────────────────────────────────────────────────────────
-
 function ThreeTwoGrid<T>({ items, renderCard }: { items: T[]; renderCard: (item: T) => React.ReactNode }) {
   const firstRow = items.slice(0, 3);
   const secondRow = items.slice(3);
@@ -145,8 +137,6 @@ function ThreeTwoGrid<T>({ items, renderCard }: { items: T[]; renderCard: (item:
   );
 }
 
-// ─── Page ────────────────────────────────────────────────────────────────────
-
 export default function Home() {
   return (
     <>
@@ -157,19 +147,16 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <img
               alt="Background Machine"
-              className="w-full h-full object-cover brightness-[0.3]"
+              className="w-full h-full object-cover brightness-[0.4]"
               src={HERO_IMAGE}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
             <div className="max-w-2xl text-white">
-              {/* Badge */}
               <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
               </div>
-
-              {/* Logo in place of text title */}
               <div className="mb-8">
                 <img
                   src={LOGO}
@@ -178,15 +165,20 @@ export default function Home() {
                   style={{ filter: "brightness(0) invert(1)" }}
                 />
               </div>
-
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and inspection systems engineered for high-speed FMCG &amp; pharmaceutical applications.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl">
+              <div className="flex flex-col sm:flex-row gap-4">
+                
+                  href="/solutions"
+                  className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center"
+                >
                   Solutions
                 </a>
-                <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors">
+                
+                  href="/contact"
+                  className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center"
+                >
                   Contact Us
                 </a>
               </div>
@@ -237,10 +229,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-8 text-center">
             <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-8">DISCUSS YOUR REQUIREMENTS.</h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a href="/contact" className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors">
+              <a href="/contact" className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">
                 Know More
               </a>
-              <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors">
+              <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors text-center">
                 Technical Catalog
               </a>
             </div>
