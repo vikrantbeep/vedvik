@@ -29,7 +29,7 @@ export default function About() {
               <img
                 alt="Precision engineered steel gears"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRToKVT46zRZSuflvaWF_9Nxy1YM7VDImOj_X457TjqjVuh6ZJmGoahxO62J4p_ePSYzEACiyherCAIUTAIpgRbuFu_zpxfw8pi7xEwB0dnCnpOSaUl98FbyXnoIiFlK4FhNw6yFz5gC3UpgQFInY8-0JacAa3H9WxlVK5K6FLh_fOBgPcnHQtETaWowwWMF-SnGm6xlG3wxbdR0Jp27J0OUpLJ28AiEHC9aiQoF0PCKn7WGlQ-79Phz9r1zhBpKYAb0UlXrfh3GE"
+                src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png"
               />
             </div>
           </div>
