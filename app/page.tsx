@@ -60,7 +60,7 @@ const packagingMachines: Machine[] = [
   {
     title: "Secondary Packaging",
     description: "End-of-line secondary packaging systems including cartoning, case packing, and shrink wrapping.",
-    image: HERO_IMAGE,
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
   },
 ];
 
