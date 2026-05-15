@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 const HERO_IMAGE =
   "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png";
@@ -18,6 +19,22 @@ interface InspectionSystem {
   description: string;
   icon: string;
 }
+
+const machineSlugMap: Record<string, string> = {
+  "Liquid Filling": "Liquid-Filling",
+  "Pouch Packing": "HFFS",
+  "Pick Fill Seal": "PFS",
+  "Bulk Packing": "Bulk-Packing",
+  "Secondary Packaging": "Secondary-Automation",
+};
+
+const inspectionSlugMap: Record<string, string> = {
+  "Inspection Machines": "Inspection",
+  "Checkweighers": "Checkweighers",
+  "X-Ray and Metal Detectors": "xray-metal-detector",
+  "Printer and Coder": "Printing",
+  "Roller Unwinders": "roller-unwinders",
+};
 
 const packagingMachines: Machine[] = [
   {
@@ -76,8 +93,9 @@ const inspectionSystems: InspectionSystem[] = [
 ];
 
 function MachineCard({ machine }: { machine: Machine }) {
+  const slug = machineSlugMap[machine.title] ?? "";
   return (
-    <div className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
+    <Link href={`/solutions/${slug}`} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="aspect-video bg-slate-100 overflow-hidden mb-2">
         {machine.image ? (
           <img
@@ -96,13 +114,14 @@ function MachineCard({ machine }: { machine: Machine }) {
       <div className="mt-auto pt-4 flex items-center gap-2 text-[#020062] text-[10px] font-black uppercase tracking-tighter">
         Specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
       </div>
-    </div>
+    </Link>
   );
 }
 
 function InspectionCard({ system }: { system: InspectionSystem }) {
+  const slug = inspectionSlugMap[system.title] ?? "";
   return (
-    <div className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
+    <Link href={`/solutions/${slug}`} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="w-12 h-12 bg-blue-50 flex items-center justify-center mb-2">
         <span className="material-symbols-outlined text-2xl text-[#020062]">{system.icon}</span>
       </div>
@@ -111,7 +130,7 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
       <div className="mt-auto pt-4 flex items-center gap-2 text-[#020062] text-[10px] font-black uppercase tracking-tighter">
         Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -168,10 +187,10 @@ export default function Home() {
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and inspection systems engineered for high-speed FMCG &amp; pharmaceutical applications.
               </p>
-             <div className="flex flex-col sm:flex-row gap-4">
-  <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">Solutions</a>
-  <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Contact Us</a>
-</div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">Solutions</a>
+                <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Contact Us</a>
+              </div>
             </div>
           </div>
         </section>
