@@ -1,72 +1,11 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-
-function Navbar() {
-  const pathname = usePathname();
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Solutions", href: "/solutions" },
-    { label: "Contact Us", href: "/contact" },
-  ];
-  return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md">
-      <nav className="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
-        <Link href="/" className="text-xl font-black tracking-tighter text-slate-900 font-headline">
-          Vedvik Machinery
-        </Link>
-        <div className="hidden md:flex gap-8 items-center">
-          {links.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`font-medium transition-colors ${
-                  isActive
-                    ? "text-primary font-bold border-b-2 border-primary"
-                    : "text-slate-600 hover:text-primary"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </div>
-        <Link
-          href="/contact"
-          className="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 font-bold transition duration-300"
-        >
-          Request Quote
-        </Link>
-      </nav>
-    </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-50 border-t border-slate-200">
-      <div className="text-lg font-black text-slate-900 font-headline">Vedvik Machinery</div>
-      <div className="flex gap-8 flex-wrap justify-center">
-        {["Privacy Policy", "Terms of Service", "Technical Documentation", "Global Offices"].map((item) => (
-          <a key={item} href="#" className="text-slate-500 hover:underline decoration-2 underline-offset-4 text-xs font-bold uppercase tracking-widest">
-            {item}
-          </a>
-        ))}
-      </div>
-      <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">
-        © {new Date().getFullYear()} Vedvik Machinery. All rights reserved.
-      </p>
-    </footer>
-  );
-}
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function ContactPage() {
   return (
-    <div className="text-on-surface min-h-screen flex flex-col" style={{ backgroundColor: "#fafaf5" }}>
+    <div className="bg-background text-on-surface min-h-screen flex flex-col">
       <Navbar />
 
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full">
@@ -75,22 +14,19 @@ export default function ContactPage() {
           {/* Left: Form */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-              <span className="text-sm font-bold text-primary mb-4 block uppercase tracking-widest font-label">
-                Inquiry Channel
-              </span>
-              <h1 className="text-5xl md:text-7xl font-black text-[#020062] tracking-tighter leading-none mb-6 font-headline">
+              <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Inquiry Channel</p>
+              <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
                 CONNECT WITH <br />US.
               </h1>
-              <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
-                Direct communication for high-specification packaging systems. Submit your
-                requirements for a call back.
+              <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
+                Direct communication for high-specification packaging systems. Submit your requirements for a call back.
               </p>
             </div>
 
             <div className="space-y-8">
               <div className="space-y-10">
                 <div className="relative">
-                  <label className="text-xs font-bold text-outline mb-2 block uppercase tracking-widest font-label" htmlFor="email">
+                  <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="email">
                     Email ID
                   </label>
                   <input
@@ -102,7 +38,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative">
-                  <label className="text-xs font-bold text-outline mb-2 block uppercase tracking-widest font-label" htmlFor="requirement">
+                  <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="requirement">
                     Requirement
                   </label>
                   <select
@@ -111,19 +47,24 @@ export default function ContactPage() {
                     defaultValue=""
                   >
                     <option disabled value="">Select machinery category</option>
-                    <option value="flow-wrap">Vertical Flow Wrap Systems</option>
-                    <option value="bottling">High-Speed Bottling Lines</option>
-                    <option value="cartoning">End-of-Line Cartoning</option>
-                    <option value="custom">Custom Robotic Integration</option>
-                    <option value="support">Technical Support & Maintenance</option>
+                    <option value="hffs">Horizontal Form Fill Seal</option>
+                    <option value="liquid-filling">Liquid Filling Lines</option>
+                    <option value="pfs">Pick Fill Seal</option>
+                    <option value="bulk">Bulk HFFS & VFFS</option>
+                    <option value="secondary">Secondary Automation</option>
+                    <option value="inspection">Vision Inspection</option>
+                    <option value="checkweighers">Checkweighers</option>
+                    <option value="xray">X-ray and Metal Detector</option>
+                    <option value="printing">Printers and Coders</option>
+                    <option value="unwinders">Roller Unwinders</option>
                   </select>
-                  <div className="absolute right-0 bottom-4 pointer-events-none text-outline-variant">
+                  <div className="absolute right-0 bottom-4 pointer-events-none text-on-surface-variant">
                     <span className="material-symbols-outlined">expand_more</span>
                   </div>
                 </div>
 
                 <div className="relative">
-                  <label className="text-xs font-bold text-outline mb-2 block uppercase tracking-widest font-label" htmlFor="notes">
+                  <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="notes">
                     Notes
                   </label>
                   <textarea
@@ -136,7 +77,7 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-4">
-                <button className="group flex items-center gap-4 bg-[#2563EB] hover:bg-blue-700 text-white px-10 py-5 font-bold transition-all duration-300 shadow-xl shadow-blue-900/10 active:scale-[0.98] uppercase tracking-widest font-label">
+                <button className="group flex items-center gap-4 bg-primary hover:bg-primary-container text-on-primary px-10 py-5 font-bold transition-all duration-300 uppercase tracking-widest">
                   <span>Submit Form</span>
                   <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </button>
@@ -148,28 +89,28 @@ export default function ContactPage() {
           <aside className="lg:col-span-5 lg:sticky lg:top-40">
             <div className="bg-surface-container-low p-10 md:p-14 space-y-12">
               <div>
-                <h3 className="text-sm font-black text-[#020062] mb-8 uppercase tracking-widest font-label">
+                <h3 className="text-xs font-bold text-primary mb-8 uppercase tracking-widest">
                   Factory Contact
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">location_on</span>
                     <div>
-                      <p className="font-bold text-lg leading-tight">Ahmedabad, Gujarat, India</p>
+                      <p className="font-bold text-lg leading-tight text-on-surface">Ahmedabad, Gujarat, India</p>
                       <p className="text-on-surface-variant font-medium">Bakrol, Indore-Ahmedabad Highway, Ahmedabad</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">mail</span>
                     <div>
-                      <p className="font-bold text-lg leading-tight">vikrant@vedvikmachinery.com</p>
+                      <p className="font-bold text-lg leading-tight text-on-surface">vikrant@vedvikmachinery.com</p>
                       <p className="text-on-surface-variant font-medium">Call if Urgent</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">call</span>
                     <div>
-                      <p className="font-bold text-lg leading-tight">+91 81558 92080</p>
+                      <p className="font-bold text-lg leading-tight text-on-surface">+91 81558 92080</p>
                       <p className="text-on-surface-variant font-medium">Mon - Sat: 09:00 - 18:00 IST</p>
                     </div>
                   </div>
@@ -177,7 +118,7 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8 border-t border-outline-variant/20">
-                <h3 className="text-xs font-black text-outline mb-6 uppercase tracking-widest font-label">
+                <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">
                   Works
                 </h3>
                 <div className="aspect-video w-full bg-surface-container overflow-hidden">
@@ -191,9 +132,9 @@ export default function ContactPage() {
 
               <div className="p-6 bg-surface-container-highest/30">
                 <p className="text-sm font-medium text-on-surface-variant italic leading-snug">
-                  "We look forward to fulfilling your packaging requirements with the best solution."
+                  &quot;We look forward to fulfilling your packaging requirements with the best solution.&quot;
                 </p>
-                <p className="text-xs font-bold uppercase tracking-widest mt-4 text-[#020062] font-label">
+                <p className="text-xs font-bold uppercase tracking-widest mt-4 text-primary">
                   - Vedvik Machinery
                 </p>
               </div>
