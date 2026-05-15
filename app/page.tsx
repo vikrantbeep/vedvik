@@ -168,20 +168,10 @@ export default function Home() {
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and inspection systems engineered for high-speed FMCG &amp; pharmaceutical applications.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                
-                  href="/solutions"
-                  className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center"
-                >
-                  Solutions
-                </a>
-                
-                  href="/contact"
-                  className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center"
-                >
-                  Contact Us
-                </a>
-              </div>
+             <div className="flex flex-col sm:flex-row gap-4">
+  <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">Solutions</a>
+  <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Contact Us</a>
+</div>
             </div>
           </div>
         </section>
