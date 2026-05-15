@@ -167,7 +167,7 @@ const products: Record<string, {
 
   "Checkweighers": {
     badge: "Quality Control",
-    name: "Checkweighers,
+    name: "Checkweighers",
     subtitle: "V2000 Series",
     description: "Dynamic inline weighing with automatic reject systems for high-speed lines.",
     heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
