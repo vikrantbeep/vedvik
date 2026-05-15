@@ -69,13 +69,14 @@ export default async function ProductPage({ params }: PageProps) {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       <main className="pt-24 flex-grow">
+
         {/* Hero */}
         <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mb-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-8">
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="mb-4">
               <span className="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[0.6875rem] font-bold tracking-widest uppercase">{product.badge}</span>
             </div>
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-tight tracking-tighter text-primary mb-6">
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
               {product.name} <br />{product.subtitle}
             </h1>
             <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">{product.description}</p>
@@ -160,6 +161,7 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </div>
