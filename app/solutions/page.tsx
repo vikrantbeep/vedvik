@@ -94,7 +94,7 @@ export default function SolutionsPage() {
         <header className="mb-12 md:mb-20">
           <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Systems</p>
           <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-            PACKAGING<br />SOLUTIONS
+            PRECISION<br />PACKAGING SOLUTIONS
           </h1>
           <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
             A curated selection of high-precision packaging machinery, designed for seamless integration and efficient operation.
