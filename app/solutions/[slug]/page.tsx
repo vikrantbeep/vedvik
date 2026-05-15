@@ -215,7 +215,7 @@ const products: Record<string, {
     subtitle: "HX Nitro TIJ Series",
     description: "From Thermal Inkjet (TIJ) printers to advanced IoT and Industry 4.0 enabled coding systems. Reliable, high-resolution printing for batch codes, dates, and barcodes.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/MapleJet_yrppqj.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "zjZzPCnCJTk",
     brand: "MapleJet, Canada",
     brandDesc: "Industrial coding and marking solutions.",
     specs: [
