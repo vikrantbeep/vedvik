@@ -36,6 +36,14 @@ const products = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtZ5yRuj22JmhL1ZJHXb2sJCHUAC_UecQO4nb9v_tZX237QZoveFHjoOijZnY78SCIA-s9h5HulDqOdjQvbTRib2XvmU0ykqVbiQv9Y8e7RCiFQY8WAUawZAFsLw3YAwMROss4DoaRjaxNJBnFXw8DtzOZd9rT1KvAvY7LX2aY8307tK1Se-GHXFmexfhLUncFYg_hQZBbji79pKF8MLub6NofRzZ4ixurOv6ny_m3Z65CHwYZDfrwii9ank4nZrw6INF8-1JoNVc",
   },
   {
+    slug: "Secondary Automation",
+    category: "Packaging",
+    name: "Secondary Automation",
+    brand: "Vedvik Machinery",
+    origin: "India",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtZ5yRuj22JmhL1ZJHXb2sJCHUAC_UecQO4nb9v_tZX237QZoveFHjoOijZnY78SCIA-s9h5HulDqOdjQvbTRib2XvmU0ykqVbiQv9Y8e7RCiFQY8WAUawZAFsLw3YAwMROss4DoaRjaxNJBnFXw8DtzOZd9rT1KvAvY7LX2aY8307tK1Se-GHXFmexfhLUncFYg_hQZBbji79pKF8MLub6NofRzZ4ixurOv6ny_m3Z65CHwYZDfrwii9ank4nZrw6INF8-1JoNVc",
+  },
+  {
     slug: "Inspection",
     category: "Inspection",
     name: "Vision Inspection",
@@ -57,62 +65,4 @@ const products = [
     name: "Roller Unwinders",
     brand: "Vedvik Machinery",
     origin: "India",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
-  },
-  {
-    slug: "Printing",
-    category: "Printing",
-    name: "Printers and Coders",
-    brand: "MapleJet",
-    origin: "Canada",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtZ5yRuj22JmhL1ZJHXb2sJCHUAC_UecQO4nb9v_tZX237QZoveFHjoOijZnY78SCIA-s9h5HulDqOdjQvbTRib2XvmU0ykqVbiQv9Y8e7RCiFQY8WAUawZAFsLw3YAwMROss4DoaRjaxNJBnFXw8DtzOZd9rT1KvAvY7LX2aY8307tK1Se-GHXFmexfhLUncFYg_hQZBbji79pKF8MLub6NofRzZ4ixurOv6ny_m3Z65CHwYZDfrwii9ank4nZrw6INF8-1JoNVc",
-  },
-];
-
-export default function SolutionsPage() {
-  return (
-    <div className="bg-background text-on-surface min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow pt-28 md:pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full">
-
-        <header className="mb-12 md:mb-20">
-          <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Systems</p>
-          <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-            PACKAGING<br />SOLUTIONS
-          </h1>
-          <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
-            A curated selection of high-precision packaging machinery, designed for seamless integration and efficient operation.
-          </p>
-        </header>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-          {products.map((product, i) => (
-            <Link key={i} href={`/solutions/${product.slug}`} className="group block">
-              <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute top-6 left-6">
-                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline">{product.name}</h2>
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-secondary">{product.brand}</span>
-                    <span className="w-1 h-1 bg-outline-variant rounded-full" />
-                    <span className="text-sm text-on-surface-variant">{product.origin}</span>
-                  </div>
-                </div>
-                <div className="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-full group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
-                  <span className="material-symbols-outlined text-sm">arrow_outward</span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-      </main>
-      <Footer />
-    </div>
-  );
-}
+    image: "https://lh3.googleusercontent.com/aida-public/A
