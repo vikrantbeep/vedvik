@@ -70,7 +70,7 @@ export default function ContactPage() {
                   <textarea
                     className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 placeholder:text-outline-variant/50 resize-none outline-none"
                     id="notes"
-                    placeholder="Briefly describe your production volume and specific material challenges..."
+                    placeholder="Briefly describe your requirement specifications..."
                     rows={4}
                   />
                 </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                     <span className="material-symbols-outlined text-primary">mail</span>
                     <div>
                       <p className="font-bold text-lg leading-tight text-on-surface">vikrant@vedvikmachinery.com</p>
-                      <p className="text-on-surface-variant font-medium">Call if Urgent</p>
+                      <p className="text-on-surface-variant font-medium">Please Call for Any Urgent Queries</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   <img
                     alt="Vedvik Machinery"
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJHRjpWQfcaKjI0FZrGnkWiietoyvARCCNlF4I0AP2YM7H_4v048trLeRLojxl8P5hM5YO6BIgZr_fn279MGkP02hE17gtntlFErfwp4pkSuNMbKRYXuG3KlXBkXj2fnyNszYczjXVgoP2JJiA0dGNYehaxv3v-A8CZZvGmi8Y7TGo-n0y2_SiIzQpvT6Yiq8Tc_r_jiBOL0mZDLtzEnkhqqznp1_bVFaH0VGfcDEgYK7d7xQJmv-G_SUvtHOnzlJNRnGsW_RaUoUJ"
+                    src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1778852182/Screenshot_2026-05-15_at_7.06.09_PM_r3gh2m.png"
                   />
                 </div>
               </div>
