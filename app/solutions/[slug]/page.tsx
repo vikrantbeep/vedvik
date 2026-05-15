@@ -13,6 +13,7 @@ const products: Record<string, {
   brandDesc: string;
   specs: { parameter: string; rating: string }[];
   showcaseImages: string[];
+  showcaseLabels?: string[];
 }> = {
   "HFFS": {
     badge: "Packaging",
@@ -29,7 +30,7 @@ const products: Record<string, {
       { parameter: "Material compatibility", rating: "PE, PET, ALU, Bio-Composites" },
       { parameter: "Monomaterial", rating: "Monomaterial Compatible" },
       { parameter: "Filling stations", rating: "1 to 3" },
-      { parameter: "HMI Control System", rating: 'Siemens Standard' },
+      { parameter: "HMI Control System", rating: "Siemens Standard" },
     ],
     showcaseImages: [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDOmaektmZQxq9dNwffq38NanshUV_oFLLw05U50OfHmqJt4RV5o088qomi-gfgJXPKdku9qs76feKt997glc3qc4L4SPuZguJ19dodPNkP811ZDmzuY6kyiitEPVZOa9Zb4g9_EonvVKxd5Suno2NTSz5m4gcroRK3myOZTb4i3-ZReAgpEItI-Y_AadMYtVh7Z1XZ6oNpCcZ_lI954gTbmXE-nmEyKPfpF-T3vFjwjsLtVLYUdry9eAhsJs9bBHwrnqUeEmoKWL4",
@@ -146,7 +147,7 @@ const products: Record<string, {
     subtitle: "Artificial Vision Series",
     description: "Vision-based quality control systems for cap defects, label integrity, fill level detection, and seal verification. Suitable for high-speed FMCG and pharma lines.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774877/E2Mcouth_mzicf1.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "OMhUTB7oiXk",
     brand: "E2M Couth, Spain",
     brandDesc: "Vision inspection specialists for packaging lines.",
     specs: [
@@ -157,11 +158,14 @@ const products: Record<string, {
       { parameter: "Interface", rating: "Industry 4.0 / OPC-UA" },
       { parameter: "Lighting", rating: "LED Multi-angle" },
     ],
-    showcaseImages: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCGQlkjWxKqj6UvtrYvIkjTcNtTSrZ2MYctGL64Syj8g8K1TNOdzZJC2RLIpaph4NrFYlwS0Iif85m8T9rBG3VRs-A-YdAENlMwWQGueeJ7t14wJiHwk6-eTLYe8DsGa4JiANG4hYtVNGW7ILgzfp2bcmB-WHMIK3JxK9oz2ABl0pKt21ViZlKNXH8rHi10V_9krTg4B25547gjxLAZsfY4U4olbUf5dUDmcKKGs_lJ05r3bLNVoLmTQOaROzRxdLqws669gzOQWmk",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCGQlkjWxKqj6UvtrYvIkjTcNtTSrZ2MYctGL64Syj8g8K1TNOdzZJC2RLIpaph4NrFYlwS0Iif85m8T9rBG3VRs-A-YdAENlMwWQGueeJ7t14wJiHwk6-eTLYe8DsGa4JiANG4hYtVNGW7ILgzfp2bcmB-WHMIK3JxK9oz2ABl0pKt21ViZlKNXH8rHi10V_9krTg4B25547gjxLAZsfY4U4olbUf5dUDmcKKGs_lJ05r3bLNVoLmTQOaROzRxdLqws669gzOQWmk",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCGQlkjWxKqj6UvtrYvIkjTcNtTSrZ2MYctGL64Syj8g8K1TNOdzZJC2RLIpaph4NrFYlwS0Iif85m8T9rBG3VRs-A-YdAENlMwWQGueeJ7t14wJiHwk6-eTLYe8DsGa4JiANG4hYtVNGW7ILgzfp2bcmB-WHMIK3JxK9oz2ABl0pKt21ViZlKNXH8rHi10V_9krTg4B25547gjxLAZsfY4U4olbUf5dUDmcKKGs_lJ05r3bLNVoLmTQOaROzRxdLqws669gzOQWmk",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCGQlkjWxKqj6UvtrYvIkjTcNtTSrZ2MYctGL64Syj8g8K1TNOdzZJC2RLIpaph4NrFYlwS0Iif85m8T9rBG3VRs-A-YdAENlMwWQGueeJ7t14wJiHwk6-eTLYe8DsGa4JiANG4hYtVNGW7ILgzfp2bcmB-WHMIK3JxK9oz2ABl0pKt21ViZlKNXH8rHi10V_9krTg4B25547gjxLAZsfY4U4olbUf5dUDmcKKGs_lJ05r3bLNVoLmTQOaROzRxdLqws669gzOQWmk",
+    showcaseImages: [],
+    showcaseLabels: [
+      "Seal Inspection",
+      "Crimp Inspection",
+      "Fill Level Inspection",
+      "Mark Inspection",
+      "Orientation",
+      "Foreign Particle Detection",
     ],
   },
 
@@ -171,7 +175,7 @@ const products: Record<string, {
     subtitle: "V2000 Series",
     description: "Dynamic inline weighing with automatic reject systems for high-speed lines.",
     heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "R8PBFOouWf8",
     brand: "Varpe, Spain",
     brandDesc: "Precision weighing and detection systems.",
     specs: [
@@ -181,10 +185,10 @@ const products: Record<string, {
       { parameter: "Certification", rating: "OIML / CE" },
     ],
     showcaseImages: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835381/Screenshot_2026-05-15_at_2.24.22_PM_a7bixd.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835379/Screenshot_2026-05-15_at_2.25.14_PM_vzqwtn.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835378/Screenshot_2026-05-15_at_2.24.52_PM_i2sbtb.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835376/Screenshot_2026-05-15_at_2.25.03_PM_zmgr23.png",
     ],
   },
 
@@ -193,7 +197,7 @@ const products: Record<string, {
     name: "Roller Unwinders",
     subtitle: "Precision Film Tension Control",
     description: "Precision film unwinding systems for consistent tension control in packaging lines. Ensures smooth, uninterrupted film feed for high-speed operations.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
+    heroImage: "",
     youtubeId: "dQw4w9WgXcQ",
     brand: "Vedvik Machinery, India",
     brandDesc: "In-house designed film handling systems.",
@@ -201,12 +205,7 @@ const products: Record<string, {
       { parameter: "Tension Control", rating: "Dancer / Servo" },
       { parameter: "Splicing", rating: "Manual / Auto Splice" },
     ],
-    showcaseImages: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuASYw6roxZQLw2TfrRUN0ptzhsGM69inW3KS_s2ZY9R6wCyMY3wdoFc5ajxzf_GJZj7axSCKoy0MpVQP6qBhwB7mkYlebgNWijtOs8soBZOQLAhiGZhsoRzf3Kfeo1WRFGBuTCzzcZGXIBEs9zvnbGR9OEPyPQgHsBSzcDWx8LaxGN7971SuNdLHtHI75Iv9BKZFFTJQ3iGV41u1u0zjfP7qGzPjISQ0GXPaBRFBBI-k43RPS9S81ArXDL4xUEMa6OM-OsP5V7fN9w",
-    ],
+    showcaseImages: [],
   },
 
   "Printing": {
@@ -250,10 +249,10 @@ const products: Record<string, {
       { parameter: "Certification", rating: "CE / FDA 21 CFR" },
     ],
     showcaseImages: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMWyNZnZx249Akh42ITb4hyRwacvHhZ2czLD61qcuJuNQH7UkBCimmJLOqVQxdlaZNzWOeGAqNgCKPzJfTMyj9Mcj1I_wEeu5OuIYHGzoETH7D8hA66eQCoFjxSElUFbKQXluuyeQpRTJunMiLbmxqw55egy_2uNJcrvg1hNEXGOTeq7xAyo0WiXENG0tWrcHxPfzDbR5rhfdpaRW72gR0EngrjfH-rOyeGrYSC-r2Wqibh7hBMsQ7VZMlRhpRkIqk4mF1X02QN1k",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835381/Screenshot_2026-05-15_at_2.24.22_PM_a7bixd.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835379/Screenshot_2026-05-15_at_2.25.14_PM_vzqwtn.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835378/Screenshot_2026-05-15_at_2.24.52_PM_i2sbtb.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778835376/Screenshot_2026-05-15_at_2.25.03_PM_zmgr23.png",
     ],
   },
 };
@@ -301,11 +300,13 @@ export default async function ProductPage({ params }: PageProps) {
               <button className="border border-outline-variant/20 text-secondary px-8 py-4 rounded-md font-bold tracking-tight hover:bg-surface-container transition-colors">Download Brochure</button>
             </div>
           </div>
-          <div className="lg:col-span-5">
-            <div className="aspect-square bg-surface-container-lowest rounded-xl overflow-hidden">
-              <img className="w-full h-full object-cover" src={product.heroImage} alt={product.name} />
+          {product.heroImage && (
+            <div className="lg:col-span-5">
+              <div className="aspect-square bg-surface-container-lowest rounded-xl overflow-hidden">
+                <img className="w-full h-full object-cover" src={product.heroImage} alt={product.name} />
+              </div>
             </div>
-          </div>
+          )}
         </section>
 
         {/* YouTube Demo */}
@@ -359,15 +360,29 @@ export default async function ProductPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
+
             <div>
               <h3 className="text-2xl font-bold mb-12 text-primary border-l-4 border-secondary pl-6">Packaging Showcase</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {product.showcaseImages.map((src, i) => (
-                  <div key={i} className="aspect-square bg-surface-container-low rounded-lg overflow-hidden">
-                    <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src={src} alt={`Showcase ${i + 1}`} />
-                  </div>
-                ))}
-              </div>
+
+              {/* Label boxes for Inspection */}
+              {product.showcaseLabels && product.showcaseLabels.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {product.showcaseLabels.map((label, i) => (
+                    <div key={i} className="aspect-square bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/20 p-4">
+                      <p className="text-sm font-bold text-primary text-center uppercase tracking-wide">{label}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : product.showcaseImages.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {product.showcaseImages.map((src, i) => (
+                    <div key={i} className="aspect-square bg-surface-container-low rounded-lg overflow-hidden">
+                      <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src={src} alt={`Showcase ${i + 1}`} />
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
               <div className="mt-12 p-8 bg-surface-container-lowest shadow-sm rounded-xl border border-outline-variant/10">
                 <h4 className="font-bold text-primary mb-4 italic">Custom Tooling Available</h4>
                 <p className="text-sm text-on-surface-variant leading-relaxed">
