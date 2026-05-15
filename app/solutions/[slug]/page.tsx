@@ -42,7 +42,7 @@ const products: Record<string, {
     ],
   },
 
-  "Liquid Filling": {
+  "Liquid-Filling": {
     badge: "Packaging",
     name: "Liquid Filling Lines",
     subtitle: "Aseptic Rotary Filling Systems",
@@ -94,7 +94,7 @@ const products: Record<string, {
     ],
   },
 
-  "Bulk Packing": {
+  "Bulk-Packing": {
     badge: "Packaging",
     name: "Bulk HFFS & VFFS",
     subtitle: "5 to 50 kg Bulk Packaging",
@@ -119,7 +119,7 @@ const products: Record<string, {
     ],
   },
 
-  "Secondary Automation": {
+  "Secondary-Automation": {
     badge: "Packaging",
     name: "Secondary Automation",
     subtitle: "End-of-Line Packaging Systems",
