@@ -12,7 +12,7 @@ const products = [
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
   },
   {
-    slug: "Liquid Filling",
+    slug: "Liquid-Filling",
     category: "Packaging",
     name: "Liquid Filling Lines",
     brand: "Filtec Automation",
@@ -28,7 +28,7 @@ const products = [
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
   },
   {
-    slug: "Bulk Packing",
+    slug: "Bulk-Packing",
     category: "Packaging",
     name: "Bulk HFFS & VFFS",
     brand: "MF Tecno",
@@ -36,7 +36,7 @@ const products = [
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
   },
   {
-    slug: "Secondary Automation",
+    slug: "Secondary-Automation",
     category: "Packaging",
     name: "Secondary Automation",
     brand: "Vedvik Machinery",
