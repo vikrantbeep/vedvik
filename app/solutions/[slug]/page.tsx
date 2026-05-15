@@ -21,7 +21,7 @@ const products: Record<string, {
     subtitle: "HB series",
     description: "Advanced horizontal form-fill-seal systems engineered for high-speed pouching compatible with shaped, spouted and ziplock pouch in PFS and FFS format. Ideal for powders, granules, liquids and similar products.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "8TQLik744C4",
     brand: "Effytec, Spain",
     brandDesc: "Advanced HFFS systems since 2004.",
     specs: [
@@ -75,7 +75,7 @@ const products: Record<string, {
     subtitle: "Automated Hygienic Packaging",
     description: "Automated pick, fill and seal systems for precise and hygienic packaging of products. Capable of packing doy packs with ziplocks and corner spouts.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "8kjHI-fzna0",
     brand: "Vedvik Machinery, India",
     brandDesc: "In-house engineered pick fill seal solutions.",
     specs: [
@@ -125,7 +125,7 @@ const products: Record<string, {
     subtitle: "End-of-Line Packaging Systems",
     description: "End-of-line secondary packaging systems including cartoning, case packing, and shrink wrapping. Designed for seamless integration with primary packaging lines.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "6WXoDSMERsQ",
     brand: "Vedvik Machinery, India",
     brandDesc: "Custom secondary automation for diverse industries.",
     specs: [
@@ -198,7 +198,7 @@ const products: Record<string, {
     subtitle: "Precision Film Tension Control",
     description: "Precision film unwinding systems for consistent tension control in packaging lines. Ensures smooth, uninterrupted film feed for high-speed operations.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778823717/Unwinder_h1jw5i.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "09AKIjPx8rI",
     brand: "Vedvik Machinery, India",
     brandDesc: "In-house designed film handling systems.",
     specs: [
