@@ -26,8 +26,8 @@ export default function Navbar() {
           <Image
             src={LOGO_URL}
             alt="Vedvik Machinery"
-            width={140}
-            height={45}
+            width={80}
+            height={26}
             className="object-contain"
             priority
           />
