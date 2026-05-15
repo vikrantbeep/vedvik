@@ -45,10 +45,10 @@ const products: Record<string, {
   "Liquid-Filling": {
     badge: "Packaging",
     name: "Liquid Filling Lines",
-    subtitle: "Aseptic Rotary Filling Systems",
-    description: "Aseptic rotary filling systems with high accuracy. CIP/SIP ready for FMCG and pharmaceutical applications with precision dosing and hygienic design.",
+    subtitle: "NWF Series",
+    description: "Aseptic weight based and volumetric rotary rotary filling systems with high accuracy. CIP/SIP ready for FMCG and pharmaceutical applications with precision dosing and hygienic design.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "s_QoZlLEJ30",
     brand: "Filtec Automation, South Africa",
     brandDesc: "Specialists in liquid filling and capping technology.",
     specs: [
@@ -97,10 +97,10 @@ const products: Record<string, {
   "Bulk-Packing": {
     badge: "Packaging",
     name: "Bulk HFFS & VFFS",
-    subtitle: "5 to 50 kg Bulk Packaging",
+    subtitle: "IABA 1000 Series",
     description: "Heavy-duty bulk packing systems in HFFS and VFFS format. Designed for 5 to 50 kg applications in agricultural, chemical, and food processing industries.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "OvarTSOQcSc",
     brand: "MF Tecno, Italy",
     brandDesc: "Italian engineering for heavy-duty bulk packaging.",
     specs: [
@@ -124,7 +124,7 @@ const products: Record<string, {
     name: "Secondary Automation",
     subtitle: "End-of-Line Packaging Systems",
     description: "End-of-line secondary packaging systems including cartoning, case packing, and shrink wrapping. Designed for seamless integration with primary packaging lines.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtZ5yRuj22JmhL1ZJHXb2sJCHUAC_UecQO4nb9v_tZX237QZoveFHjoOijZnY78SCIA-s9h5HulDqOdjQvbTRib2XvmU0ykqVbiQv9Y8e7RCiFQY8WAUawZAFsLw3YAwMROss4DoaRjaxNJBnFXw8DtzOZd9rT1KvAvY7LX2aY8307tK1Se-GHXFmexfhLUncFYg_hQZBbji79pKF8MLub6NofRzZ4ixurOv6ny_m3Z65CHwYZDfrwii9ank4nZrw6INF8-1JoNVc",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
     youtubeId: "dQw4w9WgXcQ",
     brand: "Vedvik Machinery, India",
     brandDesc: "Custom secondary automation for diverse industries.",
