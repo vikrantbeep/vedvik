@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
-  description: "Vedvik Machinery manufactures packaging systems and represents Effytec, Varpe, Filtec and other leading brands in India. HFFS, liquid filling, checkweighers, vision inspection and more.",
+  description: "Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.",
 };
 
 const HERO_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png";
