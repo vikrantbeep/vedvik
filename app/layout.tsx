@@ -2,8 +2,34 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vedvik Machinery",
-  description: "Advanced packaging and filling systems engineered for high-speed pharmaceutical and food manufacturing.",
+  title: "Vedvik Machinery | Packaging Machinery Solutions",
+  description: "Advanced packaging and inspection systems engineered for high-speed FMCG and pharmaceutical applications. Official Indian representative of Effytec, Spain.",
+  keywords: "packaging machinery, HFFS, liquid filling, inspection systems, checkweighers, India",
+  openGraph: {
+    title: "Vedvik Machinery | Packaging Machinery Solutions",
+    description: "Advanced packaging and inspection systems engineered for high-speed FMCG and pharmaceutical applications.",
+    url: "https://vedvikmachinery.com",
+    siteName: "Vedvik Machinery",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png",
+        width: 1200,
+        height: 630,
+        alt: "Vedvik Machinery",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vedvik Machinery | Packaging Machinery Solutions",
+    description: "Advanced packaging and inspection systems engineered for high-speed FMCG and pharmaceutical applications.",
+    images: ["https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png"],
+  },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
