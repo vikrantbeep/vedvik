@@ -46,7 +46,7 @@ const products: Record<string, {
     badge: "Packaging",
     name: "Liquid Filling Lines",
     subtitle: "NWF Series",
-    description: "Aseptic weight based and volumetric rotary rotary filling systems with high accuracy. CIP/SIP ready for FMCG and pharmaceutical applications with precision dosing and hygienic design.",
+    description: "Aseptic weight based and volumetric rotary filling systems with high accuracy. CIP/SIP ready for FMCG and pharmaceutical applications with precision dosing and hygienic design.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png",
     youtubeId: "s_QoZlLEJ30",
     brand: "Filtec Automation, South Africa",
