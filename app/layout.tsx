@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
-  description: "Vedvik Machinery manufactures packaging systems and represents Effytec, Varpe, Filtec and other leading brands in India. HFFS, liquid filling, checkweighers, vision inspection and more.",
+  title: "Vedvik Machinery – Packaging Machinery Solutions",
+  description: "Vedvik Machinery manufactures packaging systems and represents leading international brands in India.",
   keywords: "packaging machinery India, HFFS machine, liquid filling machine, checkweigher, vision inspection, Effytec India, Varpe India, Ahmedabad packaging machinery",
   openGraph: {
-    title: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
-    description: "Vedvik Machinery manufactures packaging systems and represents Effytec, Varpe, Filtec and other leading brands in India.",
+    title: "Vedvik Machinery – Packaging Machinery Solutions",
+    description: "Vedvik Machinery manufactures packaging systems and represents leading international brands in India.",
     url: "https://vedvikmachinery.com",
     siteName: "Vedvik Machinery",
     images: [
