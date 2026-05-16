@@ -1,10 +1,5 @@
 "use client";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Contact Vedvik Machinery – Ahmedabad, Gujarat",
-  description: "Reach the Vedvik Machinery sales team in Ahmedabad for packaging machinery enquiries, technical quotes, and demonstrations. Call +91 81558 92080 or email us.",
-};
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useForm, ValidationError } from "@formspree/react";
