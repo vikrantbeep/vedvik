@@ -1,5 +1,10 @@
 "use client";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Contact Vedvik Machinery – Ahmedabad, Gujarat",
+  description: "Reach the Vedvik Machinery sales team in Ahmedabad for packaging machinery enquiries, technical quotes, and demonstrations. Call +91 81558 92080 or email us.",
+};
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useForm, ValidationError } from "@formspree/react";
@@ -17,14 +22,14 @@ export default function ContactPage() {
           {/* Left: Form */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-              <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Inquiry Channel</p>
-              <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-                CONNECT WITH <br />US.
-              </h1>
-              <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
-                Direct communication for high-specification packaging systems. Submit your requirements for a call back.
-              </p>
-            </div>
+  <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Inquiry Channel</p>
+  <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
+    GET IN<br />TOUCH.
+  </h1>
+  <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
+    Share your machinery requirement and we'll respond within one business day with a recommendation and quote.
+  </p>
+</div>
 
             {state.succeeded ? (
               <div className="py-16">
