@@ -14,6 +14,7 @@ const products: Record<string, {
   specs: { parameter: string; rating: string }[];
   showcaseImages: string[];
   showcaseLabels?: string[];
+  brochureUrl?: string;
 }> = {
   "HFFS": {
     badge: "Packaging",
@@ -24,6 +25,7 @@ const products: Record<string, {
     youtubeId: "8TQLik744C4",
     brand: "Effytec, Spain",
     brandDesc: "Advanced HFFS systems since 2004.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/Effytec%20Brochure.pdf",
     specs: [
       { parameter: "Min Pouch Dimensions", rating: "H60 mm X B40 mm" },
       { parameter: "Maximum Speed", rating: "Upto 320 PPM (with Quadruplex)" },
@@ -51,6 +53,7 @@ const products: Record<string, {
     youtubeId: "s_QoZlLEJ30",
     brand: "Filtec Automation, South Africa",
     brandDesc: "Specialists in liquid filling and capping technology.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/Filtec%20Automation%20Brochure.pdf",
     specs: [
       { parameter: "Filling Range", rating: "50 ml – 50000 ml" },
       { parameter: "Operating Speed", rating: "Up to 400 BPM" },
@@ -103,6 +106,7 @@ const products: Record<string, {
     youtubeId: "OvarTSOQcSc",
     brand: "MF Tecno, Italy",
     brandDesc: "Italian engineering for heavy-duty bulk packaging.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/MF%20Tecno%20Brochure.pdf",
     specs: [
       { parameter: "Bag Weight Range", rating: "5 – 50 kg" },
       { parameter: "Speed", rating: "Up to 600 bags / hour" },
@@ -150,6 +154,7 @@ const products: Record<string, {
     youtubeId: "OMhUTB7oiXk",
     brand: "E2M Couth, Spain",
     brandDesc: "Vision inspection specialists for packaging lines.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/E2M%20Couth%20Brochure.pdf",
     specs: [
       { parameter: "Camera Resolution", rating: "Up to 20 MP" },
       { parameter: "Inspection Speed", rating: "Up to 1200 units / min" },
@@ -178,6 +183,7 @@ const products: Record<string, {
     youtubeId: "R8PBFOouWf8",
     brand: "Varpe, Spain",
     brandDesc: "Precision weighing and detection systems.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/Varpe%20Brochure.pdf",
     specs: [
       { parameter: "Weighing Range", rating: "5 g – 15 kg" },
       { parameter: "Speed", rating: "Up to 300 packs / min" },
@@ -245,6 +251,7 @@ const products: Record<string, {
     youtubeId: "R8PBFOouWf8",
     brand: "Varpe, Spain",
     brandDesc: "Advanced detection systems for food and pharma safety.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/Varpe%20Brochure.pdf",
     specs: [
       { parameter: "Detection Type", rating: "X-ray + Metal (Fe / Non-Fe / SS)" },
       { parameter: "Belt Speed", rating: "Up to 60 m/min" },
@@ -300,7 +307,11 @@ export default async function ProductPage({ params }: PageProps) {
             <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">{product.description}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="bg-primary-container text-on-primary px-8 py-4 rounded-md font-bold tracking-tight shadow-sm text-center">Request Technical Quote</Link>
-              <button className="border border-outline-variant/20 text-secondary px-8 py-4 rounded-md font-bold tracking-tight hover:bg-surface-container transition-colors">Download Brochure</button>
+              {product.brochureUrl ? (
+                <a href={product.brochureUrl} target="_blank" rel="noopener noreferrer" className="border border-outline-variant/20 text-secondary px-8 py-4 rounded-md font-bold tracking-tight hover:bg-surface-container transition-colors text-center">Download Brochure</a>
+              ) : (
+                <button disabled className="border border-outline-variant/20 text-secondary/40 px-8 py-4 rounded-md font-bold tracking-tight cursor-not-allowed">Download Brochure</button>
+              )}
             </div>
           </div>
           {product.heroImage && (
