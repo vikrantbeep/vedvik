@@ -115,7 +115,7 @@ export default function Home() {
                 <img src={LOGO} alt="Vedvik Machinery" className="h-28 md:h-40 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
               </div>
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
-                Packaging machinery — manufactured in Ahmedabad and supplied across India. Official Indian representative of Effytec, Varpe, Filtec and more.
+                Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">View Solutions</a>
