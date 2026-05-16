@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Vedvik Machinery | Packaging Machinery Solutions",
-  description: "Advanced packaging and inspection systems engineered for high-speed FMCG and pharmaceutical applications. Official Indian representative of Effytec, Spain.",
+  description: "Advanced packaging and inspection systems engineered for high-speed FMCG and pharmaceutical applications.",
   keywords: "packaging machinery, HFFS, liquid filling, inspection systems, checkweighers, India",
   openGraph: {
     title: "Vedvik Machinery | Packaging Machinery Solutions",
