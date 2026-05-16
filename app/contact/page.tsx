@@ -2,8 +2,11 @@
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactPage() {
+  const [state, handleSubmit] = useForm("mojrgynq");
+
   return (
     <div className="bg-background text-on-surface min-h-screen flex flex-col">
       <Navbar />
@@ -23,66 +26,87 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="space-y-10">
-                <div className="relative">
-                  <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="email">
-                    Email ID
-                  </label>
-                  <input
-                    className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 placeholder:text-outline-variant/50 outline-none"
-                    id="email"
-                    placeholder="client@organization.com"
-                    type="email"
-                  />
-                </div>
+            {state.succeeded ? (
+              <div className="py-16">
+                <p className="text-2xl font-bold text-primary uppercase tracking-widest mb-4">✓ Enquiry Sent!</p>
+                <p className="text-on-surface-variant">Thank you for reaching out. We will get back to you shortly.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="space-y-10">
 
-                <div className="relative">
-                  <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="requirement">
-                    Requirement
-                  </label>
-                  <select
-                    className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 appearance-none outline-none"
-                    id="requirement"
-                    defaultValue=""
-                  >
-                    <option disabled value="">Select machinery category</option>
-                    <option value="hffs">Horizontal Form Fill Seal</option>
-                    <option value="liquid-filling">Liquid Filling Lines</option>
-                    <option value="pfs">Pick Fill Seal</option>
-                    <option value="bulk">Bulk HFFS & VFFS</option>
-                    <option value="secondary">Secondary Automation</option>
-                    <option value="inspection">Vision Inspection</option>
-                    <option value="checkweighers">Checkweighers</option>
-                    <option value="xray">X-ray and Metal Detector</option>
-                    <option value="printing">Printers and Coders</option>
-                    <option value="unwinders">Roller Unwinders</option>
-                  </select>
-                  <div className="absolute right-0 bottom-4 pointer-events-none text-on-surface-variant">
-                    <span className="material-symbols-outlined">expand_more</span>
+                  <div className="relative">
+                    <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="email">
+                      Email ID
+                    </label>
+                    <input
+                      className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 placeholder:text-outline-variant/50 outline-none"
+                      id="email"
+                      name="email"
+                      placeholder="client@organization.com"
+                      type="email"
+                      required
+                    />
+                    <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-500 text-xs mt-1" />
                   </div>
+
+                  <div className="relative">
+                    <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="requirement">
+                      Requirement
+                    </label>
+                    <select
+                      className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 appearance-none outline-none"
+                      id="requirement"
+                      name="requirement"
+                      defaultValue=""
+                      required
+                    >
+                      <option disabled value="">Select machinery category</option>
+                      <option value="Horizontal Form Fill Seal">Horizontal Form Fill Seal</option>
+                      <option value="Liquid Filling Lines">Liquid Filling Lines</option>
+                      <option value="Pick Fill Seal">Pick Fill Seal</option>
+                      <option value="Bulk HFFS & VFFS">Bulk HFFS &amp; VFFS</option>
+                      <option value="Secondary Automation">Secondary Automation</option>
+                      <option value="Vision Inspection">Vision Inspection</option>
+                      <option value="Checkweighers">Checkweighers</option>
+                      <option value="X-ray and Metal Detector">X-ray and Metal Detector</option>
+                      <option value="Printers and Coders">Printers and Coders</option>
+                      <option value="Roller Unwinders">Roller Unwinders</option>
+                    </select>
+                    <div className="absolute right-0 bottom-4 pointer-events-none text-on-surface-variant">
+                      <span className="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <ValidationError field="requirement" prefix="Requirement" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                  </div>
+
+                  <div className="relative">
+                    <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="notes">
+                      Notes
+                    </label>
+                    <textarea
+                      className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 placeholder:text-outline-variant/50 resize-none outline-none"
+                      id="notes"
+                      name="notes"
+                      placeholder="Briefly describe your requirement specifications..."
+                      rows={4}
+                    />
+                    <ValidationError field="notes" prefix="Notes" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                  </div>
+
                 </div>
 
-                <div className="relative">
-                  <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="notes">
-                    Notes
-                  </label>
-                  <textarea
-                    className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 placeholder:text-outline-variant/50 resize-none outline-none"
-                    id="notes"
-                    placeholder="Briefly describe your requirement specifications..."
-                    rows={4}
-                  />
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="group flex items-center gap-4 bg-primary hover:bg-primary-container text-on-primary px-10 py-5 font-bold transition-all duration-300 uppercase tracking-widest disabled:opacity-50"
+                  >
+                    <span>{state.submitting ? "Sending..." : "Submit Form"}</span>
+                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </button>
                 </div>
-              </div>
-
-              <div className="pt-4">
-                <button className="group flex items-center gap-4 bg-primary hover:bg-primary-container text-on-primary px-10 py-5 font-bold transition-all duration-300 uppercase tracking-widest">
-                  <span>Submit Form</span>
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </button>
-              </div>
-            </div>
+              </form>
+            )}
           </div>
 
           {/* Right: Info Panel */}
@@ -118,9 +142,7 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8 border-t border-outline-variant/20">
-                <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">
-                  Works
-                </h3>
+                <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">Works</h3>
                 <div className="aspect-video w-full bg-surface-container overflow-hidden">
                   <img
                     alt="Vedvik Machinery"
@@ -134,9 +156,7 @@ export default function ContactPage() {
                 <p className="text-sm font-medium text-on-surface-variant italic leading-snug">
                   &quot;We look forward to fulfilling your packaging requirements with the best solution.&quot;
                 </p>
-                <p className="text-xs font-bold uppercase tracking-widest mt-4 text-primary">
-                  - Vedvik Machinery
-                </p>
+                <p className="text-xs font-bold uppercase tracking-widest mt-4 text-primary">- Vedvik Machinery</p>
               </div>
             </div>
           </aside>
