@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   keywords: "packaging machinery, HFFS, liquid filling, inspection systems, checkweighers, India",
   openGraph: {
     title: "Vedvik Machinery | Packaging Machinery Solutions",
-    description: "Advanced packaging and inspection systems engineered for high-speed FMCG and pharmaceutical applications.",
-    url: "https://vedvikmachinery.com",
     siteName: "Vedvik Machinery",
     images: [
       {
