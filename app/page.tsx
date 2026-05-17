@@ -114,14 +114,14 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[80vh] flex flex-col justify-between pt-16">
+        <section className="relative min-h-[80vh] flex flex-col pt-16">
           <div className="absolute inset-0 z-0">
             <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.4]" src={HERO_IMAGE} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
           </div>
 
           {/* Hero content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-12">
             <div className="max-w-2xl text-white">
               <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
@@ -139,41 +139,44 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Industries scrolling banner */}
-          <div className="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-sm py-4 overflow-hidden">
-            <div className="flex items-center gap-2 mb-2 px-8">
-              <span className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em]">Industries</span>
+          {/* Industries banner */}
+          <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm border-t border-white/10">
+            {/* Label row */}
+            <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
+              <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">
+                Industries We Serve
+              </p>
             </div>
-            <div className="flex gap-0">
-              {/* Two copies for seamless loop */}
-              {[...industries, ...industries].map((industry, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 px-8 py-2 border-r border-white/10 flex-shrink-0"
-                  style={{ animation: "scroll-left 30s linear infinite" }}
-                >
-                  <span className="material-symbols-outlined text-white/60 text-lg">{industry.icon}</span>
-                  <span className="text-white/80 text-xs font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">
-                    {industry.label}
-                  </span>
-                </div>
-              ))}
+            {/* Scrolling ticker */}
+            <div className="overflow-hidden pb-4">
+              <style>{`
+                @keyframes ticker {
+                  0%   { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .ticker-track {
+                  display: flex;
+                  width: max-content;
+                  animation: ticker 22s linear infinite;
+                }
+              `}</style>
+              <div className="ticker-track">
+                {[...industries, ...industries].map((industry, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 px-10 border-r border-white/20 h-12"
+                    style={{ minWidth: "200px" }}
+                  >
+                    <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
+                    <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">
+                      {industry.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
-
-        <style>{`
-          @keyframes scroll-left {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .flex > div[style] {
-            animation: none;
-          }
-          .overflow-hidden > .flex {
-            animation: scroll-left 30s linear infinite;
-          }
-        `}</style>
 
         {/* Packaging Machines */}
         <section className="py-12 bg-white">
