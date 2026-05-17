@@ -163,10 +163,10 @@ export default function ContactPage() {
                 <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">Works</h3>
                 
                   href="https://share.google/2BRumy8Z6sxXW8x87"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block aspect-video w-full bg-surface-container overflow-hidden cursor-pointer"
-                >
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block aspect-video w-full bg-surface-container overflow-hidden cursor-pointer"
+>
                   <img
                     alt="Vedvik Machinery Location"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
