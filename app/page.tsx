@@ -46,12 +46,10 @@ const inspectionSystems: InspectionSystem[] = [
   { title: "Roller Unwinders", description: "Precision film unwinders with servo tension control and auto-splice — for consistent film feed on high-speed packaging lines.", icon: "rotate_right" },
 ];
 
-const productTypes = ["Juices", "Pet Food", "Bakery", "Cereals", "Snacks", "Powders", "Sauces", "Pharma"];
-
 function MachineCard({ machine }: { machine: Machine }) {
   const slug = machineSlugMap[machine.title] ?? "";
   return (
-    <Link href={"/solutions/" + slug} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
+    <Link href={/solutions/${slug}} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="aspect-video bg-slate-100 overflow-hidden mb-2">
         <img alt={machine.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={machine.image} />
       </div>
@@ -67,7 +65,7 @@ function MachineCard({ machine }: { machine: Machine }) {
 function InspectionCard({ system }: { system: InspectionSystem }) {
   const slug = inspectionSlugMap[system.title] ?? "";
   return (
-    <Link href={"/solutions/" + slug} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
+    <Link href={/solutions/${slug}} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="w-12 h-12 bg-blue-50 flex items-center justify-center mb-2">
         <span className="material-symbols-outlined text-2xl text-[#020062]">{system.icon}</span>
       </div>
@@ -119,16 +117,6 @@ export default function Home() {
               <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
                 Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
               </p>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 mb-10">
-                <p className="text-white/70 text-[10px] font-bold tracking-[0.2em] uppercase mb-3">Products We Pack</p>
-                <div className="flex flex-wrap gap-2">
-                  {productTypes.map((product) => (
-                    <span key={product} className="bg-white/15 border border-white/20 px-3 py-2 text-white text-xs font-bold uppercase tracking-widest">
-                      {product}
-                    </span>
-                  ))}
-                </div>
-              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">View Solutions</a>
                 <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Request a Quote</a>
