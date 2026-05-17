@@ -49,7 +49,7 @@ const inspectionSystems: InspectionSystem[] = [
 function MachineCard({ machine }: { machine: Machine }) {
   const slug = machineSlugMap[machine.title] ?? "";
   return (
-    <Link href={/solutions/${slug}} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
+    <Link href={`/solutions/${slug}`} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="aspect-video bg-slate-100 overflow-hidden mb-2">
         <img alt={machine.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={machine.image} />
       </div>
@@ -65,7 +65,7 @@ function MachineCard({ machine }: { machine: Machine }) {
 function InspectionCard({ system }: { system: InspectionSystem }) {
   const slug = inspectionSlugMap[system.title] ?? "";
   return (
-    <Link href={/solutions/${slug}} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
+    <Link href={`/solutions/${slug}`} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="w-12 h-12 bg-blue-50 flex items-center justify-center mb-2">
         <span className="material-symbols-outlined text-2xl text-[#020062]">{system.icon}</span>
       </div>
