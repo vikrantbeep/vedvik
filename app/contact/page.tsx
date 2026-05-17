@@ -4,11 +4,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useForm, ValidationError } from "@formspree/react";
 
-export const metadata = {
-  title: "Contact Vedvik Machinery – Ahmedabad, Gujarat",
-  description: "Reach the Vedvik Machinery sales team in Ahmedabad for packaging machinery enquiries, technical quotes, and demonstrations. Call +91 81558 92080 or email us.",
-};
-
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("mojrgynq");
 
@@ -161,12 +156,13 @@ export default function ContactPage() {
 
               <div className="pt-8 border-t border-outline-variant/20">
                 <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">Works</h3>
-                
+
+                <a
                   href="https://share.google/2BRumy8Z6sxXW8x87"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block aspect-video w-full bg-surface-container overflow-hidden cursor-pointer"
->
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block aspect-video w-full bg-surface-container overflow-hidden cursor-pointer"
+                >
                   <img
                     alt="Vedvik Machinery Location"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
