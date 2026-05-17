@@ -30,6 +30,19 @@ const inspectionSlugMap: Record<string, string> = {
   "Roller Unwinders": "roller-unwinders",
 };
 
+const industries = [
+  { label: "Juices & Beverages", icon: "water_drop" },
+  { label: "Bakery & Snacks", icon: "bakery_dining" },
+  { label: "Pet Food", icon: "pets" },
+  { label: "Pharmaceuticals", icon: "medication" },
+  { label: "Edible Oils", icon: "oil_barrel" },
+  { label: "Dairy", icon: "egg" },
+  { label: "Agrochemicals", icon: "agriculture" },
+  { label: "Personal Care", icon: "soap" },
+  { label: "Detergents", icon: "cleaning_services" },
+  { label: "Spices & Powders", icon: "set_meal" },
+];
+
 const packagingMachines: Machine[] = [
   { title: "Liquid Filling", description: "Rotary filling lines from 50 ml to 50 L — servo and gravity fill, CIP/SIP ready for food and pharma. By Filtec, South Africa.", image: HERO_IMAGE },
   { title: "Pouch Packing", description: "High-speed pouch packing with Effytec HB Series — up to 320 PPM for shaped, spouted and ziplock pouches. By Effytec, Spain.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png" },
@@ -101,12 +114,14 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[80vh] flex items-center pt-16">
+        <section className="relative min-h-[80vh] flex flex-col justify-between pt-16">
           <div className="absolute inset-0 z-0">
             <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.4]" src={HERO_IMAGE} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
           </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+
+          {/* Hero content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center">
             <div className="max-w-2xl text-white">
               <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
@@ -123,7 +138,42 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Industries scrolling banner */}
+          <div className="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-sm py-4 overflow-hidden">
+            <div className="flex items-center gap-2 mb-2 px-8">
+              <span className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em]">Industries</span>
+            </div>
+            <div className="flex gap-0">
+              {/* Two copies for seamless loop */}
+              {[...industries, ...industries].map((industry, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 px-8 py-2 border-r border-white/10 flex-shrink-0"
+                  style={{ animation: "scroll-left 30s linear infinite" }}
+                >
+                  <span className="material-symbols-outlined text-white/60 text-lg">{industry.icon}</span>
+                  <span className="text-white/80 text-xs font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">
+                    {industry.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
+
+        <style>{`
+          @keyframes scroll-left {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .flex > div[style] {
+            animation: none;
+          }
+          .overflow-hidden > .flex {
+            animation: scroll-left 30s linear infinite;
+          }
+        `}</style>
 
         {/* Packaging Machines */}
         <section className="py-12 bg-white">
