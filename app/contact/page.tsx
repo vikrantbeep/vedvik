@@ -4,6 +4,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useForm, ValidationError } from "@formspree/react";
 
+export const metadata = {
+  title: "Contact Vedvik Machinery – Ahmedabad, Gujarat",
+  description: "Reach the Vedvik Machinery sales team in Ahmedabad for packaging machinery enquiries, technical quotes, and demonstrations. Call +91 81558 92080 or email us.",
+};
+
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("mojrgynq");
 
@@ -17,14 +22,14 @@ export default function ContactPage() {
           {/* Left: Form */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-  <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Inquiry Channel</p>
-  <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-    GET IN<br />TOUCH.
-  </h1>
-  <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
-    Share your machinery requirement and we'll respond within one business day with a recommendation.
-  </p>
-</div>
+              <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Inquiry Channel</p>
+              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
+                GET IN TOUCH.
+              </h1>
+              <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
+                Share your machinery requirement and we'll respond within one business day with a recommendation.
+              </p>
+            </div>
 
             {state.succeeded ? (
               <div className="py-16">
@@ -48,6 +53,20 @@ export default function ContactPage() {
                       required
                     />
                     <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                  </div>
+
+                  <div className="relative">
+                    <label className="text-xs font-bold text-on-surface-variant mb-2 block uppercase tracking-widest" htmlFor="phone">
+                      Phone Number
+                    </label>
+                    <input
+                      className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-lg font-medium transition-all duration-300 placeholder:text-outline-variant/50 outline-none"
+                      id="phone"
+                      name="phone"
+                      placeholder="+91 98765 43210"
+                      type="tel"
+                    />
+                    <ValidationError field="phone" prefix="Phone" errors={state.errors} className="text-red-500 text-xs mt-1" />
                   </div>
 
                   <div className="relative">
@@ -134,6 +153,7 @@ export default function ContactPage() {
                     <span className="material-symbols-outlined text-primary">call</span>
                     <div>
                       <p className="font-bold text-lg leading-tight text-on-surface">+91 81558 92080</p>
+                      <p className="text-on-surface-variant text-sm">For urgent requirements, call directly.</p>
                     </div>
                   </div>
                 </div>
@@ -141,20 +161,29 @@ export default function ContactPage() {
 
               <div className="pt-8 border-t border-outline-variant/20">
                 <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">Works</h3>
-                <div className="aspect-video w-full bg-surface-container overflow-hidden">
+                
+                  href="https://share.google/2BRumy8Z6sxXW8x87"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block aspect-video w-full bg-surface-container overflow-hidden cursor-pointer"
+                >
                   <img
-                    alt="Vedvik Machinery"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    alt="Vedvik Machinery Location"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1778852182/Screenshot_2026-05-15_at_7.06.09_PM_r3gh2m.png"
                   />
-                </div>
+                </a>
+                <p className="text-xs text-on-surface-variant mt-2 flex items-center gap-1">
+                  <span className="material-symbols-outlined text-sm text-primary">open_in_new</span>
+                  Click to open in Google Maps
+                </p>
               </div>
 
               <div className="p-6 bg-surface-container-highest/30">
                 <p className="text-sm font-medium text-on-surface-variant italic leading-snug">
-                  &quot;We look forward to fulfilling your packaging requirements with the best solution.&quot;
+                  &quot;If you know your product and output target, we know the machine. Let&apos;s talk.&quot;
                 </p>
-                <p className="text-xs font-bold uppercase tracking-widest mt-4 text-primary">- Vedvik Machinery</p>
+                <p className="text-xs font-bold uppercase tracking-widest mt-4 text-primary">— Vedvik Machinery, Ahmedabad</p>
               </div>
             </div>
           </aside>
