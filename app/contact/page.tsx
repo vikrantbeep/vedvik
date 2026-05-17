@@ -22,7 +22,7 @@ export default function ContactPage() {
     GET IN<br />TOUCH.
   </h1>
   <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
-    Share your machinery requirement and we'll respond within one business day with a recommendation and quote.
+    Share your machinery requirement and we'll respond within one business day with a recommendation.
   </p>
 </div>
 
@@ -128,14 +128,12 @@ export default function ContactPage() {
                     <span className="material-symbols-outlined text-primary">mail</span>
                     <div>
                       <p className="font-bold text-lg leading-tight text-on-surface">vikrant@vedvikmachinery.com</p>
-                      <p className="text-on-surface-variant font-medium">Please Call for Any Urgent Queries</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-primary">call</span>
                     <div>
                       <p className="font-bold text-lg leading-tight text-on-surface">+91 81558 92080</p>
-                      <p className="text-on-surface-variant font-medium">Mon - Sat: 09:00 - 18:00 IST</p>
                     </div>
                   </div>
                 </div>
