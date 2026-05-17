@@ -148,7 +148,6 @@ export default function ContactPage() {
                     <span className="material-symbols-outlined text-primary">call</span>
                     <div>
                       <p className="font-bold text-lg leading-tight text-on-surface">+91 81558 92080</p>
-                      <p className="text-on-surface-variant text-sm">For urgent requirements, call directly.</p>
                     </div>
                   </div>
                 </div>
