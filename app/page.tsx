@@ -15,13 +15,16 @@ interface Machine { title: string; description: string; image: string; }
 interface InspectionSystem { title: string; description: string; icon: string; }
 
 const machineSlugMap: Record<string, string> = {
+  "Comipack": "Comipack",
+  "Boato Pack": "Boato-Pack",
+  "GMS": "GMS",
+  "Pharmik": "Pharmik",
   "Liquid Filling": "Liquid-Filling",
   "Pouch Packing": "HFFS",
   "Pick Fill Seal": "PFS",
   "Bulk Packing": "Bulk-Packing",
   "Secondary Packaging": "Secondary-Automation",
 };
-
 const inspectionSlugMap: Record<string, string> = {
   "Inspection Machines": "Inspection",
   "Checkweighers": "Checkweighers",
@@ -44,6 +47,10 @@ const industries = [
 ];
 
 const packagingMachines: Machine[] = [
+  { title: "Comipack", description: "High-speed packaging systems engineered for precision and reliability across FMCG and pharma applications.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png" },
+  { title: "Boato Pack", description: "Advanced packaging solutions for demanding production environments with high throughput requirements.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png" },
+  { title: "GMS", description: "Versatile packaging machinery designed for flexible integration across multiple product categories.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png" },
+  { title: "Pharmik", description: "Specialist pharmaceutical packaging systems built to meet stringent hygiene and regulatory standards.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png" },
   { title: "Liquid Filling", description: "Rotary filling lines from 50 ml to 50 L — servo and gravity fill, CIP/SIP ready for food and pharma. By Filtec, South Africa.", image: HERO_IMAGE },
   { title: "Pouch Packing", description: "High-speed pouch packing with Effytec HB Series — up to 320 PPM for shaped, spouted and ziplock pouches. By Effytec, Spain.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png" },
   { title: "Pick Fill Seal", description: "Cam-driven PFS systems for doy pouches and ziplock bags — 50 g to 1 kg fill, up to 60 cycles/min. Engineered by Vedvik.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png" },
@@ -92,18 +99,9 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
 }
 
 function ThreeTwoGrid<T>({ items, renderCard }: { items: T[]; renderCard: (item: T) => React.ReactNode }) {
-  const firstRow = items.slice(0, 3);
-  const secondRow = items.slice(3);
   return (
-    <div className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {firstRow.map((item, i) => <div key={i}>{renderCard(item)}</div>)}
-      </div>
-      {secondRow.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:w-2/3">
-          {secondRow.map((item, i) => <div key={i}>{renderCard(item)}</div>)}
-        </div>
-      )}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {items.map((item, i) => <div key={i}>{renderCard(item)}</div>)}
     </div>
   );
 }
