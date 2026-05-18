@@ -9,6 +9,38 @@ export const metadata: Metadata = {
 };
 const products = [
   {
+    slug: "Comipack",
+    category: "Packaging",
+    name: "Comipack",
+    brand: "Comipack",
+    origin: "Italy",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
+  },
+  {
+    slug: "Boato-Pack",
+    category: "Packaging",
+    name: "Boato Pack",
+    brand: "Boato Pack",
+    origin: "Italy",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
+  },
+  {
+    slug: "GMS",
+    category: "Packaging",
+    name: "GMS",
+    brand: "GMS",
+    origin: "Italy",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
+  },
+  {
+    slug: "Pharmik",
+    category: "Packaging",
+    name: "Pharmik",
+    brand: "Pharmik",
+    origin: "India",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
+  },
+  {
     slug: "HFFS",
     category: "Packaging",
     name: "Horizontal Form Fill Seal",
