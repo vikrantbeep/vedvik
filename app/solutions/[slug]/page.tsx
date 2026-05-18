@@ -16,6 +16,73 @@ const products: Record<string, {
   showcaseLabels?: string[];
   brochureUrl?: string;
 }> = {
+  "Comipack": {
+    badge: "Packaging",
+    name: "Comipack",
+    subtitle: "Packaging Systems",
+    description: "High-speed packaging systems engineered for precision and reliability across FMCG and pharma applications.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
+    youtubeId: "dQw4w9WgXcQ",
+    brand: "Comipack, Italy",
+    brandDesc: "Specialist packaging systems manufacturer.",
+    specs: [
+      { parameter: "Application", rating: "FMCG / Pharma" },
+    ],
+    showcaseImages: [
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
+    ],
+  },
+
+  "Boato-Pack": {
+    badge: "Packaging",
+    name: "Boato Pack",
+    subtitle: "Packaging Systems",
+    description: "Advanced packaging solutions for demanding production environments with high throughput requirements.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
+    youtubeId: "dQw4w9WgXcQ",
+    brand: "Boato Pack, Italy",
+    brandDesc: "Advanced packaging machinery for high throughput lines.",
+    specs: [
+      { parameter: "Application", rating: "FMCG / Industrial" },
+    ],
+    showcaseImages: [
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
+    ],
+  },
+
+  "GMS": {
+    badge: "Packaging",
+    name: "GMS",
+    subtitle: "Packaging Systems",
+    description: "Versatile packaging machinery designed for flexible integration across multiple product categories.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
+    youtubeId: "dQw4w9WgXcQ",
+    brand: "GMS, Italy",
+    brandDesc: "Versatile packaging solutions for diverse industries.",
+    specs: [
+      { parameter: "Application", rating: "Multi-category" },
+    ],
+    showcaseImages: [
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
+    ],
+  },
+
+  "Pharmik": {
+    badge: "Packaging",
+    name: "Pharmik",
+    subtitle: "Pharmaceutical Packaging Systems",
+    description: "Specialist pharmaceutical packaging systems built to meet stringent hygiene and regulatory standards.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
+    youtubeId: "dQw4w9WgXcQ",
+    brand: "Pharmik, India",
+    brandDesc: "Specialist pharmaceutical packaging systems.",
+    specs: [
+      { parameter: "Application", rating: "Pharmaceutical" },
+    ],
+    showcaseImages: [
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
+    ],
+  },
   "HFFS": {
     badge: "Packaging",
     name: "Horizontal Form Fill Seal",
