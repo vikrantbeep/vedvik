@@ -125,7 +125,7 @@ export default function Home() {
                 Precision Engineering
               </div>
               <div className="mb-8">
-                <img src={LOGO} alt="Vedvik Machinery" className="h-20 md:h-28 w-auto object-contain" />
+                <img src={LOGO} alt="Vedvik Machinery" className="h-28 md:h-40 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
               </div>
               <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">
                 Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
