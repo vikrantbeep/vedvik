@@ -112,22 +112,22 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[80vh] flex flex-col pt-16">
+        <section className="relative min-h-[60vh] flex flex-col pt-16">
           <div className="absolute inset-0 z-0">
             <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.4]" src={HERO_IMAGE} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
           </div>
 
           {/* Hero content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-12">
+          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-8">
             <div className="max-w-2xl text-white">
               <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                 Precision Engineering
               </div>
               <div className="mb-8">
-                <img src={LOGO} alt="Vedvik Machinery" className="h-28 md:h-40 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+                <img src={LOGO} alt="Vedvik Machinery" className="h-20 md:h-28 w-auto object-contain" />
               </div>
-              <p className="text-slate-300 text-lg md:text-xl max-w-md leading-relaxed mb-10">
+              <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">
                 Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
