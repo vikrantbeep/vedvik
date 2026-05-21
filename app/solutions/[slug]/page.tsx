@@ -43,7 +43,7 @@ const products: Record<string, {
     name: "Stick Packing Solutions",
     subtitle: "EVO Series",
     description: "Packaging solutions for stick pack and small sachet formats with high throughput requirements and secondary packing compatibility.",
-    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349831/linea1_whfxfo.png",
     youtubeId: "IO4G05NqgpQ",
     brand: "Boato Pack, Italy",
     brandDesc: "Advanced packaging machinery for high throughput lines.",
@@ -63,7 +63,7 @@ const products: Record<string, {
     name: "GMS",
     subtitle: "Packaging Systems",
     description: "Versatile packaging machinery designed for flexible integration across multiple product categories.",
-    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779350063/th_alimentadores-vibratorios-para-obturadores-de-goma-o-liofilizados_8195478_jl7lui.jpg",
     youtubeId: "3_p-Do_6OH8",
     brand: "GMS, Italy",
     brandDesc: "Versatile packaging solutions for diverse industries.",
@@ -71,7 +71,7 @@ const products: Record<string, {
       { parameter: "Application", rating: "Multi-category" },
     ],
     showcaseImages: [
-      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779350063/th_alimentadores-vibratorios-para-obturadores-de-goma-o-liofilizados_8195478_jl7lui.jpg",
     ],
   },
 
