@@ -47,10 +47,9 @@ const industries = [
 ];
 
 const packagingMachines: Machine[] = [
-  { title: "Comipack", description: "High-speed packaging systems engineered for precision and reliability across FMCG and pharma applications.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png" },
-  { title: "Boato Pack", description: "Advanced packaging solutions for demanding production environments with high throughput requirements.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png" },
-  { title: "GMS", description: "Versatile packaging machinery designed for flexible integration across multiple product categories.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png" },
-  { title: "Pharmik", description: "Specialist pharmaceutical packaging systems built to meet stringent hygiene and regulatory standards.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png" },
+  { title: "Comipack", description: "High-speed packaging systems engineered for precision and reliability across FMCG and pharma applications.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349829/images_tjvmpm.jpg" },
+  { title: "Boato Pack", description: "Advanced packaging solutions for demanding production environments with high throughput requirements.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349831/linea1_whfxfo.png" },
+  { title: "GMS", description: "Versatile range of feeding systems.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779350063/th_alimentadores-vibratorios-para-obturadores-de-goma-o-liofilizados_8195478_jl7lui.jpg" },
   { title: "Liquid Filling", description: "Rotary filling lines from 50 ml to 50 L — servo and gravity fill, CIP/SIP ready for food and pharma. By Filtec, South Africa.", image: HERO_IMAGE },
   { title: "Pouch Packing", description: "High-speed pouch packing with Effytec HB Series — up to 320 PPM for shaped, spouted and ziplock pouches. By Effytec, Spain.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png" },
   { title: "Pick Fill Seal", description: "Cam-driven PFS systems for doy pouches and ziplock bags — 50 g to 1 kg fill, up to 60 cycles/min. Engineered by Vedvik.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png" },
