@@ -39,6 +39,7 @@ const products = [
     brand: "Pharmik",
     origin: "India",
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
+    disabled: true,
   },
   {
     slug: "HFFS",
@@ -139,29 +140,58 @@ export default function SolutionsPage() {
 </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-          {products.map((product, i) => (
-            <Link key={i} href={`/solutions/${product.slug}`} className="group block">
-              <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute top-6 left-6">
-                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline">{product.name}</h2>
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-secondary">{product.brand}</span>
-                    <span className="w-1 h-1 bg-outline-variant rounded-full" />
-                    <span className="text-sm text-on-surface-variant">{product.origin}</span>
+          {products.map((product, i) => {
+            if (product.disabled) {
+              return (
+                <div key={i} className="block cursor-not-allowed">
+                  <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg opacity-50 grayscale">
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700" />
+                    <div className="absolute top-6 left-6 flex gap-2">
+                      <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
+                      <span className="px-4 py-1.5 bg-black/60 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-white rounded-full">Coming Soon</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-start opacity-50">
+                    <div>
+                      <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline">{product.name}</h2>
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm font-medium text-secondary">{product.brand}</span>
+                        <span className="w-1 h-1 bg-outline-variant rounded-full" />
+                        <span className="text-sm text-on-surface-variant">{product.origin}</span>
+                      </div>
+                    </div>
+                    <div className="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-full flex-shrink-0">
+                      <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                    </div>
                   </div>
                 </div>
-                <div className="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-full group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
-                  <span className="material-symbols-outlined text-sm">arrow_outward</span>
+              );
+            }
+
+            return (
+              <Link key={i} href={`/solutions/${product.slug}`} className="group block">
+                <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg">
+                  <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute top-6 left-6">
+                    <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline">{product.name}</h2>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-medium text-secondary">{product.brand}</span>
+                      <span className="w-1 h-1 bg-outline-variant rounded-full" />
+                      <span className="text-sm text-on-surface-variant">{product.origin}</span>
+                    </div>
+                  </div>
+                  <div className="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-full group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
+                    <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
       </main>
