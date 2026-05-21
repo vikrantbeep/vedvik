@@ -22,7 +22,7 @@ const products = [
     name: "Boato Pack",
     brand: "Boato Pack",
     origin: "Italy",
-    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774881/VMpfs_fazimw.png",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349831/linea1_whfxfo.png",
   },
   {
     slug: "GMS",
@@ -30,7 +30,7 @@ const products = [
     name: "GMS",
     brand: "GMS",
     origin: "Italy",
-    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774883/MFtecno_t1p2xp.png",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779350063/th_alimentadores-vibratorios-para-obturadores-de-goma-o-liofilizados_8195478_jl7lui.jpg",
   },
   {
     slug: "Pharmik",
