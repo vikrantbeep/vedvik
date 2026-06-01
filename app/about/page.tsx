@@ -23,13 +23,13 @@ export default function About() {
               </h1>
               <div className="space-y-6 text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
                 <p>
-                  Vedvik Machinery is an Ahmedabad-based packaging machinery company — a manufacturer of select in-house systems and the official Indian representative of established global brands including Effytec (Spain), Varpe (Spain), Filtec Automation (South Africa), MF Tecno (Italy) and MapleJet (Canada).
+                  Vedvik Machinery is a trusted provider of advanced packaging and inspection solutions for the food, beverage, pharmaceutical, chemical, and consumer goods industries. We represent leading international manufacturers and deliver high-quality machinery designed to improve production efficiency, product quality, and operational reliability.
                 </p>
                 <p>
-                  Our founding team brings over 30 years of combined industry experience in packaging machinery. We design and manufacture Pick Fill Seal machines, film roller unwinders and secondary automation systems in-house at our Ahmedabad facility.
+                  Our portfolio includes filling, packaging, coding, inspection, and quality control equipment tailored to the unique requirements of each customer. By combining global technology with local support, we help businesses optimize their production processes and achieve long-term growth.
                 </p>
                 <p>
-                  Our team handles the entire project from initial consultation to installation and after-sales support — directly, without third-party middlemen.
+                  At Vedvik Machinery, we are committed to building lasting partnerships through technical expertise, responsive service, and solutions that deliver real value to our customers.
                 </p>
               </div>
             </div>
