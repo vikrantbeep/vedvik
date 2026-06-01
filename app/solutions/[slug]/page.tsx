@@ -48,7 +48,11 @@ const products: Record<string, {
     brand: "Boato Pack, Italy",
     brandDesc: "Advanced packaging machinery for high throughput lines.",
     specs: [
-      { parameter: "Application", rating: "FMCG / Industrial" },
+      { parameter: "Product Type", rating: "Liquids, semi-liquids, powders, solids, wet wipes" },
+      { parameter: "Packaging Format", rating: "3 side and 4 side seal" }
+      { parameter: "Production Speed", rating: "4,000+ sachets/min" }
+      { parameter: "Sachet Size Range", rating: "Width 25–150 mm, Length up to 250 mm" }
+      { parameter: "Machine Dimensions", rating: "2800 × 2260 × 2210 mm" }
     ],
     showcaseImages: [
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779096374/download-2_smujau.jpg",
@@ -85,7 +89,11 @@ const products: Record<string, {
     brand: "Kraus, Germany",
     brandDesc: "German-engineered product handling and conveying systems.",
     specs: [
-      { parameter: "Application", rating: "FMCG / Industrial / Pharma" },
+      { parameter: "Product Types", rating: "Cards, leaflets, cartons, folded paper products, flat items" },
+      { parameter: "Feeding Speed", rating: "Up to 50 m/min" },
+      { parameter: "Dimensions", rating: "50 × 50 mm to 350 × 320 mm" },
+      { parameter: "Thickness", rating: "0 - 10mm" },
+      { parameter: "Drive", rating: "Compact servo-driven design" },
       { parameter: "Origin", rating: "Germany" },
     ],
     showcaseImages: [
@@ -99,7 +107,7 @@ const products: Record<string, {
     subtitle: "HB series",
     description: "Advanced horizontal form-fill-seal systems engineered for high-speed pouching compatible with shaped, spouted and ziplock pouch in PFS and FFS format. Ideal for powders, granules, liquids and similar products.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
-    youtubeId: "8TQLik744C4",
+    youtubeId: "3W37kQxRTnw",
     brand: "Effytec, Spain",
     brandDesc: "Advanced HFFS systems since 2004.",
     brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/Effytec%20Brochure.pdf",
