@@ -42,7 +42,7 @@ const products: Product[] = [
     name: "Feeding Systems",
     brand: "GMS",
     origin: "Italy",
-    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779350063/th_alimentadores-vibratorios-para-obturadores-de-goma-o-liofilizados_8195478_jl7lui.jpg",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780312482/ChatGPT_Image_Jun_1_2026_04_44_32_PM_njslyg.png",
   },
   {
     slug: "Kraus",
