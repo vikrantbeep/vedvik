@@ -21,7 +21,7 @@ const products: Record<string, {
     name: "Clipping & Twisting",
     subtitle: "Bag packing systems",
     description: "Reliable bag clipping and twist-tying systems designed for fast and consistent package closure across bakery, fresh produce, and food packaging applications.",
-    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779092261/unnamed-1_xy7jex.jpg",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780314168/ChatGPT_Image_Jun_1_2026_05_12_27_PM_tpx536.png",
     youtubeId: "KCVvmnyqUak",
     brand: "Comipack, Italy",
     brandDesc: "Bag clipping and twisting experts",
@@ -97,8 +97,12 @@ const products: Record<string, {
       { parameter: "Origin", rating: "Germany" },
     ],
     showcaseImages: [
-      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
-    ],
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png","https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png","https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315965/kraus_collator_3_tkrwpw.jpg",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315965/joker_labelling_2_r99usj.jpg",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315964/joker_shingled_feeder_1_s1swsi.jpg",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315964/joker_labelling_stacking_1_pl2xxs.jpg",
+      ]
   },
 
   "HFFS": {
