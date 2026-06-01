@@ -5,9 +5,21 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Packaging Machinery Solutions – Vedvik Machinery",
-  description: "Explore Vedvik Machinery's full range: HFFS pouch packers, liquid filling lines, checkweighers, X-ray inspection, vision systems, printers, and more. European technology, Indian support.",
+  description:
+    "Explore Vedvik Machinery's full range: HFFS pouch packers, liquid filling lines, checkweighers, X-ray inspection, vision systems, printers, and more. European technology, Indian support.",
 };
-const products = [
+
+type Product = {
+  slug: string;
+  category: string;
+  name: string;
+  brand: string;
+  origin: string;
+  image: string;
+  disabled?: boolean;
+};
+
+const products: Product[] = [
   {
     slug: "Comipack",
     category: "Packaging",
@@ -129,14 +141,14 @@ export default function SolutionsPage() {
       <main className="flex-grow pt-28 md:pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full">
 
         <header className="mb-12 md:mb-20">
-  <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Systems</p>
-  <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-    PACKAGING &<br />INSPECTION SYSTEMS
-  </h1>
-  <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
-    Vedvik Machinery represents leading global manufacturers across 10 product categories — from pouch packaging and liquid filling to vision inspection and X-ray detection.
-  </p>
-</header>
+          <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Systems</p>
+          <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
+            PACKAGING &<br />INSPECTION SYSTEMS
+          </h1>
+          <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
+            Vedvik Machinery represents leading global manufacturers across 10 product categories — from pouch packaging and liquid filling to vision inspection and X-ray detection.
+          </p>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {products.map((product, i) => {
