@@ -97,7 +97,7 @@ const products: Record<string, {
       { parameter: "Origin", rating: "Germany" },
     ],
     showcaseImages: [
-      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png","https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png","https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315965/kraus_collator_3_tkrwpw.jpg",
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315965/joker_labelling_2_r99usj.jpg",
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780315964/joker_shingled_feeder_1_s1swsi.jpg",
