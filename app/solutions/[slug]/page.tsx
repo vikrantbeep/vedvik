@@ -59,14 +59,14 @@ const products: Record<string, {
   },
 
   "GMS": {
-    badge: "Packaging",
-    name: "GMS",
-    subtitle: "Packaging Systems",
-    description: "Versatile packaging machinery designed for flexible integration across multiple product categories.",
+    badge: "Feeding Systems",
+    name: "Feeding Systems",
+    subtitle: "Vibratory & Bowl Feeders",
+    description: "Versatile vibratory and bowl feeding systems designed for flexible integration across multiple product categories including rubber stoppers, lyophilisates, and similar components.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779350063/th_alimentadores-vibratorios-para-obturadores-de-goma-o-liofilizados_8195478_jl7lui.jpg",
     youtubeId: "3_p-Do_6OH8",
     brand: "GMS, Italy",
-    brandDesc: "Versatile packaging solutions for diverse industries.",
+    brandDesc: "Versatile feeding solutions for diverse industries.",
     specs: [
       { parameter: "Application", rating: "Multi-category" },
     ],
@@ -75,22 +75,24 @@ const products: Record<string, {
     ],
   },
 
-  "Pharmik": {
-    badge: "Packaging",
-    name: "Pharmik",
-    subtitle: "Pharmaceutical Packaging Systems",
-    description: "Specialist pharmaceutical packaging systems built to meet stringent hygiene and regulatory standards.",
-    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
-    youtubeId: "dQw4w9WgXcQ",
-    brand: "Pharmik, India",
-    brandDesc: "Specialist pharmaceutical packaging systems.",
+  "Kraus": {
+    badge: "Product Handling",
+    name: "Product Handling Systems",
+    subtitle: "Conveying & Transfer Solutions",
+    description: "Robust product handling and conveying systems engineered for precise transfer, accumulation, and distribution across high-speed packaging lines.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
+    youtubeId: "",
+    brand: "Kraus, Germany",
+    brandDesc: "German-engineered product handling and conveying systems.",
     specs: [
-      { parameter: "Application", rating: "Pharmaceutical" },
+      { parameter: "Application", rating: "FMCG / Industrial / Pharma" },
+      { parameter: "Origin", rating: "Germany" },
     ],
     showcaseImages: [
-      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774885/Secondary_zqcr5t.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
     ],
   },
+
   "HFFS": {
     badge: "Packaging",
     name: "Horizontal Form Fill Seal",
@@ -399,23 +401,25 @@ export default async function ProductPage({ params }: PageProps) {
         </section>
 
         {/* YouTube Demo */}
-        <section className="bg-primary py-16">
-          <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <div className="flex flex-col items-center mb-10 text-center">
-              <h2 className="text-white text-3xl font-bold mb-4 tracking-tight">Machine Demo</h2>
-              <div className="h-1 w-24 bg-secondary" />
+        {product.youtubeId && (
+          <section className="bg-primary py-16">
+            <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+              <div className="flex flex-col items-center mb-10 text-center">
+                <h2 className="text-white text-3xl font-bold mb-4 tracking-tight">Machine Demo</h2>
+                <div className="h-1 w-24 bg-secondary" />
+              </div>
+              <div className="aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${product.youtubeId}?autoplay=1&mute=1`}
+                  title="Machine Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
-            <div className="aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
-              <iframe
-                className="w-full h-full"
-                src={`https://www.youtube.com/embed/${product.youtubeId}?autoplay=1&mute=1`}
-                title="Machine Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Specs + Showcase */}
         <section className="py-24 max-w-screen-2xl mx-auto px-6 md:px-12">
