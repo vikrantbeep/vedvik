@@ -34,7 +34,7 @@ const products: Product[] = [
     name: "Stick and Sachet Packing",
     brand: "Boato Pack",
     origin: "Italy",
-    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349831/linea1_whfxfo.png",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780312396/ChatGPT_Image_Jun_1_2026_04_42_50_PM_gibudi.png",
   },
   {
     slug: "GMS",
