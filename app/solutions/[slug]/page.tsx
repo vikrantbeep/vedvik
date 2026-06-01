@@ -43,7 +43,7 @@ const products: Record<string, {
     name: "Stick Packing Solutions",
     subtitle: "EVO Series",
     description: "Packaging solutions for stick pack and small sachet formats with high throughput requirements and secondary packing compatibility.",
-    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349831/linea1_whfxfo.png",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780312396/ChatGPT_Image_Jun_1_2026_04_42_50_PM_gibudi.png",
     youtubeId: "IO4G05NqgpQ",
     brand: "Boato Pack, Italy",
     brandDesc: "Advanced packaging machinery for high throughput lines.",
