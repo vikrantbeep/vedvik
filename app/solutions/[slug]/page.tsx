@@ -49,10 +49,10 @@ const products: Record<string, {
     brandDesc: "Advanced packaging machinery for high throughput lines.",
     specs: [
       { parameter: "Product Type", rating: "Liquids, semi-liquids, powders, solids, wet wipes" },
-      { parameter: "Packaging Format", rating: "3 side and 4 side seal" }
-      { parameter: "Production Speed", rating: "4,000+ sachets/min" }
-      { parameter: "Sachet Size Range", rating: "Width 25–150 mm, Length up to 250 mm" }
-      { parameter: "Machine Dimensions", rating: "2800 × 2260 × 2210 mm" }
+      { parameter: "Packaging Format", rating: "3 side and 4 side seal" },
+      { parameter: "Production Speed", rating: "4,000+ sachets/min" },
+      { parameter: "Sachet Size Range", rating: "Width 25–150 mm, Length up to 250 mm" },
+      { parameter: "Machine Dimensions", rating: "2800 × 2260 × 2210 mm" },
     ],
     showcaseImages: [
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779096374/download-2_smujau.jpg",
