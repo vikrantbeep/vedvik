@@ -47,6 +47,7 @@ const products: Record<string, {
     youtubeId: "IO4G05NqgpQ",
     brand: "Boato Pack, Italy",
     brandDesc: "Advanced packaging machinery for high throughput lines.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/4SIDESEAL_EVO_en%20copy.pdf",
     specs: [
       { parameter: "Product Type", rating: "Liquids, semi-liquids, powders, solids, wet wipes" },
       { parameter: "Packaging Format", rating: "3 side and 4 side seal" },
@@ -88,6 +89,7 @@ const products: Record<string, {
     youtubeId: "",
     brand: "Kraus, Germany",
     brandDesc: "German-engineered product handling and conveying systems.",
+    brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/E_JoKerEco_englisch.pdf",
     specs: [
       { parameter: "Product Types", rating: "Cards, leaflets, cartons, folded paper products, flat items" },
       { parameter: "Feeding Speed", rating: "Up to 50 m/min" },
