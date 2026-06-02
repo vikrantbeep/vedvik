@@ -47,7 +47,7 @@ const industries = [
 ];
 
 const packagingMachines: Machine[] = [
-  { title: "Comipack", description: "High-speed packaging systems engineered for precision and reliability across FMCG and pharma applications.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1779349829/images_tjvmpm.jpg" },
+  { title: "Comipack", description: "High-speed packaging systems engineered for precision and reliability across FMCG and pharma applications.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780314168/ChatGPT_Image_Jun_1_2026_05_12_27_PM_tpx536.png" },
   { title: "Boato Pack", description: "Advanced packaging solutions for demanding production environments with high throughput requirements.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780312396/ChatGPT_Image_Jun_1_2026_04_42_50_PM_gibudi.png" },
   { title: "GMS", description: "Versatile range of feeding systems.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780312482/ChatGPT_Image_Jun_1_2026_04_44_32_PM_njslyg.png" },
   { title: "Kraus", description: "Product handling automation systems.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png" },
