@@ -42,7 +42,7 @@ export default function BlogPage() {
                 <div>
                   <p className="text-xs text-on-surface-variant mb-2 uppercase tracking-widest">{post.date}</p>
                   <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline group-hover:text-secondary transition-colors">
-                    {post.name || post.title}
+                    {post.title}
                   </h2>
                   <p className="text-sm text-on-surface-variant leading-relaxed line-clamp-3">{post.description}</p>
                 </div>
