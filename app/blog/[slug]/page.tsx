@@ -30,13 +30,13 @@ function renderContent(content: string) {
 
     if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="font-['Montserrat'] font-black text-2xl text-zinc-900 mt-10 mb-4">
+        <h2 key={i} className="text-2xl md:text-3xl font-extrabold tracking-tight text-primary mt-12 mb-4 font-headline border-l-4 border-secondary pl-6">
           {line.replace("## ", "")}
         </h2>
       );
     } else if (line.startsWith("**") && line.endsWith("**")) {
       elements.push(
-        <p key={i} className="font-bold text-zinc-900 mt-4 mb-1">
+        <p key={i} className="font-bold text-primary mt-6 mb-1">
           {line.replace(/\*\*/g, "")}
         </p>
       );
@@ -47,12 +47,13 @@ function renderContent(content: string) {
         i++;
       }
       elements.push(
-        <ul key={`ul-${i}`} className="list-disc list-inside text-zinc-600 leading-relaxed space-y-1 my-4 ml-4">
+        <ul key={`ul-${i}`} className="space-y-2 my-4 ml-2">
           {listItems.map((item, j) => {
             const parts = item.split(/\*\*(.*?)\*\*/);
             return (
-              <li key={j}>
-                {parts.map((p, k) => k % 2 === 1 ? <strong key={k}>{p}</strong> : p)}
+              <li key={j} className="flex items-start gap-3 text-on-surface-variant text-sm leading-relaxed">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                <span>{parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-primary">{p}</strong> : p)}</span>
               </li>
             );
           })}
@@ -62,8 +63,8 @@ function renderContent(content: string) {
     } else {
       const parts = line.split(/\*\*(.*?)\*\*/);
       elements.push(
-        <p key={i} className="text-zinc-600 leading-relaxed text-base my-3">
-          {parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-zinc-900">{p}</strong> : p)}
+        <p key={i} className="text-on-surface-variant leading-relaxed text-base my-4">
+          {parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-primary">{p}</strong> : p)}
         </p>
       );
     }
@@ -77,47 +78,88 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const post = blogs.find((b) => b.slug === slug);
   if (!post) notFound();
 
+  const otherPosts = blogs.filter((b) => b.slug !== slug).slice(0, 2);
+
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
-      <main className="pt-24 pb-20 min-h-screen bg-white">
-        <article className="max-w-3xl mx-auto px-6 md:px-12">
-          {/* Back */}
-          <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-[#020062] transition-colors mb-10">
-            <span className="material-symbols-outlined text-[14px]">arrow_back</span>
-            All Articles
-          </Link>
+      <main className="pt-24 flex-grow">
 
-          {/* Meta */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#020062] bg-blue-50 px-3 py-1 rounded-full">
-              {post.category}
-            </span>
-            <span className="text-xs text-zinc-400">{post.date}</span>
-          </div>
-
-          {/* Title */}
-          <h1 className="font-['Montserrat'] font-black text-3xl md:text-4xl text-zinc-900 leading-tight mb-6">
-            {post.title}
-          </h1>
-          <p className="text-zinc-500 text-lg leading-relaxed mb-10 border-b border-zinc-100 pb-10">
-            {post.description}
-          </p>
-
-          {/* Content */}
-          <div>{renderContent(post.content)}</div>
-
-          {/* CTA */}
-          <div className="mt-16 bg-zinc-50 border border-zinc-200 rounded-2xl p-8 text-center">
-            <p className="font-['Montserrat'] font-black text-xl text-zinc-900 mb-3">Have a question about your packaging line?</p>
-            <p className="text-zinc-500 text-sm mb-6">Our team in Ahmedabad is happy to help you find the right solution.</p>
-            <Link href="/contact" className="btn-machined text-white px-6 py-3 font-['Montserrat'] font-bold text-xs uppercase tracking-widest inline-block hover:scale-95 transition-all">
-              Contact Us
+        {/* Hero banner */}
+        <section className="bg-primary py-16 md:py-24">
+          <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors mb-10">
+              <span className="material-symbols-outlined text-[14px]">arrow_back</span>
+              All Articles
             </Link>
+            <div className="max-w-3xl">
+              <span className="px-4 py-1.5 bg-white/20 text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6 inline-block">
+                {post.category}
+              </span>
+              <h1 className="text-3xl md:text-6xl font-extrabold tracking-tighter text-white leading-none mb-6 font-headline">
+                {post.title}
+              </h1>
+              <p className="text-white/70 text-lg leading-relaxed max-w-2xl">{post.description}</p>
+              <p className="text-white/40 text-xs uppercase tracking-widest mt-6">{post.date}</p>
+            </div>
           </div>
-        </article>
+        </section>
+
+        {/* Article body */}
+        <section className="py-16 md:py-24 max-w-screen-2xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+            {/* Main content */}
+            <article className="lg:col-span-8">
+              {renderContent(post.content)}
+            </article>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-4 space-y-8">
+
+              {/* CTA */}
+              <div className="bg-surface-container-low border border-outline-variant/20 rounded-xl p-8">
+                <span className="material-symbols-outlined text-3xl text-secondary mb-4 block">support_agent</span>
+                <h3 className="font-extrabold text-primary text-lg font-headline mb-2">Have a question?</h3>
+                <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+                  Our team in Ahmedabad is ready to help you find the right packaging solution for your line.
+                </p>
+                <Link href="/contact" className="bg-primary-container text-on-primary px-6 py-3 rounded-md font-bold tracking-tight text-sm block text-center">
+                  Contact Us
+                </Link>
+              </div>
+
+              {/* More articles */}
+              {otherPosts.length > 0 && (
+                <div className="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-8">
+                  <h3 className="font-extrabold text-primary text-sm uppercase tracking-widest mb-6 font-headline">More Articles</h3>
+                  <div className="space-y-6">
+                    {otherPosts.map((other) => (
+                      <Link key={other.slug} href={`/blog/${other.slug}`} className="group block">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">{other.category}</span>
+                        <p className="text-sm font-bold text-primary mt-1 group-hover:text-secondary transition-colors leading-snug">{other.title}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Solutions CTA */}
+              <div className="bg-surface-container-low border border-outline-variant/20 rounded-xl p-8">
+                <h3 className="font-extrabold text-primary text-sm uppercase tracking-widest mb-3 font-headline">Explore Solutions</h3>
+                <p className="text-on-surface-variant text-sm leading-relaxed mb-4">Browse our full range of packaging and inspection systems.</p>
+                <Link href="/solutions" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+                  View All Products
+                  <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </Link>
+              </div>
+
+            </aside>
+          </div>
+        </section>
+
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
