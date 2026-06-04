@@ -29,14 +29,18 @@ export default function BlogPage() {
           {blogs.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
               {/* Card top — colored block acting as image placeholder */}
-              <div className="aspect-[4/3] overflow-hidden bg-surface-container relative mb-6 rounded-lg flex items-end p-6">
-                <div className="absolute inset-0 bg-primary opacity-90" />
-                <div className="relative z-10">
-                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-white rounded-full">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
+              <div className="aspect-[4/3] overflow-hidden bg-surface-container relative mb-6 rounded-lg">
+  {post.image ? (
+    <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+  ) : (
+    <div className="absolute inset-0 bg-primary opacity-90" />
+  )}
+  <div className="absolute top-4 left-4">
+    <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">
+      {post.category}
+    </span>
+  </div>
+</div>
 
               <div className="flex justify-between items-start">
                 <div>
