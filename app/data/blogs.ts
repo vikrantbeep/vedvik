@@ -4,6 +4,7 @@ export type Blog = {
   description: string;
   date: string;
   category: string;
+  image?: string;
   content: string;
 };
 
@@ -14,7 +15,8 @@ export const blogs: Blog[] = [
     description: "Selecting the right packaging machine can make or break your production efficiency. Here's what to evaluate before you invest.",
     date: "2 June 2025",
     category: "Buying Guide",
-    content: `
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
+    content: ` 
 Choosing a packaging machine is one of the most important capital decisions a manufacturer can make. The wrong choice leads to downtime, wasted material, and costly retrofits. The right one delivers consistent output, lower labor costs, and a faster return on investment.
 
 ## 1. Know Your Product
@@ -63,6 +65,7 @@ Vedvik Machinery represents established international brands including Effytec, 
     description: "Checkweighers are a critical part of any compliant packaging line. This guide explains how they work, why they matter, and when you need one.",
     date: "4 June 2025",
     category: "Technology",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Varpe_kdbgnh.png",
     content: `
 A checkweigher is an automated inline weighing machine that checks the weight of every single pack on a production line — at full production speed — and rejects any pack that falls outside a defined weight tolerance. It is one of the most important quality control instruments in a packaging operation.
 
