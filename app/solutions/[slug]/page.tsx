@@ -86,7 +86,7 @@ const products: Record<string, {
     subtitle: "Conveying & Transfer Solutions",
     description: "Robust product handling and conveying systems engineered for precise transfer, accumulation, and distribution across high-speed packaging lines.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
-    youtubeId: "",
+    youtubeId: "cQYWR1K5C54",
     brand: "Kraus, Germany",
     brandDesc: "German-engineered product handling and conveying systems.",
     brochureUrl: "https://yibemnxprjltprpa.public.blob.vercel-storage.com/E_JoKerEco_englisch.pdf",
