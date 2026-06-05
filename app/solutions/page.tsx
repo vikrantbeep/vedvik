@@ -26,7 +26,7 @@ const products: Product[] = [
     name: "Twist Tying",
     brand: "Comipack",
     origin: "Italy",
-    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774880/Effytec_rnrkwy.png",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780376386/Screenshot_2026-06-02_at_10.29.18_AM_j5z9jz.png",
   },
   {
     slug: "Boato-Pack",
