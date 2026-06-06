@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.",
 };
 
-const HERO_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778774882/Filtec_pjlyz3.png";
+const HERO_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780741526/ChatGPT_Image_Jun_6_2026_03_20_23_PM_pf1pnz.png";
 const LOGO = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
 
 interface Machine { title: string; description: string; image: string; }
