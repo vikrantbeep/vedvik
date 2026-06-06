@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780741526/ChatGPT_Image_Jun_6_2026_03_20_23_PM_pf1pnz.png";
-const LOGO = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
 
 interface Machine { title: string; description: string; image: string; }
 interface InspectionSystem { title: string; description: string; icon: string; }
@@ -114,8 +113,7 @@ export default function Home() {
         {/* Hero */}
         <section className="relative min-h-[60vh] flex flex-col pt-16">
           <div className="absolute inset-0 z-0">
-            <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.4]" src={HERO_IMAGE} />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+            <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.5]" src={HERO_IMAGE} />
           </div>
 
           {/* Hero content */}
@@ -125,7 +123,9 @@ export default function Home() {
                 Precision Engineering
               </div>
               <div className="mb-8">
-                <img src={LOGO} alt="Vedvik Machinery" className="h-28 md:h-40 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+                <h1 className="font-['Montserrat'] font-black text-4xl md:text-6xl uppercase leading-tight tracking-tight text-white">
+                  Vedvik Machinery<br />Packaging Machines
+                </h1>
               </div>
               <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">
                 Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
@@ -160,11 +160,7 @@ export default function Home() {
               `}</style>
               <div className="ticker-track">
                 {[...industries, ...industries].map((industry, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 px-10 border-r border-white/20 h-12"
-                    style={{ minWidth: "200px" }}
-                  >
+                  <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
                     <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
                     <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">
                       {industry.label}
