@@ -100,7 +100,7 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
 
 function ThreeTwoGrid<T>({ items, renderCard }: { items: T[]; renderCard: (item: T) => React.ReactNode }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
       {items.map((item, i) => <div key={i}>{renderCard(item)}</div>)}
     </div>
   );
@@ -118,8 +118,8 @@ export default function Home() {
 
         {/* Industries banner */}
         <div className="w-full bg-[#2c52a1]">
-          <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
-            <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
+          <div className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-2">
+            <p className="text-white font-['Montserrat'] font-black text-xs md:text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
           </div>
           <div className="overflow-hidden pb-4">
             <style>{`
@@ -135,9 +135,9 @@ export default function Home() {
             `}</style>
             <div className="ticker-track">
               {[...industries, ...industries].map((industry, i) => (
-                <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
+                <div key={i} className="flex items-center gap-2 px-6 md:px-10 border-r border-white/20 h-12" style={{ minWidth: "160px" }}>
                   <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
-                  <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
+                  <span className="text-white/90 text-[10px] md:text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
                 </div>
               ))}
             </div>
@@ -145,41 +145,41 @@ export default function Home() {
         </div>
 
         {/* Packaging Machines */}
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#2c52a1] mt-2">PACKAGING MACHINES</h2>
+        <section className="py-10 md:py-12 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <div className="flex flex-col gap-1 mb-6 md:mb-8">
+              <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
+              <div className="flex items-end justify-between">
+                <h2 className="font-['Montserrat'] font-black text-2xl md:text-3xl text-[#2c52a1]">PACKAGING MACHINES</h2>
+                <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity whitespace-nowrap ml-4" href="/solutions">All Systems</a>
               </div>
-              <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
             <ThreeTwoGrid items={packagingMachines} renderCard={(machine) => <MachineCard machine={machine} />} />
           </div>
         </section>
 
         {/* Inspection Systems */}
-        <section className="py-12 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#2c52a1] mt-2">INSPECTION SYSTEMS</h2>
+        <section className="py-10 md:py-12 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <div className="flex flex-col gap-1 mb-6 md:mb-8">
+              <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
+              <div className="flex items-end justify-between">
+                <h2 className="font-['Montserrat'] font-black text-2xl md:text-3xl text-[#2c52a1]">INSPECTION SYSTEMS</h2>
+                <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity whitespace-nowrap ml-4" href="/solutions">All Systems</a>
               </div>
-              <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
             <ThreeTwoGrid items={inspectionSystems} renderCard={(system) => <InspectionCard system={system} />} />
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#2c52a1] text-white">
-          <div className="max-w-7xl mx-auto px-8 text-center">
-            <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
-            <p className="text-slate-300 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
-            <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a href="/contact" className="bg-white text-[#2c52a1] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
-              <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors text-center">Browse Solutions</a>
+        <section className="py-12 md:py-16 bg-[#2c52a1] text-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
+            <h2 className="font-['Montserrat'] font-black text-2xl md:text-5xl mb-4 leading-tight">HAVE A PACKAGING REQUIREMENT?</h2>
+            <p className="text-slate-300 text-base md:text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+              <a href="/contact" className="bg-white text-[#2c52a1] px-8 md:px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
+              <a href="/solutions" className="border border-white/30 text-white px-8 md:px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors text-center">Browse Solutions</a>
             </div>
           </div>
         </section>
