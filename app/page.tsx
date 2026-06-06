@@ -73,9 +73,9 @@ function MachineCard({ machine }: { machine: Machine }) {
       <div className="aspect-video bg-slate-100 overflow-hidden mb-2">
         <img alt={machine.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={machine.image} />
       </div>
-      <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">{machine.title}</h3>
+      <h3 className="font-['Montserrat'] font-bold text-lg text-[#2c52a1]">{machine.title}</h3>
       <p className="text-slate-500 text-sm leading-relaxed">{machine.description}</p>
-      <div className="mt-auto pt-4 flex items-center gap-2 text-[#020062] text-[10px] font-black uppercase tracking-tighter">
+      <div className="mt-auto pt-4 flex items-center gap-2 text-[#2c52a1] text-[10px] font-black uppercase tracking-tighter">
         Specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
       </div>
     </Link>
@@ -87,11 +87,11 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
   return (
     <Link href={`/solutions/${slug}`} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
       <div className="w-12 h-12 bg-blue-50 flex items-center justify-center mb-2">
-        <span className="material-symbols-outlined text-2xl text-[#020062]">{system.icon}</span>
+        <span className="material-symbols-outlined text-2xl text-[#2c52a1]">{system.icon}</span>
       </div>
-      <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">{system.title}</h3>
+      <h3 className="font-['Montserrat'] font-bold text-lg text-[#2c52a1]">{system.title}</h3>
       <p className="text-slate-500 text-sm leading-relaxed">{system.description}</p>
-      <div className="mt-auto pt-4 flex items-center gap-2 text-[#020062] text-[10px] font-black uppercase tracking-tighter">
+      <div className="mt-auto pt-4 flex items-center gap-2 text-[#2c52a1] text-[10px] font-black uppercase tracking-tighter">
         Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
       </div>
     </Link>
@@ -112,46 +112,47 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-<section className="pt-16">
-  <img alt="Vedvik Machinery" className="w-full h-auto object-contain" src={HERO_IMAGE} />
-</section>
+        <section className="pt-16">
+          <img alt="Vedvik Machinery" className="w-full h-auto object-contain" src={HERO_IMAGE} />
+        </section>
 
-{/* Industries banner */}
-<div className="w-full bg-[#020062]">
-  <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
-    <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
-  </div>
-  <div className="overflow-hidden pb-4">
-    <style>{`
-      @keyframes ticker {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      .ticker-track {
-        display: flex;
-        width: max-content;
-        animation: ticker 22s linear infinite;
-      }
-    `}</style>
-    <div className="ticker-track">
-      {[...industries, ...industries].map((industry, i) => (
-        <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
-          <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
-          <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
+        {/* Industries banner */}
+        <div className="w-full bg-[#2c52a1]">
+          <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
+            <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
+          </div>
+          <div className="overflow-hidden pb-4">
+            <style>{`
+              @keyframes ticker {
+                0%   { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+              .ticker-track {
+                display: flex;
+                width: max-content;
+                animation: ticker 22s linear infinite;
+              }
+            `}</style>
+            <div className="ticker-track">
+              {[...industries, ...industries].map((industry, i) => (
+                <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
+                  <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
+                  <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+
         {/* Packaging Machines */}
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-[#020062] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#020062] mt-2">PACKAGING MACHINES</h2>
+                <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
+                <h2 className="font-['Montserrat'] font-black text-3xl text-[#2c52a1] mt-2">PACKAGING MACHINES</h2>
               </div>
-              <a className="text-xs font-bold text-[#020062] uppercase tracking-widest border-b border-[#020062] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
+              <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
             <ThreeTwoGrid items={packagingMachines} renderCard={(machine) => <MachineCard machine={machine} />} />
           </div>
@@ -162,22 +163,22 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-[#020062] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#020062] mt-2">INSPECTION SYSTEMS</h2>
+                <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
+                <h2 className="font-['Montserrat'] font-black text-3xl text-[#2c52a1] mt-2">INSPECTION SYSTEMS</h2>
               </div>
-              <a className="text-xs font-bold text-[#020062] uppercase tracking-widest border-b border-[#020062] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
+              <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
             <ThreeTwoGrid items={inspectionSystems} renderCard={(system) => <InspectionCard system={system} />} />
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#020062] text-white">
+        <section className="py-16 bg-[#2c52a1] text-white">
           <div className="max-w-7xl mx-auto px-8 text-center">
             <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
             <p className="text-slate-300 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a href="/contact" className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
+              <a href="/contact" className="bg-white text-[#2c52a1] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
               <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors text-center">Browse Solutions</a>
             </div>
           </div>
