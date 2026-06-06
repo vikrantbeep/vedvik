@@ -145,32 +145,33 @@ export default function Home() {
         </div>
 
         {/* Packaging Machines */}
-<section className="py-10 md:py-12 bg-white">
-  <div className="max-w-7xl mx-auto px-4 md:px-8">
-    <div className="mb-6 md:mb-8">
-      <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
-      <div className="flex items-center justify-between mt-2">
-        <h2 className="font-['Montserrat'] font-black text-xl md:text-3xl text-[#2c52a1]">PACKAGING MACHINES</h2>
-        <a className="text-[10px] font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity whitespace-nowrap ml-4 flex-shrink-0" href="/solutions">All Systems</a>
-      </div>
-    </div>
-    <ThreeTwoGrid items={packagingMachines} renderCard={(machine) => <MachineCard machine={machine} />} />
-  </div>
-</section>
+        <section className="py-10 md:py-12 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <div className="flex flex-col gap-1 mb-6 md:mb-8">
+              <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
+              <div className="flex items-end justify-between">
+                <h2 className="font-['Montserrat'] font-black text-2xl md:text-3xl text-[#2c52a1]">PACKAGING MACHINES</h2>
+                <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity whitespace-nowrap ml-4" href="/solutions">All Systems</a>
+              </div>
+            </div>
+            <ThreeTwoGrid items={packagingMachines} renderCard={(machine) => <MachineCard machine={machine} />} />
+          </div>
+        </section>
 
-{/* Inspection Systems */}
-<section className="py-10 md:py-12 bg-slate-50">
-  <div className="max-w-7xl mx-auto px-4 md:px-8">
-    <div className="mb-6 md:mb-8">
-      <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
-      <div className="flex items-center justify-between mt-2">
-        <h2 className="font-['Montserrat'] font-black text-xl md:text-3xl text-[#2c52a1]">INSPECTION SYSTEMS</h2>
-        <a className="text-[10px] font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity whitespace-nowrap ml-4 flex-shrink-0" href="/solutions">All Systems</a>
-      </div>
-    </div>
-    <ThreeTwoGrid items={inspectionSystems} renderCard={(system) => <InspectionCard system={system} />} />
-  </div>
-</section>
+        {/* Inspection Systems */}
+        <section className="py-10 md:py-12 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <div className="flex flex-col gap-1 mb-6 md:mb-8">
+              <span className="text-[#2c52a1] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
+              <div className="flex items-end justify-between">
+                <h2 className="font-['Montserrat'] font-black text-2xl md:text-3xl text-[#2c52a1]">INSPECTION SYSTEMS</h2>
+                <a className="text-xs font-bold text-[#2c52a1] uppercase tracking-widest border-b border-[#2c52a1] pb-1 hover:opacity-70 transition-opacity whitespace-nowrap ml-4" href="/solutions">All Systems</a>
+              </div>
+            </div>
+            <ThreeTwoGrid items={inspectionSystems} renderCard={(system) => <InspectionCard system={system} />} />
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-12 md:py-16 bg-[#2c52a1] text-white">
           <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
