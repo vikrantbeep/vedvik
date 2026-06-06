@@ -113,7 +113,7 @@ export default function Home() {
         {/* Hero */}
         <section className="relative min-h-[60vh] flex flex-col pt-16">
           <div className="absolute inset-0 z-0">
-            <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.5]" src={HERO_IMAGE} />
+            <img alt="Background Machine" className="w-full h-full object-cover" src={HERO_IMAGE} />
           </div>
 
           {/* Hero content */}
@@ -123,9 +123,9 @@ export default function Home() {
                 Precision Engineering
               </div>
               <div className="mb-8">
-                <h1 className="font-['Montserrat'] font-black text-4xl md:text-6xl uppercase leading-tight tracking-tight text-white">
-                  Vedvik Machinery<br />Packaging Machines
-                </h1>
+               <h1 className="font-['Montserrat'] font-black text-4xl md:text-6xl uppercase leading-tight tracking-tight text-black">
+  Vedvik Machinery<br />Packaging Machines
+</h1>
               </div>
               <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">
                 Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
