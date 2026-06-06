@@ -112,69 +112,51 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[60vh] flex flex-col pt-16">
-          <div className="absolute inset-0 z-0">
-            <img alt="Background Machine" className="w-full h-full object-cover brightness-[0.4]" src={HERO_IMAGE} />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-          </div>
+<section className="relative min-h-[60vh] flex flex-col pt-16">
+  <div className="absolute inset-0 z-0">
+    <img alt="Background Machine" className="w-full h-full object-cover" src={HERO_IMAGE} />
+  </div>
 
-          {/* Hero content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-8">
-            <div className="max-w-2xl text-white">
-              <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
-                Precision Engineering
-              </div>
-              <div className="mb-8">
-                <img src={LOGO} alt="Vedvik Machinery" className="h-28 md:h-40 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
-              </div>
-              <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">
-                Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">View Solutions</a>
-                <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Request a Quote</a>
-              </div>
-            </div>
-          </div>
+  {/* Hero content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-8">
+    <div className="max-w-2xl text-white">
+      <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">Precision Engineering</div>
+      <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.</p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">View Solutions</a>
+        <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Request a Quote</a>
+      </div>
+    </div>
+  </div>
 
-          {/* Industries banner */}
-          <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm border-t border-white/10">
-            {/* Label row */}
-            <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
-              <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">
-                Industries We Serve
-              </p>
-            </div>
-            {/* Scrolling ticker */}
-            <div className="overflow-hidden pb-4">
-              <style>{`
-                @keyframes ticker {
-                  0%   { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                .ticker-track {
-                  display: flex;
-                  width: max-content;
-                  animation: ticker 22s linear infinite;
-                }
-              `}</style>
-              <div className="ticker-track">
-                {[...industries, ...industries].map((industry, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 px-10 border-r border-white/20 h-12"
-                    style={{ minWidth: "200px" }}
-                  >
-                    <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
-                    <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">
-                      {industry.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+  {/* Industries banner */}
+  <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm border-t border-white/10">
+    <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
+      <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
+    </div>
+    <div className="overflow-hidden pb-4">
+      <style>{`
+        @keyframes ticker {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .ticker-track {
+          display: flex;
+          width: max-content;
+          animation: ticker 22s linear infinite;
+        }
+      `}</style>
+      <div className="ticker-track">
+        {[...industries, ...industries].map((industry, i) => (
+          <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
+            <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
+            <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Packaging Machines */}
         <section className="py-12 bg-white">
