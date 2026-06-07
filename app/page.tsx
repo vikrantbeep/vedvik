@@ -72,9 +72,9 @@ function MachineCard({ machine }: { machine: Machine }) {
       <div className="aspect-video bg-slate-100 overflow-hidden mb-2">
         <img alt={machine.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={machine.image} />
       </div>
-      <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">{machine.title}</h3>
+      <h3 className="font-['Montserrat'] font-bold text-lg text-[#0CCA92]">{machine.title}</h3>
       <p className="text-slate-500 text-sm leading-relaxed">{machine.description}</p>
-      <div className="mt-auto pt-4 flex items-center gap-2 text-[#020062] text-[10px] font-black uppercase tracking-tighter">
+      <div className="mt-auto pt-4 flex items-center gap-2 text-[#0CCA92] text-[10px] font-black uppercase tracking-tighter">
         Specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
       </div>
     </Link>
@@ -85,12 +85,12 @@ function InspectionCard({ system }: { system: InspectionSystem }) {
   const slug = inspectionSlugMap[system.title] ?? "";
   return (
     <Link href={`/solutions/${slug}`} className="group bg-white border border-slate-200 p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300">
-      <div className="w-12 h-12 bg-blue-50 flex items-center justify-center mb-2">
-        <span className="material-symbols-outlined text-2xl text-[#020062]">{system.icon}</span>
+      <div className="w-12 h-12 bg-emerald-50 flex items-center justify-center mb-2">
+        <span className="material-symbols-outlined text-2xl text-[#0CCA92]">{system.icon}</span>
       </div>
-      <h3 className="font-['Montserrat'] font-bold text-lg text-[#020062]">{system.title}</h3>
+      <h3 className="font-['Montserrat'] font-bold text-lg text-[#0CCA92]">{system.title}</h3>
       <p className="text-slate-500 text-sm leading-relaxed">{system.description}</p>
-      <div className="mt-auto pt-4 flex items-center gap-2 text-[#020062] text-[10px] font-black uppercase tracking-tighter">
+      <div className="mt-auto pt-4 flex items-center gap-2 text-[#0CCA92] text-[10px] font-black uppercase tracking-tighter">
         Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
       </div>
     </Link>
@@ -125,29 +125,28 @@ export default function Home() {
               <h1 className="font-['Montserrat'] font-black text-4xl md:text-5xl leading-tight text-slate-900 mb-4">
                 Advanced packaging<br />
                 and inspection systems<br />
-                engineered for <span className="text-[#020062]">efficiency</span><br />
-                and <span className="text-[#020062]">reliability.</span>
+                engineered for <span className="text-[#0CCA92]">efficiency</span><br />
+                and <span className="text-[#0CCA92]">reliability.</span>
               </h1>
-              <div className="w-12 h-[3px] bg-[#020062] my-6" />
+              <div className="w-12 h-[3px] bg-[#0CCA92] my-6" />
               <p className="text-slate-600 text-base leading-relaxed mb-10">
                 Tailored solutions for FMCG and pharmaceutical<br />
                 applications. Built with precision. Backed by experience.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">View Solutions</a>
-                <a href="/contact" className="border border-[#020062] text-[#020062] px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-50 transition-colors text-center">Request a Quote</a>
+                <a href="/solutions" className="bg-[#0CCA92] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-emerald-500 transition-colors shadow-xl text-center">View Solutions</a>
+                <a href="/contact" className="border border-[#0CCA92] text-[#0CCA92] px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-emerald-50 transition-colors text-center">Request a Quote</a>
               </div>
             </div>
           </div>
+
           {/* Industries banner */}
           <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm border-t border-white/10">
-            {/* Label row */}
             <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
               <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">
                 Industries We Serve
               </p>
             </div>
-            {/* Scrolling ticker */}
             <div className="overflow-hidden pb-4">
               <style>{`
                 @keyframes ticker {
@@ -179,10 +178,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-[#020062] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#020062] mt-2">PACKAGING MACHINES</h2>
+                <span className="text-[#0CCA92] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
+                <h2 className="font-['Montserrat'] font-black text-3xl text-[#0CCA92] mt-2">PACKAGING MACHINES</h2>
               </div>
-              <a className="text-xs font-bold text-[#020062] uppercase tracking-widest border-b border-[#020062] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
+              <a className="text-xs font-bold text-[#0CCA92] uppercase tracking-widest border-b border-[#0CCA92] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
             <ThreeTwoGrid items={packagingMachines} renderCard={(machine) => <MachineCard machine={machine} />} />
           </div>
@@ -193,22 +192,22 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-[#020062] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#020062] mt-2">INSPECTION SYSTEMS</h2>
+                <span className="text-[#0CCA92] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
+                <h2 className="font-['Montserrat'] font-black text-3xl text-[#0CCA92] mt-2">INSPECTION SYSTEMS</h2>
               </div>
-              <a className="text-xs font-bold text-[#020062] uppercase tracking-widest border-b border-[#020062] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
+              <a className="text-xs font-bold text-[#0CCA92] uppercase tracking-widest border-b border-[#0CCA92] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
             <ThreeTwoGrid items={inspectionSystems} renderCard={(system) => <InspectionCard system={system} />} />
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#020062] text-white">
+        <section className="py-16 bg-[#0CCA92] text-white">
           <div className="max-w-7xl mx-auto px-8 text-center">
             <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
-            <p className="text-slate-300 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
+            <p className="text-emerald-50 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a href="/contact" className="bg-white text-[#020062] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
+              <a href="/contact" className="bg-white text-[#0CCA92] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
               <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors text-center">Browse Solutions</a>
             </div>
           </div>
