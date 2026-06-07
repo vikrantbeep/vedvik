@@ -303,6 +303,7 @@ const products: Record<string, {
   "roller-unwinders": {
     badge: "Packaging Support",
     name: "Slitting, Printing and Lamination Machines",
+    subtitle: "",
     description: "Complete converting solutions for cutting, printing and bonding flexible packaging materials to create finished packaging films.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780828263/ChatGPT_Image_Jun_7_2026_04_00_26_PM_safla9.png",
     youtubeId: "09AKIjPx8rI",
