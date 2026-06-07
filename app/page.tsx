@@ -14,10 +14,10 @@ interface Machine { title: string; description: string; image: string; }
 interface InspectionSystem { title: string; description: string; icon: string; }
 
 const machineSlugMap: Record<string, string> = {
-  "Comipack": "Comipack",
-  "Boato Pack": "Boato-Pack",
-  "GMS": "GMS",
-  "Kraus": "Kraus",
+  "Twist Tying": "Comipack",
+  "Stick Packing": "Boato-Pack",
+  "Feeding Systems": "GMS",
+  "Product Handling": "Kraus",
   "Liquid Filling": "Liquid-Filling",
   "Pouch Packing": "HFFS",
   "Pick Fill Seal": "PFS",
@@ -65,6 +65,8 @@ const inspectionSystems: InspectionSystem[] = [
   { title: "Roller Unwinders", description: "Precision film unwinders with servo tension control and auto-splice — for consistent film feed on high-speed packaging lines.", icon: "rotate_right" },
 ];
 
+const DOT_PATTERN = `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23c8d4e8' fill-opacity='0.5'/%3E%3C/svg%3E")`;
+
 function MachineCard({ machine }: { machine: Machine }) {
   const slug = machineSlugMap[machine.title] ?? "";
   return (
@@ -108,6 +110,110 @@ function ThreeTwoGrid<T>({ items, renderCard }: { items: T[]; renderCard: (item:
 export default function Home() {
   return (
     <>
+      <style>{`
+        @keyframes ticker {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .ticker-track {
+          display: flex;
+          width: max-content;
+          animation: ticker 22s linear infinite;
+        }
+        .btn-primary {
+          display: inline-block;
+          background: #0C4CA2;
+          color: white;
+          padding: 1rem 2.5rem;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          text-align: center;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
+          box-shadow: 0 4px 14px rgba(12,76,162,0.25);
+        }
+        .btn-primary:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(12,76,162,0.35);
+        }
+        .btn-primary:active {
+          background: #7eb2f1;
+          transform: translateY(0px);
+          box-shadow: 0 2px 8px rgba(12,76,162,0.15);
+        }
+        .btn-outline {
+          display: inline-block;
+          background: transparent;
+          color: #0C4CA2;
+          border: 1.5px solid #0C4CA2;
+          padding: 1rem 2.5rem;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          text-align: center;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
+        }
+        .btn-outline:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(12,76,162,0.15);
+        }
+        .btn-outline:active {
+          background: #e8e8e8;
+          transform: translateY(0px);
+          box-shadow: none;
+        }
+        .btn-white {
+          display: inline-block;
+          background: white;
+          color: #0C4CA2;
+          padding: 1rem 3rem;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          text-align: center;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        }
+        .btn-white:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .btn-white:active {
+          background: #e8e8e8;
+          transform: translateY(0px);
+          box-shadow: none;
+        }
+        .btn-ghost {
+          display: inline-block;
+          background: transparent;
+          color: white;
+          border: 1.5px solid rgba(255,255,255,0.3);
+          padding: 1rem 3rem;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          text-align: center;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
+        }
+        .btn-ghost:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+        }
+        .btn-ghost:active {
+          background: #7eb2f1;
+          border-color: #7eb2f1;
+          transform: translateY(0px);
+          box-shadow: none;
+        }
+      `}</style>
       <Navbar />
       <main>
         {/* Hero */}
@@ -134,8 +240,8 @@ export default function Home() {
                 applications. Built with precision. Backed by experience.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/solutions" className="bg-[#0C4CA2] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-800 transition-colors shadow-xl text-center">View Solutions</a>
-                <a href="/contact" className="border border-[#0C4CA2] text-[#0C4CA2] px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-50 transition-colors text-center">Request a Quote</a>
+                <a href="/solutions" className="btn-primary">View Solutions</a>
+                <a href="/contact" className="btn-outline">Request a Quote</a>
               </div>
             </div>
           </div>
@@ -148,17 +254,6 @@ export default function Home() {
               </p>
             </div>
             <div className="overflow-hidden pb-4">
-              <style>{`
-                @keyframes ticker {
-                  0%   { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                .ticker-track {
-                  display: flex;
-                  width: max-content;
-                  animation: ticker 22s linear infinite;
-                }
-              `}</style>
               <div className="ticker-track">
                 {[...industries, ...industries].map((industry, i) => (
                   <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
@@ -174,7 +269,7 @@ export default function Home() {
         </section>
 
         {/* Packaging Machines */}
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-white" style={{ backgroundImage: DOT_PATTERN }}>
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -188,7 +283,7 @@ export default function Home() {
         </section>
 
         {/* Inspection Systems */}
-        <section className="py-12 bg-slate-50">
+        <section className="py-12 bg-slate-50" style={{ backgroundImage: DOT_PATTERN }}>
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -202,13 +297,13 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#0C4CA2] text-white">
+        <section className="py-16 bg-[#0C4CA2] text-white" style={{ backgroundImage: DOT_PATTERN }}>
           <div className="max-w-7xl mx-auto px-8 text-center">
             <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
             <p className="text-blue-100 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a href="/contact" className="bg-white text-[#0C4CA2] px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-100 transition-colors text-center">Talk to Our Team</a>
-              <a href="/solutions" className="border border-white/30 text-white px-12 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors text-center">Browse Solutions</a>
+              <a href="/contact" className="btn-white">Talk to Our Team</a>
+              <a href="/solutions" className="btn-ghost">Browse Solutions</a>
             </div>
           </div>
         </section>
