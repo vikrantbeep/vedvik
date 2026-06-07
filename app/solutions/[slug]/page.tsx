@@ -7,13 +7,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const product = products[slug];
   if (!product) return { title: "Product Not Found – Vedvik Machinery" };
+  if ("categoryPage" in product) return { title: `${product.name} – Vedvik Machinery`, description: product.description };
   return {
     title: `${product.name} – Vedvik Machinery`,
     description: product.description,
   };
 }
 
-const products: Record<string, {
+type CategoryPage = {
+  categoryPage: true;
+  badge: string;
+  name: string;
+  subtitle: string;
+  description: string;
+  heroImage: string;
+  subcategories: { slug: string; name: string; subtitle: string; description: string; image: string }[];
+};
+
+type ProductPage = {
   badge: string;
   name: string;
   subtitle: string;
@@ -26,7 +37,9 @@ const products: Record<string, {
   showcaseImages: string[];
   showcaseLabels?: string[];
   brochureUrl?: string;
-}> = {
+};
+
+const products: Record<string, CategoryPage | ProductPage> = {
   "Comipack": {
     badge: "Packaging",
     name: "Clipping & Twisting",
@@ -141,7 +154,7 @@ const products: Record<string, {
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBgPhd7Npd41TxrmYcBziTB1NYXtTxrsiS49qB_3sSaXaa1xj2i0sGKKQ_okSGlhTQ_8grYdElrhwv89J6ikYGwegHTuWFzUtAxVGgSo5WUAAHzb5fod9z2iUn07LEWScq70Wu7GSspkmX2TLLwYHo-nSErOzoIRnTtDg0WNjqwHW099AqUI3SU0PRCZv_lrQSZh8wvaMxW4DUdS55FhmGm9WWE_CjYLL7fu0GQ2b1p3EfSPCZC83wHPh9-m7aCP1LP6Yi9Y7atCMo",
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778824273/producthome-1221_xgts9h.jpg",
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0Rhuo5sWwxTKvISGISt2XIswf7GWBddctXBRRkUPvwD9jXQWwnDTlVqsVH5xel4UWqZRhxzSGaoiTm1xdi15pkS2-isNaSu0jZ7MUMOo6F0AcjcvS1hzDouyhrg8t93fLmsVv7E-AJrvyZN7mJFtorKXfzqfacnmPZPIYmbYcyDBAID-NwG__L8kkGyCVbQTSIMcncr3KcNYbfWLJDqMjbiWhynHDrvrZNWwDVhdBcnR8SznTJrjVPMA1Wkgzb6zGXR7b2LNxuc",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCd4q2UinzZZOH-_bZODrsStRe-ejRhvH4nob8ieCJybE_EnWHJ8off8ek-PWtcioYBz1yiI4EfwM__UjON14JMTe9afCB8Ly6Flf7wUeywfzwiHQCeCUzY2E3gG5O6OMBNj1tw3ldZM-4Wji2Pg0-lppP5mccEIQfmJvtME02LbUb97VHZvk6Kfut9Mpyi6nIXBklJLJzmHuJexyyuvG_qUX9cMz6Piyl6vqRJNsvEmU0el4kwGBz6L6KYVdwgycEwqSOZEGxjqmQ",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCd4q2UinzZZOH-_bZODrsStRe-ejRhvH4nob8ieCJybE_EnWHJ8off8ek-PWtcioYBz1yiI4EfwC8Ly6Flf7wUeywfzwiHQCeCUzY2E3gG5O6OMBNj1tw3ldZM-4Wji2Pg0-lppP5mccEIQfmJvtME02LbUb97VHZvk6Kfut9Mpyi6nIXBklJLJzmHuJexyyuvG_qUX9cMz6Piyl6vqRJNsvEmU0el4kwGBz6L6KYVdwgycEwqSOZEGxjqmQ",
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778824509/17_uuqvhu.png",
     ],
   },
@@ -300,22 +313,108 @@ const products: Record<string, {
     ],
   },
 
+  // ─── CATEGORY HUB ───────────────────────────────────────────────────────────
   "roller-unwinders": {
-    badge: "Packaging Support",
-    name: "Slitting, Printing and Lamination Machines",
-    subtitle: "",
-    description: "Complete converting solutions for cutting, printing and bonding flexible packaging materials to create finished packaging films.",
-    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780828263/ChatGPT_Image_Jun_7_2026_04_00_26_PM_safla9.png",
+    categoryPage: true,
+    badge: "Film Processing",
+    name: "Film Processing",
+    subtitle: "Slitting, Printing & Lamination",
+    description: "Complete film processing solutions engineered for flexible packaging manufacturers. Choose from our range of slitting, printing, and lamination machines — all built in-house by Vedvik Machinery.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778823717/Unwinder_h1jw5i.png",
+    subcategories: [
+      {
+        slug: "slitting-machine",
+        name: "Slitting Machine",
+        subtitle: "Precision Roll Slitting",
+        description: "High-speed slitting systems for precise slit width control across flexible films, foils, and laminates. Servo-driven with auto-tension control.",
+        image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841717/rovema_upgradekit-vorabrollung_vfbaoq.webp",
+      },
+      {
+        slug: "printing-machine",
+        name: "Printing Machine",
+        subtitle: "Flexographic & Gravure Printing",
+        description: "Multi-colour flexographic and gravure printing machines for high-resolution print quality on flexible packaging films, laminates, and foils.",
+        image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778831423/Hx-Nitro-on-flexible-packaging-line-1024x564_ulknop.jpg",
+      },
+      {
+        slug: "lamination-machine",
+        name: "Lamination Machine",
+        subtitle: "Solvent-less & Dry Lamination",
+        description: "Solvent-less and dry lamination systems for producing high-barrier multi-layer flexible packaging films with consistent bond strength and clarity.",
+        image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841777/ChatGPT_Image_May_15_2026_04_12_34_PM_dglsl6.png",
+      },
+    ],
+  },
+
+  // ─── FILM PROCESSING CHILD PAGES ────────────────────────────────────────────
+  "slitting-machine": {
+    badge: "Film Processing",
+    name: "Slitting Machine",
+    subtitle: "Precision Roll Slitting",
+    description: "High-speed slitting systems for precise slit width control across flexible films, foils, and laminates. Servo-driven with auto-tension control for consistent output at high speeds.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841717/rovema_upgradekit-vorabrollung_vfbaoq.webp",
     youtubeId: "09AKIjPx8rI",
     brand: "Vedvik Machinery, India",
-    brandDesc: "In-house designed film handling systems.",
+    brandDesc: "In-house engineered film processing systems.",
     specs: [
-      { parameter: "Tension Control", rating: "Dancer / Servo" },
-      { parameter: "Splicing", rating: "Manual / Auto Splice" },
+      { parameter: "Slitting Type", rating: "Razor / Shear / Score" },
+      { parameter: "Web Width", rating: "Up to 1600 mm" },
+      { parameter: "Max Speed", rating: "Up to 400 m/min" },
+      { parameter: "Rewind Tension", rating: "Servo controlled" },
+      { parameter: "Min Slit Width", rating: "15 mm" },
+      { parameter: "Drive", rating: "AC Servo" },
     ],
     showcaseImages: [
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841717/rovema_upgradekit-vorabrollung_vfbaoq.webp",
       "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841777/ChatGPT_Image_May_15_2026_04_12_34_PM_dglsl6.png",
+    ],
+  },
+
+  "printing-machine": {
+    badge: "Film Processing",
+    name: "Printing Machine",
+    subtitle: "Flexographic & Gravure Printing",
+    description: "Multi-colour flexographic and gravure printing machines for high-resolution print quality on flexible packaging films, laminates, and foils. Suitable for food, pharma, and industrial packaging.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778831423/Hx-Nitro-on-flexible-packaging-line-1024x564_ulknop.jpg",
+    youtubeId: "zjZzPCnCJTk",
+    brand: "Vedvik Machinery, India",
+    brandDesc: "In-house engineered film processing systems.",
+    specs: [
+      { parameter: "Print Process", rating: "Flexographic / Gravure" },
+      { parameter: "Colours", rating: "Up to 8 colours" },
+      { parameter: "Web Width", rating: "Up to 1300 mm" },
+      { parameter: "Max Speed", rating: "Up to 250 m/min" },
+      { parameter: "Registration", rating: "Auto register control" },
+      { parameter: "Drying System", rating: "Hot air / UV" },
+    ],
+    showcaseImages: [
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778831423/Hx-Nitro-on-flexible-packaging-line-1024x564_ulknop.jpg",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778831421/Jx-Nitro-Advanced-Product-Thumbnail-600x593-2-1-300x300_k8qxcb.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778831420/A7S08465_72_vpl21z.jpg",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778831421/Hx-Cartro-mobile-communication-crop_927X600_u41fjk.jpg",
+    ],
+  },
+
+  "lamination-machine": {
+    badge: "Film Processing",
+    name: "Lamination Machine",
+    subtitle: "Solvent-less & Dry Lamination",
+    description: "Solvent-less and dry lamination systems for producing high-barrier multi-layer flexible packaging films with consistent bond strength and clarity. Suitable for food, pharma, and industrial applications.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841777/ChatGPT_Image_May_15_2026_04_12_34_PM_dglsl6.png",
+    youtubeId: "09AKIjPx8rI",
+    brand: "Vedvik Machinery, India",
+    brandDesc: "In-house engineered film processing systems.",
+    specs: [
+      { parameter: "Lamination Type", rating: "Solvent-less / Dry / Wet" },
+      { parameter: "Web Width", rating: "Up to 1600 mm" },
+      { parameter: "Max Speed", rating: "Up to 300 m/min" },
+      { parameter: "Bond Strength", rating: "As per substrate" },
+      { parameter: "Nip Pressure", rating: "Pneumatic controlled" },
+      { parameter: "Temperature Control", rating: "PID based" },
+    ],
+    showcaseImages: [
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841777/ChatGPT_Image_May_15_2026_04_12_34_PM_dglsl6.png",
+      "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841717/rovema_upgradekit-vorabrollung_vfbaoq.webp",
     ],
   },
 
@@ -392,6 +491,62 @@ export default async function ProductPage({ params }: PageProps) {
     );
   }
 
+  // ─── CATEGORY HUB LAYOUT ──────────────────────────────────────────────────
+  if ("categoryPage" in product) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <Navbar />
+        <main className="pt-24 flex-grow">
+          {/* Hero */}
+          <section className="max-w-screen-2xl mx-auto px-6 md:px-12 pt-8 pb-16">
+            <div className="mb-4">
+              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{product.badge}</span>
+            </div>
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 font-headline">
+              {product.name} <br />
+              <span className="text-secondary">{product.subtitle}</span>
+            </h1>
+            <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed mt-6">{product.description}</p>
+          </section>
+
+          {/* Subcategory Cards */}
+          <section className="bg-surface-container-low py-24">
+            <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {product.subcategories.map((sub) => (
+                  <Link key={sub.slug} href={`/solutions/${sub.slug}`} className="group bg-background rounded-2xl overflow-hidden border border-outline-variant/20 hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div className="aspect-video overflow-hidden">
+                      <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={sub.image} alt={sub.name} />
+                    </div>
+                    <div className="p-8 flex flex-col flex-grow">
+                      <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Film Processing</p>
+                      <h2 className="text-2xl font-extrabold text-primary tracking-tight mb-2 font-headline">{sub.name}</h2>
+                      <p className="text-sm font-semibold text-on-surface-variant mb-4">{sub.subtitle}</p>
+                      <p className="text-sm text-on-surface-variant leading-relaxed flex-grow">{sub.description}</p>
+                      <div className="mt-8 flex items-center gap-2 text-secondary font-bold text-sm">
+                        <span>View Machine</span>
+                        <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="py-20 max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
+            <h3 className="text-2xl font-bold text-primary mb-4">Not sure which machine fits your line?</h3>
+            <p className="text-on-surface-variant mb-8 max-w-xl mx-auto">Our engineers will assess your film specifications and recommend the right configuration.</p>
+            <Link href="/contact" className="bg-primary-container text-on-primary px-10 py-4 rounded-md font-bold tracking-tight shadow-sm inline-block">Request a Consultation</Link>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // ─── STANDARD PRODUCT LAYOUT ──────────────────────────────────────────────
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -434,13 +589,7 @@ export default async function ProductPage({ params }: PageProps) {
                 <div className="h-1 w-24 bg-secondary" />
               </div>
               <div className="aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${product.youtubeId}?autoplay=1&mute=1`}
-                  title="Machine Demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                <iframe className="w-full h-full" src={`https://www.youtube.com/embed/${product.youtubeId}?autoplay=1&mute=1`} title="Machine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
             </div>
           </section>
