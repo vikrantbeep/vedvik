@@ -350,7 +350,7 @@ const products: Record<string, CategoryPage | ProductPage> = {
   "slitting-machine": {
     badge: "Film Processing",
     name: "Slitting Machine",
-    subtitle: "Precision Roll Slitting",
+    subtitle: "Cantilever and Drum Slitter",
     description: "High-speed slitting systems for precise slit width control across flexible films, foils, and laminates. Servo-driven with auto-tension control for consistent output at high speeds.",
     heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778841717/rovema_upgradekit-vorabrollung_vfbaoq.webp",
     youtubeId: "09AKIjPx8rI",
