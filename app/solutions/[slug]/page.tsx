@@ -300,10 +300,10 @@ const products: Record<string, {
 
   "roller-unwinders": {
     badge: "Packaging Support",
-    name: "Roller Unwinders",
+    name: "Slitting, Printing and Lamination Machines",
     subtitle: "Precision Film Tension Control",
-    description: "Precision film unwinding systems for consistent tension control in packaging lines. Ensures smooth, uninterrupted film feed for high-speed operations.",
-    heroImage: "import type { Metadata } from "next";
+    description: "Complete converting solutions for cutting, printing, and bonding flexible packaging materials to create high-quality finished packaging films.",
+    heroImage: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780828263/ChatGPT_Image_Jun_7_2026_04_00_26_PM_safla9.png";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Link from "next/link";
