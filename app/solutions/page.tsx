@@ -111,7 +111,7 @@ const products: Product[] = [
   {
     slug: "roller-unwinders",
     category: "Packaging Support",
-    name: "Roller Unwinders",
+    name: "Slitting, Printing and Lamination",
     brand: "Vedvik Machinery",
     origin: "India",
     image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778823717/Unwinder_h1jw5i.png",
