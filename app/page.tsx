@@ -65,8 +65,6 @@ const inspectionSystems: InspectionSystem[] = [
   { title: "Roller Unwinders", description: "Precision film unwinders with servo tension control and auto-splice — for consistent film feed on high-speed packaging lines.", icon: "rotate_right" },
 ];
 
-const DOT_PATTERN = `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23c8d4e8' fill-opacity='0.5'/%3E%3C/svg%3E")`;
-
 function MachineCard({ machine }: { machine: Machine }) {
   const slug = machineSlugMap[machine.title] ?? "";
   return (
@@ -262,7 +260,7 @@ export default function Home() {
         </section>
 
         {/* Packaging Machines */}
-        <section className="py-12 bg-white" style={{ backgroundImage: DOT_PATTERN }}>
+        <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -276,7 +274,7 @@ export default function Home() {
         </section>
 
         {/* Inspection Systems */}
-        <section className="py-12 bg-slate-50" style={{ backgroundImage: DOT_PATTERN }}>
+        <section className="py-12 bg-slate-50">
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -290,7 +288,7 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#0C4CA2] text-white" style={{ backgroundImage: DOT_PATTERN }}>
+        <section className="py-16 bg-[#0C4CA2] text-white">
           <div className="max-w-7xl mx-auto px-8 text-center">
             <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
             <p className="text-blue-100 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
