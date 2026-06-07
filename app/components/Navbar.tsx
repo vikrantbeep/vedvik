@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 
-const LOGO_URL = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
+const LOGO_URL = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780846082/Vedvik_Logo_Cropped_Exact_qgouui.svg";
 
 const links = [
   { href: "/", label: "Home" },
