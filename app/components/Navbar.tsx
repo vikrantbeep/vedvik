@@ -21,20 +21,19 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-16">
-
-        {/* Logo on the LEFT */}
+        {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src={LOGO_URL}
             alt="Vedvik Machinery"
-            width={80}
-            height={26}
+            width={140}
+            height={46}
             className="object-contain"
             priority
           />
         </Link>
 
-        {/* Desktop Nav Links on the RIGHT */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-10">
           {links.map((link) => (
             <Link
@@ -51,13 +50,13 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="btn-machined text-white px-5 py-2 font-['Montserrat'] font-bold text-xs uppercase tracking-widest hover:scale-95 transition-all"
+            className="bg-[#0C4CA2] text-white px-5 py-2 font-['Montserrat'] font-bold text-xs uppercase tracking-widest hover:bg-[#020062] transition-colors"
           >
             Request Quote
           </Link>
         </div>
 
-        {/* Hamburger on the RIGHT for mobile */}
+        {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
@@ -69,7 +68,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown — aligned to the RIGHT */}
+      {/* Mobile Dropdown */}
       {open && (
         <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
           <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col items-end gap-4">
@@ -90,7 +89,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="btn-machined text-white px-5 py-2 font-['Montserrat'] font-bold text-xs uppercase tracking-widest"
+              className="bg-[#0C4CA2] text-white px-5 py-2 font-['Montserrat'] font-bold text-xs uppercase tracking-widest"
             >
               Request Quote
             </Link>
