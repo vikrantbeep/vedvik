@@ -29,7 +29,7 @@ const inspectionSlugMap: Record<string, string> = {
   "Checkweighers": "Checkweighers",
   "X-Ray and Metal Detectors": "xray-metal-detector",
   "Printer and Coder": "Printing",
-  "Roller Unwinders": "roller-unwinders",
+  "Slitting, Printing and Lamination": "roller-unwinders",
 };
 
 const industries = [
@@ -62,7 +62,7 @@ const inspectionSystems: InspectionSystem[] = [
   { title: "Checkweighers", description: "Dynamic inline checkweighing from 5 g to 15 kg — up to 300 packs/min with automatic reject. OIML/CE certified. By Varpe, Spain.", icon: "scale" },
   { title: "X-Ray and Metal Detectors", description: "X-ray inspection for foreign bodies, voids and underfill — combined with metal detection (Fe, Non-Fe, SS). CE/FDA 21 CFR certified. By Varpe, Spain.", icon: "visibility" },
   { title: "Printer and Coder", description: "TIJ, CIJ and laser coders for batch codes, MRP dates and barcodes — Industry 4.0 and MQTT enabled. By MapleJet, Canada.", icon: "sensors" },
-  { title: "Slitting, Printing and Lamination", description: "Complete converting solutions for cutting, printing and bonding flexible packaging materials to create finished packaging films", icon: "rotate_right" },
+  { title: "Slitting, Printing and Lamination", description: "Complete converting solutions for cutting, printing and bonding flexible packaging materials to create finished packaging films.", icon: "rotate_right" },
 ];
 
 function MachineCard({ machine }: { machine: Machine }) {
@@ -216,42 +216,43 @@ export default function Home() {
         `}</style>
 
         {/* Hero */}
-        <section className="relative min-h-[60vh] flex flex-col pt-16">
+        <section className="relative min-h-[100svh] md:min-h-[60vh] flex flex-col pt-16">
           <div className="absolute inset-0 z-0">
-            <img alt="Background Machine" className="w-full h-full object-cover" src={HERO_IMAGE} />
+            <img alt="Background Machine" className="w-full h-full object-cover object-center" src={HERO_IMAGE} />
+            <div className="absolute inset-0 bg-white/40 md:bg-transparent" />
           </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-8">
-            <div className="max-w-2xl">
-              <div className="inline-block px-3 py-1 border border-slate-400 text-slate-700 text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
+          <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full flex-grow flex items-center py-10 md:py-8">
+            <div className="max-w-2xl w-full">
+              <div className="inline-block px-3 py-1 border border-slate-400 text-slate-700 text-[10px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8">
                 Precision Engineering
               </div>
-              <h1 className="font-['Montserrat'] font-black text-4xl md:text-5xl leading-tight text-slate-900 mb-4">
+              <h1 className="font-['Montserrat'] font-black text-3xl md:text-5xl leading-tight text-slate-900 mb-4">
                 Advanced packaging<br />
                 and inspection systems<br />
                 engineered for <span className="text-[#0C4CA2]">efficiency</span><br />
                 and <span className="text-[#0C4CA2]">reliability.</span>
               </h1>
-              <div className="w-12 h-[3px] bg-[#0C4CA2] my-6" />
-              <p className="text-slate-600 text-base leading-relaxed mb-10">
-                Tailored solutions for FMCG and pharmaceutical<br />
+              <div className="w-12 h-[3px] bg-[#0C4CA2] my-5 md:my-6" />
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8 md:mb-10">
+                Tailored solutions for FMCG and pharmaceutical
                 applications. Built with precision. Backed by experience.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/solutions" className="btn-primary">View Solutions</a>
-                <a href="/contact" className="btn-outline">Request a Quote</a>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                <a href="/solutions" className="btn-primary text-center">View Solutions</a>
+                <a href="/contact" className="btn-outline text-center">Request a Quote</a>
               </div>
             </div>
           </div>
-          <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm border-t border-white/10">
-            <div className="max-w-7xl mx-auto px-8 pt-4 pb-2">
-              <p className="text-white font-['Montserrat'] font-black text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
+          <div className="relative z-10 w-full bg-black/60 backdrop-blur-sm border-t border-white/10">
+            <div className="max-w-7xl mx-auto px-5 md:px-8 pt-3 pb-2">
+              <p className="text-white font-['Montserrat'] font-black text-xs md:text-sm uppercase tracking-[0.25em]">Industries We Serve</p>
             </div>
-            <div className="overflow-hidden pb-4">
+            <div className="overflow-hidden pb-3 md:pb-4">
               <div className="ticker-track">
                 {[...industries, ...industries].map((industry, i) => (
-                  <div key={i} className="flex items-center gap-3 px-10 border-r border-white/20 h-12" style={{ minWidth: "200px" }}>
-                    <span className="material-symbols-outlined text-white/70 text-base flex-shrink-0">{industry.icon}</span>
-                    <span className="text-white/90 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
+                  <div key={i} className="flex items-center gap-2 md:gap-3 px-6 md:px-10 border-r border-white/20 h-10 md:h-12" style={{ minWidth: "160px" }}>
+                    <span className="material-symbols-outlined text-white/70 text-sm md:text-base flex-shrink-0">{industry.icon}</span>
+                    <span className="text-white/90 text-[10px] md:text-[11px] font-bold uppercase tracking-widest whitespace-nowrap font-['Montserrat']">{industry.label}</span>
                   </div>
                 ))}
               </div>
@@ -261,11 +262,11 @@ export default function Home() {
 
         {/* Packaging Machines */}
         <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-5 md:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
                 <span className="text-[#0C4CA2] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 01</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#0C4CA2] mt-2">PACKAGING MACHINES</h2>
+                <h2 className="font-['Montserrat'] font-black text-2xl md:text-3xl text-[#0C4CA2] mt-2">PACKAGING MACHINES</h2>
               </div>
               <a className="text-xs font-bold text-[#0C4CA2] uppercase tracking-widest border-b border-[#0C4CA2] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
@@ -275,11 +276,11 @@ export default function Home() {
 
         {/* Inspection Systems */}
         <section className="py-12 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-5 md:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
                 <span className="text-[#0C4CA2] font-bold font-['Montserrat'] text-[10px] tracking-widest uppercase">Division 02</span>
-                <h2 className="font-['Montserrat'] font-black text-3xl text-[#0C4CA2] mt-2">INSPECTION SYSTEMS</h2>
+                <h2 className="font-['Montserrat'] font-black text-2xl md:text-3xl text-[#0C4CA2] mt-2">INSPECTION SYSTEMS</h2>
               </div>
               <a className="text-xs font-bold text-[#0C4CA2] uppercase tracking-widest border-b border-[#0C4CA2] pb-1 hover:opacity-70 transition-opacity" href="/solutions">All Systems</a>
             </div>
@@ -289,10 +290,10 @@ export default function Home() {
 
         {/* CTA */}
         <section className="py-16 bg-[#0C4CA2] text-white">
-          <div className="max-w-7xl mx-auto px-8 text-center">
-            <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
-            <p className="text-blue-100 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
-            <div className="flex flex-col md:flex-row justify-center gap-6">
+          <div className="max-w-7xl mx-auto px-5 md:px-8 text-center">
+            <h2 className="font-['Montserrat'] font-black text-2xl md:text-5xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
+            <p className="text-blue-100 text-base md:text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will suggest the right system and arrange a demonstration.</p>
+            <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
               <a href="/contact" className="btn-white">Talk to Our Team</a>
               <a href="/solutions" className="btn-ghost">Browse Solutions</a>
             </div>
