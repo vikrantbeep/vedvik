@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Link from "next/link";
-
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products[slug];
+  if (!product) return { title: "Product Not Found – Vedvik Machinery" };
+  return {
+    title: `${product.name} – Vedvik Machinery`,
+    description: product.description,
+  };
+}
 const products: Record<string, {
   badge: string;
   name: string;
