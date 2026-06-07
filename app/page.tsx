@@ -118,25 +118,27 @@ export default function Home() {
 
           {/* Hero content */}
           <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex-grow flex items-center py-8">
-            <div className="max-w-2xl text-white">
-              <div className="inline-block px-3 py-1 bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
+            <div className="max-w-2xl">
+              <div className="inline-block px-3 py-1 border border-slate-400 text-slate-700 text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
                 Precision Engineering
               </div>
-              <div className="mb-8">
-               <h1 className="font-['Montserrat'] font-black text-4xl md:text-6xl uppercase leading-tight tracking-tight text-black">
-  Vedvik Machinery<br />Packaging Machines
-</h1>
-              </div>
-              <p className="text-slate-300 text-base md:text-lg max-w-md leading-relaxed mb-8">
-                Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.
+              <h1 className="font-['Montserrat'] font-black text-4xl md:text-5xl leading-tight text-slate-900 mb-4">
+                Advanced packaging<br />
+                and inspection systems<br />
+                engineered for <span className="text-[#020062]">efficiency</span><br />
+                and <span className="text-[#020062]">reliability.</span>
+              </h1>
+              <div className="w-12 h-[3px] bg-[#020062] my-6" />
+              <p className="text-slate-600 text-base leading-relaxed mb-10">
+                Tailored solutions for FMCG and pharmaceutical<br />
+                applications. Built with precision. Backed by experience.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/solutions" className="bg-[#020062] text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-blue-900 transition-colors shadow-xl text-center">View Solutions</a>
-                <a href="/contact" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors text-center">Request a Quote</a>
+                <a href="/contact" className="border border-[#020062] text-[#020062] px-10 py-4 font-['Montserrat'] font-bold text-sm uppercase tracking-widest hover:bg-slate-50 transition-colors text-center">Request a Quote</a>
               </div>
             </div>
           </div>
-
           {/* Industries banner */}
           <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm border-t border-white/10">
             {/* Label row */}
