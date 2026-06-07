@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Packaging Machinery Solutions – Vedvik Machinery",
+  title: "title: "Solutions – Vedvik Machinery | Packaging & Inspection Systems",",
   description:
     "Explore Vedvik Machinery's full range: HFFS pouch packers, liquid filling lines, checkweighers, X-ray inspection, vision systems, printers, and more. European technology, Indian support.",
 };
