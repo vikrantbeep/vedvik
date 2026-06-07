@@ -114,7 +114,7 @@ const products: Product[] = [
     name: "Slitting, Printing and Lamination",
     brand: "Vedvik Machinery",
     origin: "India",
-    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778823717/Unwinder_h1jw5i.png",
+    image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780828263/ChatGPT_Image_Jun_7_2026_04_00_26_PM_safla9.png",
   },
   {
     slug: "Printing",
