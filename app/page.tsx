@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import ScrollReveal from "./components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
@@ -110,8 +111,8 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <ScrollReveal />
         <style>{`
-          /* ── Keyframes ── */
           @keyframes ticker {
             0%   { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -136,16 +137,12 @@ export default function Home() {
             from { width: 0; }
             to   { width: 3rem; }
           }
-
-          /* ── Hero entrance ── */
           .hero-badge   { animation: fadeIn  0.6s ease both; animation-delay: 0.1s; }
           .hero-heading { animation: fadeUp  0.8s ease both; animation-delay: 0.25s; }
           .hero-bar     { animation: barGrow 0.6s ease both; animation-delay: 0.9s; }
           .hero-sub     { animation: fadeUp  0.7s ease both; animation-delay: 1.0s; }
           .hero-cta     { animation: fadeUp  0.7s ease both; animation-delay: 1.15s; }
           .hero-img     { animation: scaleIn 1.2s ease both; animation-delay: 0s; }
-
-          /* ── Scroll-reveal ── */
           .scroll-fade {
             opacity: 0;
             transform: translateY(24px);
@@ -164,15 +161,11 @@ export default function Home() {
             opacity: 1;
             transform: translateX(0);
           }
-
-          /* ── Ticker ── */
           .ticker-track {
             display: flex;
             width: max-content;
             animation: ticker 22s linear infinite;
           }
-
-          /* ── Buttons ── */
           .btn-primary {
             display: inline-block;
             background: #0C4CA2;
@@ -187,15 +180,8 @@ export default function Home() {
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
             box-shadow: 0 4px 14px rgba(12,76,162,0.25);
           }
-          .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(12,76,162,0.35);
-          }
-          .btn-primary:active {
-            background: #7eb2f1;
-            transform: translateY(0px);
-            box-shadow: 0 2px 8px rgba(12,76,162,0.15);
-          }
+          .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(12,76,162,0.35); }
+          .btn-primary:active { background: #7eb2f1; transform: translateY(0px); box-shadow: 0 2px 8px rgba(12,76,162,0.15); }
           .btn-outline {
             display: inline-block;
             background: transparent;
@@ -210,15 +196,8 @@ export default function Home() {
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
           }
-          .btn-outline:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(12,76,162,0.15);
-          }
-          .btn-outline:active {
-            background: #e8e8e8;
-            transform: translateY(0px);
-            box-shadow: none;
-          }
+          .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(12,76,162,0.15); }
+          .btn-outline:active { background: #e8e8e8; transform: translateY(0px); box-shadow: none; }
           .btn-white {
             display: inline-block;
             background: white;
@@ -233,15 +212,8 @@ export default function Home() {
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
             box-shadow: 0 4px 14px rgba(0,0,0,0.1);
           }
-          .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-          }
-          .btn-white:active {
-            background: #e8e8e8;
-            transform: translateY(0px);
-            box-shadow: none;
-          }
+          .btn-white:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+          .btn-white:active { background: #e8e8e8; transform: translateY(0px); box-shadow: none; }
           .btn-ghost {
             display: inline-block;
             background: transparent;
@@ -256,52 +228,14 @@ export default function Home() {
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
           }
-          .btn-ghost:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255,255,255,0.1);
-          }
-          .btn-ghost:active {
-            background: #7eb2f1;
-            border-color: #7eb2f1;
-            transform: translateY(0px);
-            box-shadow: none;
-          }
-
-          /* ── CTA section subtle pulse on the heading ── */
+          .btn-ghost:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,255,255,0.1); }
+          .btn-ghost:active { background: #7eb2f1; border-color: #7eb2f1; transform: translateY(0px); box-shadow: none; }
           @keyframes softPulse {
             0%, 100% { opacity: 1; }
             50%       { opacity: 0.85; }
           }
-          .cta-heading-animate {
-            animation: softPulse 4s ease-in-out infinite;
-          }
+          .cta-heading-animate { animation: softPulse 4s ease-in-out infinite; }
         `}</style>
-
-        {/* Scroll observer script */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            function init() {
-              var els = document.querySelectorAll('.scroll-fade, .scroll-slide-left');
-              if (!els.length) return;
-              var io = new IntersectionObserver(function(entries) {
-                entries.forEach(function(e) {
-                  if (e.isIntersecting) {
-                    var delay = e.target.style.animationDelay || '0ms';
-                    var ms = parseFloat(delay) || 0;
-                    setTimeout(function() { e.target.classList.add('visible'); }, ms);
-                    io.unobserve(e.target);
-                  }
-                });
-              }, { threshold: 0.12 });
-              els.forEach(function(el) { io.observe(el); });
-            }
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', init);
-            } else {
-              init();
-            }
-          })();
-        `}} />
 
         {/* Hero */}
         <section className="relative min-h-[100svh] md:min-h-[60vh] flex flex-col pt-16">
