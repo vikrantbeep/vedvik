@@ -10,9 +10,12 @@ export default function ScrollReveal() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            const delay = parseFloat((e.target as HTMLElement).dataset.delay || "0");
-            setTimeout(() => e.target.classList.add("visible"), delay);
-            io.unobserve(e.target);
+            const el = e.target as HTMLElement;
+            const delay =
+              parseFloat(el.dataset.delay || "0") ||
+              parseFloat(el.style.animationDelay) || 0;
+            setTimeout(() => el.classList.add("visible"), delay);
+            io.unobserve(el);
           }
         });
       },
