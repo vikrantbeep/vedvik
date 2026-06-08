@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
+import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Packaging Machinery Solutions – Vedvik Machinery",
@@ -40,6 +41,7 @@ export default function SolutionsPage() {
   return (
     <div className="bg-background text-on-surface min-h-screen flex flex-col">
       <Navbar />
+      <ScrollReveal />
 
       <style>{`
         @keyframes fadeUp {
@@ -50,11 +52,9 @@ export default function SolutionsPage() {
           from { opacity: 0; transform: translateX(-24px); }
           to   { opacity: 1; transform: translateX(0); }
         }
-
-        .hero-badge    { animation: fadeUp   0.6s ease both; animation-delay: 0.1s; }
+        .hero-badge    { animation: fadeUp    0.6s ease both; animation-delay: 0.1s; }
         .hero-heading  { animation: slideLeft 0.75s ease both; animation-delay: 0.2s; }
-        .hero-sub      { animation: fadeUp   0.7s ease both; animation-delay: 0.5s; }
-
+        .hero-sub      { animation: fadeUp    0.7s ease both; animation-delay: 0.5s; }
         .scroll-fade {
           opacity: 0;
           transform: translateY(24px);
@@ -65,30 +65,6 @@ export default function SolutionsPage() {
           transform: translateY(0);
         }
       `}</style>
-
-      <script dangerouslySetInnerHTML={{ __html: `
-        (function() {
-          function init() {
-            var els = document.querySelectorAll('.scroll-fade');
-            if (!els.length) return;
-            var io = new IntersectionObserver(function(entries) {
-              entries.forEach(function(e) {
-                if (e.isIntersecting) {
-                  var ms = parseFloat(e.target.dataset.delay || '0');
-                  setTimeout(function() { e.target.classList.add('visible'); }, ms);
-                  io.unobserve(e.target);
-                }
-              });
-            }, { threshold: 0.1 });
-            els.forEach(function(el) { io.observe(el); });
-          }
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
-          } else {
-            init();
-          }
-        })();
-      `}} />
 
       <main className="flex-grow pt-28 md:pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full">
 
@@ -104,7 +80,7 @@ export default function SolutionsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {products.map((product, i) => {
-            const delay = (i % 3) * 80; // stagger within each row
+            const delay = (i % 3) * 80;
 
             if (product.disabled) {
               return (
