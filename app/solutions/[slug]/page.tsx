@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import ScrollReveal from "../../components/ScrollReveal";
 import Link from "next/link";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -313,7 +314,6 @@ const products: Record<string, CategoryPage | ProductPage> = {
     ],
   },
 
-  // ─── CATEGORY HUB ───────────────────────────────────────────────────────────
   "roller-unwinders": {
     categoryPage: true,
     badge: "Film Processing",
@@ -346,7 +346,6 @@ const products: Record<string, CategoryPage | ProductPage> = {
     ],
   },
 
-  // ─── FILM PROCESSING CHILD PAGES ────────────────────────────────────────────
   "slitting-machine": {
     badge: "Film Processing",
     name: "Slitting Machine",
@@ -472,6 +471,77 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+// Shared animation styles injected into both layouts
+const animationStyles = `
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .hero-badge   { animation: slideLeft 0.6s ease both; animation-delay: 0.05s; }
+  .hero-heading { animation: fadeUp   0.8s ease both; animation-delay: 0.2s; }
+  .hero-sub     { animation: fadeUp   0.7s ease both; animation-delay: 0.4s; }
+  .hero-cta     { animation: fadeUp   0.7s ease both; animation-delay: 0.55s; }
+  .hero-img     { animation: scaleIn  1.0s ease both; animation-delay: 0.1s; }
+  .btn-primary {
+    display: inline-block;
+    background: #0C4CA2;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s ease;
+    box-shadow: 0 4px 14px rgba(12,76,162,0.25);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(12,76,162,0.35); }
+  .btn-primary:active { background: #7eb2f1; transform: translateY(0px); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: #0C4CA2;
+    border: 1.5px solid #0C4CA2;
+    padding: 1rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(12,76,162,0.15); }
+  .btn-outline:disabled { opacity: 0.35; cursor: not-allowed; transform: none; box-shadow: none; }
+`;
+
 export default async function ProductPage({ params }: PageProps) {
   const { slug } = await params;
   const product = products[slug];
@@ -482,8 +552,8 @@ export default async function ProductPage({ params }: PageProps) {
         <Navbar />
         <main className="flex-grow flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-primary font-headline mb-4">Product Not Found</h1>
-            <Link href="/solutions" className="text-secondary underline">Back to Solutions</Link>
+            <h1 className="text-4xl font-bold text-[#0C4CA2] font-['Montserrat'] mb-4">Product Not Found</h1>
+            <Link href="/solutions" className="text-[#0C4CA2] underline">Back to Solutions</Link>
           </div>
         </main>
         <Footer />
@@ -494,38 +564,44 @@ export default async function ProductPage({ params }: PageProps) {
   // ─── CATEGORY HUB LAYOUT ──────────────────────────────────────────────────
   if ("categoryPage" in product) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-white">
         <Navbar />
+        <ScrollReveal />
+        <style>{animationStyles}</style>
         <main className="pt-24 flex-grow">
+
           {/* Hero */}
           <section className="max-w-screen-2xl mx-auto px-6 md:px-12 pt-8 pb-16">
-            <div className="mb-4">
-              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{product.badge}</span>
-            </div>
-            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 font-headline">
-              {product.name} <br />
-              <span className="text-secondary">{product.subtitle}</span>
+            <span className="hero-badge inline-block text-xs font-bold text-[#0C4CA2] uppercase tracking-widest font-['Montserrat'] mb-4">{product.badge}</span>
+            <h1 className="hero-heading font-['Montserrat'] font-black text-4xl md:text-7xl tracking-tighter text-[#0C4CA2] leading-none mb-4">
+              {product.name}<br />
+              <span className="text-slate-500 font-semibold text-2xl md:text-4xl">{product.subtitle}</span>
             </h1>
-            <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed mt-6">{product.description}</p>
+            <div className="hero-bar w-12 h-[3px] bg-[#0C4CA2] my-5" />
+            <p className="hero-sub text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed">{product.description}</p>
           </section>
 
           {/* Subcategory Cards */}
-          <section className="bg-surface-container-low py-24">
+          <section className="bg-slate-50 py-20">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {product.subcategories.map((sub) => (
-                  <Link key={sub.slug} href={`/solutions/${sub.slug}`} className="group bg-background rounded-2xl overflow-hidden border border-outline-variant/20 hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div className="aspect-video overflow-hidden">
+                {product.subcategories.map((sub, i) => (
+                  <Link
+                    key={sub.slug}
+                    href={`/solutions/${sub.slug}`}
+                    className="scroll-fade group bg-white border border-slate-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  >
+                    <div className="aspect-video overflow-hidden bg-slate-100">
                       <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={sub.image} alt={sub.name} />
                     </div>
                     <div className="p-8 flex flex-col flex-grow">
-                      <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Film Processing</p>
-                      <h2 className="text-2xl font-extrabold text-primary tracking-tight mb-2 font-headline">{sub.name}</h2>
-                      <p className="text-sm font-semibold text-on-surface-variant mb-4">{sub.subtitle}</p>
-                      <p className="text-sm text-on-surface-variant leading-relaxed flex-grow">{sub.description}</p>
-                      <div className="mt-8 flex items-center gap-2 text-secondary font-bold text-sm">
-                        <span>View Machine</span>
-                        <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      <p className="text-[10px] font-black text-[#0C4CA2] uppercase tracking-widest font-['Montserrat'] mb-3">Film Processing</p>
+                      <h2 className="font-['Montserrat'] font-black text-xl text-[#0C4CA2] tracking-tight mb-1">{sub.name}</h2>
+                      <p className="text-sm font-semibold text-slate-400 mb-4">{sub.subtitle}</p>
+                      <p className="text-sm text-slate-500 leading-relaxed flex-grow">{sub.description}</p>
+                      <div className="mt-8 flex items-center gap-2 text-[#0C4CA2] text-[10px] font-black uppercase tracking-widest">
+                        View Machine <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
                       </div>
                     </div>
                   </Link>
@@ -535,11 +611,14 @@ export default async function ProductPage({ params }: PageProps) {
           </section>
 
           {/* CTA */}
-          <section className="py-20 max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
-            <h3 className="text-2xl font-bold text-primary mb-4">Not sure which machine fits your line?</h3>
-            <p className="text-on-surface-variant mb-8 max-w-xl mx-auto">Our engineers will assess your film specifications and recommend the right configuration.</p>
-            <Link href="/contact" className="bg-primary-container text-on-primary px-10 py-4 rounded-md font-bold tracking-tight shadow-sm inline-block">Request a Consultation</Link>
+          <section className="py-16 bg-[#0C4CA2] text-white">
+            <div className="max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
+              <h3 className="scroll-fade font-['Montserrat'] font-black text-2xl md:text-4xl mb-4">NOT SURE WHICH MACHINE FITS YOUR LINE?</h3>
+              <p className="scroll-fade text-blue-100 mb-8 max-w-xl mx-auto" style={{ animationDelay: "100ms" }}>Our engineers will assess your film specifications and recommend the right configuration.</p>
+              <Link href="/contact" className="scroll-fade btn-primary inline-block" style={{ animationDelay: "200ms" }}>Request a Consultation</Link>
+            </div>
           </section>
+
         </main>
         <Footer />
       </div>
@@ -548,32 +627,33 @@ export default async function ProductPage({ params }: PageProps) {
 
   // ─── STANDARD PRODUCT LAYOUT ──────────────────────────────────────────────
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
+      <ScrollReveal />
+      <style>{animationStyles}</style>
       <main className="pt-24 flex-grow">
 
         {/* Hero */}
         <section className="max-w-screen-2xl mx-auto px-6 md:px-12 mb-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-8">
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="mb-4">
-              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{product.badge}</span>
-            </div>
-            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-              {product.name} <br />{product.subtitle}
+            <span className="hero-badge inline-block text-xs font-bold text-[#0C4CA2] uppercase tracking-widest font-['Montserrat'] mb-4">{product.badge}</span>
+            <h1 className="hero-heading font-['Montserrat'] font-black text-4xl md:text-7xl tracking-tighter text-[#0C4CA2] leading-none mb-4 md:mb-6">
+              {product.name}<br />{product.subtitle}
             </h1>
-            <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">{product.description}</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="bg-primary-container text-on-primary px-8 py-4 rounded-md font-bold tracking-tight shadow-sm text-center">Request Technical Quote</Link>
+            <div className="hero-bar w-12 h-[3px] bg-[#0C4CA2] my-5" />
+            <p className="hero-sub text-slate-500 max-w-xl leading-relaxed text-base md:text-lg mb-8">{product.description}</p>
+            <div className="hero-cta flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="btn-primary text-center">Request Technical Quote</Link>
               {product.brochureUrl ? (
-                <a href={product.brochureUrl} target="_blank" rel="noopener noreferrer" className="border border-outline-variant/20 text-secondary px-8 py-4 rounded-md font-bold tracking-tight hover:bg-surface-container transition-colors text-center">Download Brochure</a>
+                <a href={product.brochureUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-center">Download Brochure</a>
               ) : (
-                <button disabled className="border border-outline-variant/20 text-secondary/40 px-8 py-4 rounded-md font-bold tracking-tight cursor-not-allowed">Download Brochure</button>
+                <button disabled className="btn-outline">Download Brochure</button>
               )}
             </div>
           </div>
           {product.heroImage && (
-            <div className="lg:col-span-5">
-              <div className="aspect-square bg-surface-container-lowest rounded-xl overflow-hidden">
+            <div className="lg:col-span-5 hero-img">
+              <div className="aspect-square bg-slate-50 overflow-hidden border border-slate-100">
                 <img className="w-full h-full object-cover" src={product.heroImage} alt={product.name} />
               </div>
             </div>
@@ -582,13 +662,13 @@ export default async function ProductPage({ params }: PageProps) {
 
         {/* YouTube Demo */}
         {product.youtubeId && (
-          <section className="bg-primary py-16">
+          <section className="bg-[#0C4CA2] py-16">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
               <div className="flex flex-col items-center mb-10 text-center">
-                <h2 className="text-white text-3xl font-bold mb-4 tracking-tight">Machine Demo</h2>
-                <div className="h-1 w-24 bg-secondary" />
+                <h2 className="scroll-fade text-white font-['Montserrat'] font-black text-2xl md:text-3xl mb-4 tracking-tight">MACHINE DEMO</h2>
+                <div className="scroll-fade w-12 h-[3px] bg-white/40" style={{ animationDelay: "100ms" }} />
               </div>
-              <div className="aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+              <div className="scroll-fade aspect-video w-full max-w-5xl mx-auto overflow-hidden shadow-2xl" style={{ animationDelay: "150ms" }}>
                 <iframe className="w-full h-full" src={`https://www.youtube.com/embed/${product.youtubeId}?autoplay=1&mute=1`} title="Machine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
             </div>
@@ -596,64 +676,79 @@ export default async function ProductPage({ params }: PageProps) {
         )}
 
         {/* Specs + Showcase */}
-        <section className="py-24 max-w-screen-2xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-            <div>
-              <h3 className="text-2xl font-bold mb-12 text-primary border-l-4 border-secondary pl-6">Technical Specifications</h3>
-              <div className="bg-surface-container-lowest border border-outline-variant/20 rounded-lg overflow-hidden">
+        <section className="py-20 max-w-screen-2xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            {/* Specs */}
+            <div className="scroll-fade">
+              <h3 className="font-['Montserrat'] font-black text-xl text-[#0C4CA2] mb-8 border-l-4 border-[#0C4CA2] pl-5 uppercase tracking-tight">Technical Specifications</h3>
+              <div className="bg-white border border-slate-200 overflow-hidden">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-surface-container-low border-b border-outline-variant/20">
+                  <thead className="bg-slate-50 border-b border-slate-200">
                     <tr>
-                      <th className="px-6 py-4 font-bold text-primary uppercase tracking-widest text-[0.6875rem]">Parameter</th>
-                      <th className="px-6 py-4 font-bold text-primary uppercase tracking-widest text-[0.6875rem]">Rating</th>
+                      <th className="px-6 py-4 font-black text-[#0C4CA2] uppercase tracking-widest text-[0.6875rem] font-['Montserrat']">Parameter</th>
+                      <th className="px-6 py-4 font-black text-[#0C4CA2] uppercase tracking-widest text-[0.6875rem] font-['Montserrat']">Rating</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-outline-variant/10">
+                  <tbody className="divide-y divide-slate-100">
                     {product.specs.map((spec) => (
-                      <tr key={spec.parameter}>
-                        <td className="px-6 py-5 font-semibold text-on-surface">{spec.parameter}</td>
-                        <td className="px-6 py-5 text-on-surface-variant">{spec.rating}</td>
+                      <tr key={spec.parameter} className="hover:bg-slate-50 transition-colors">
+                        <td className="px-6 py-4 font-semibold text-slate-700">{spec.parameter}</td>
+                        <td className="px-6 py-4 text-slate-500">{spec.rating}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <div className="mt-12 flex items-center gap-6 p-8 bg-surface-container-low rounded-xl">
-                <span className="material-symbols-outlined text-4xl text-secondary">verified_user</span>
+              <div className="mt-8 flex items-center gap-6 p-6 bg-slate-50 border border-slate-200">
+                <span className="material-symbols-outlined text-4xl text-[#0C4CA2]">verified_user</span>
                 <div>
-                  <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Manufacturer Info</p>
-                  <p className="text-lg font-bold text-primary">Engineering by {product.brand}</p>
-                  <p className="text-sm text-on-surface-variant">{product.brandDesc}</p>
+                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-['Montserrat'] mb-1">Manufacturer Info</p>
+                  <p className="font-['Montserrat'] font-black text-[#0C4CA2]">Engineering by {product.brand}</p>
+                  <p className="text-sm text-slate-500">{product.brandDesc}</p>
                 </div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-12 text-primary border-l-4 border-secondary pl-6">Packaging Showcase</h3>
+            {/* Showcase */}
+            <div className="scroll-fade" style={{ animationDelay: "100ms" }}>
+              <h3 className="font-['Montserrat'] font-black text-xl text-[#0C4CA2] mb-8 border-l-4 border-[#0C4CA2] pl-5 uppercase tracking-tight">Packaging Showcase</h3>
               {product.showcaseLabels && product.showcaseLabels.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {product.showcaseLabels.map((label, i) => (
-                    <div key={i} className="aspect-square bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/20 p-4">
-                      <p className="text-sm font-bold text-primary text-center uppercase tracking-wide">{label}</p>
+                    <div key={i} className="aspect-square bg-slate-50 border border-slate-200 flex items-center justify-center p-4">
+                      <p className="text-sm font-black text-[#0C4CA2] text-center uppercase tracking-wide font-['Montserrat']">{label}</p>
                     </div>
                   ))}
                 </div>
               ) : product.showcaseImages.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {product.showcaseImages.map((src, i) => (
-                    <div key={i} className="aspect-square bg-surface-container-low rounded-lg overflow-hidden">
+                    <div key={i} className="aspect-square bg-slate-100 overflow-hidden">
                       <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src={src} alt={`Showcase ${i + 1}`} />
                     </div>
                   ))}
                 </div>
               ) : null}
-
-              <div className="mt-12 p-8 bg-surface-container-lowest shadow-sm rounded-xl border border-outline-variant/10">
-                <h4 className="font-bold text-primary mb-4 italic">Custom Tooling Available</h4>
-                <p className="text-sm text-on-surface-variant leading-relaxed">
+              <div className="mt-8 p-6 bg-slate-50 border border-slate-200">
+                <h4 className="font-['Montserrat'] font-black text-[#0C4CA2] mb-3 uppercase tracking-tight text-sm">Custom Tooling Available</h4>
+                <p className="text-sm text-slate-500 leading-relaxed">
                   Our modular systems allow for rapid changeovers between formats. Whether you require custom configurations or specialised integrations, our team adapts the solution to your line&apos;s unique requirements.
                 </p>
               </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 bg-[#0C4CA2] text-white">
+          <div className="max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
+            <h2 className="scroll-fade font-['Montserrat'] font-black text-2xl md:text-4xl mb-4">HAVE A PACKAGING REQUIREMENT?</h2>
+            <p className="scroll-fade text-blue-100 text-base max-w-xl mx-auto mb-8" style={{ animationDelay: "100ms" }}>Tell us your product, output speed, and pack format — our team will suggest the right system.</p>
+            <div className="scroll-fade flex flex-col md:flex-row justify-center gap-4" style={{ animationDelay: "200ms" }}>
+              <Link href="/contact" className="btn-white inline-block bg-white text-[#0C4CA2] px-10 py-4 font-['Montserrat'] font-black text-sm uppercase tracking-widest hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Talk to Our Team</Link>
+              <Link href="/solutions" className="inline-block bg-transparent text-white border border-white/30 px-10 py-4 font-['Montserrat'] font-black text-sm uppercase tracking-widest hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Browse Solutions</Link>
             </div>
           </div>
         </section>
