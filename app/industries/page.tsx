@@ -147,8 +147,7 @@ export default function IndustriesPage() {
 
         <header className="mb-12 md:mb-20">
           <p className="page-header-label text-[#0C4CA2] font-semibold tracking-widest uppercase text-xs mb-4 font-['Montserrat']">Industries</p>
-          <h1 className="page-header-animate text-4xl md:text-7xl font-black tracking-tighter text-[#020062] leading-none mb-4 md:mb-6 font-['Montserrat']">
-            SECTORS<br />WE SERVE
+<h1 className="page-header-animate text-4xl md:text-7xl font-black tracking-tighter text-[#0C4CA2] leading-none mb-4 md:mb-6 font-['Montserrat']">            SECTORS<br />WE SERVE
           </h1>
           <p className="page-header-animate text-slate-500 max-w-xl text-base md:text-lg leading-relaxed font-light" style={{ animationDelay: "0.3s" }}>
             From pharmaceuticals to pet food, Vedvik Machinery delivers tailored packaging and inspection systems across 15 industries — built around the specific requirements of each sector.
@@ -171,8 +170,7 @@ export default function IndustriesPage() {
                 />
               </div>
               <div className="p-6">
-                <h2 className="font-['Montserrat'] font-black text-lg text-[#020062] mb-2">{industry.name}</h2>
-                <p className="text-slate-500 text-sm leading-relaxed">{industry.description}</p>
+<h2 className="font-['Montserrat'] font-black text-lg text-[#0C4CA2] mb-2">{industry.name}</h2>                <p className="text-slate-500 text-sm leading-relaxed">{industry.description}</p>
                 <div className="mt-4 flex items-center gap-2 text-[#0C4CA2] text-[10px] font-black uppercase tracking-widest">
                   View Solutions <span className="material-symbols-outlined text-sm transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                 </div>
