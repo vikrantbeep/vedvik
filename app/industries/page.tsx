@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollReveal from "../components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -105,24 +106,62 @@ export default function IndustriesPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Navbar />
+      <ScrollReveal />
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(28px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideLeft {
+          from { opacity: 0; transform: translateX(-24px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        .scroll-fade {
+          opacity: 0;
+          transform: translateY(24px);
+          transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .scroll-fade.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .scroll-slide-left {
+          opacity: 0;
+          transform: translateX(-20px);
+          transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .scroll-slide-left.visible {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        .page-header-animate {
+          animation: fadeUp 0.8s ease both;
+          animation-delay: 0.15s;
+        }
+        .page-header-label {
+          animation: slideLeft 0.6s ease both;
+          animation-delay: 0.05s;
+        }
+      `}</style>
       <main className="flex-grow pt-28 md:pt-32 pb-24 px-5 md:px-12 max-w-screen-2xl mx-auto w-full">
 
         <header className="mb-12 md:mb-20">
-          <p className="text-[#0C4CA2] font-semibold tracking-widest uppercase text-xs mb-4 font-['Montserrat']">Industries</p>
-          <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-[#020062] leading-none mb-4 md:mb-6 font-['Montserrat']">
+          <p className="page-header-label text-[#0C4CA2] font-semibold tracking-widest uppercase text-xs mb-4 font-['Montserrat']">Industries</p>
+          <h1 className="page-header-animate text-4xl md:text-7xl font-black tracking-tighter text-[#020062] leading-none mb-4 md:mb-6 font-['Montserrat']">
             SECTORS<br />WE SERVE
           </h1>
-          <p className="text-slate-500 max-w-xl text-base md:text-lg leading-relaxed font-light">
+          <p className="page-header-animate text-slate-500 max-w-xl text-base md:text-lg leading-relaxed font-light" style={{ animationDelay: "0.3s" }}>
             From pharmaceuticals to pet food, Vedvik Machinery delivers tailored packaging and inspection systems across 15 industries — built around the specific requirements of each sector.
           </p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry) => (
+          {industries.map((industry, i) => (
             <Link
               key={industry.slug}
               href={`/industries/${industry.slug}`}
-              className="group block overflow-hidden border border-slate-200 hover:shadow-lg transition-all duration-300"
+              className="scroll-fade group block overflow-hidden border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="aspect-[16/9] overflow-hidden bg-slate-100">
                 <img
@@ -135,7 +174,7 @@ export default function IndustriesPage() {
                 <h2 className="font-['Montserrat'] font-black text-lg text-[#020062] mb-2">{industry.name}</h2>
                 <p className="text-slate-500 text-sm leading-relaxed">{industry.description}</p>
                 <div className="mt-4 flex items-center gap-2 text-[#0C4CA2] text-[10px] font-black uppercase tracking-widest">
-                  View Solutions <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  View Solutions <span className="material-symbols-outlined text-sm transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                 </div>
               </div>
             </Link>
