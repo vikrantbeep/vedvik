@@ -6,11 +6,16 @@ import Link from "next/link";
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const industry = industries[slug];
-  if (!industry) return { title: "Industry Not Found – Vedvik Machinery" };
+  if (!industry) return { title: "Industry Not Found" };
   return {
-    title: `${industry.name} Packaging Solutions – Vedvik Machinery`,
+    title: `${industry.name} Packaging Solutions`,
     description: industry.description,
+    alternates: { canonical: `/industries/${slug}` },
   };
+}
+
+export async function generateStaticParams() {
+  return Object.keys(industries).map((slug) => ({ slug }));
 }
 
 type Machine = {

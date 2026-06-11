@@ -5,8 +5,9 @@ import Link from "next/link";
 import ScrollReveal from "./components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
-  description: "Advanced packaging and inspection systems engineered for efficient FMCG and pharmaceutical applications.",
+  title: { absolute: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India" },
+  description: "Packaging machinery manufacturer in Ahmedabad, India. HFFS pouch packing, liquid filling, checkweighers, X-ray & vision inspection. Official representative of Effytec, Varpe, Filtec & more.",
+  alternates: { canonical: "/" },
 };
 
 const HERO_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780753138/ChatGPT_Image_Jun_6_2026_06_55_05_PM_kavigy.png";

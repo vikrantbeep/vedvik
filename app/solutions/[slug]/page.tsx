@@ -4,14 +4,31 @@ import Footer from "../../components/Footer";
 import ScrollReveal from "../../components/ScrollReveal";
 import Link from "next/link";
 
+export async function generateStaticParams() {
+  return Object.keys(products).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const product = products[slug];
   if (!product) return { title: "Product Not Found – Vedvik Machinery" };
-  if ("categoryPage" in product) return { title: `${product.name} – Vedvik Machinery`, description: product.description };
+  const title =
+    "categoryPage" in product
+      ? `${product.name} Machines – ${product.subtitle}`
+      : `${product.name} – ${product.brand} | Supplier in India`;
   return {
-    title: `${product.name} – Vedvik Machinery`,
+    title,
     description: product.description,
+    alternates: { canonical: `/solutions/${slug}` },
+    openGraph: {
+      title,
+      description: product.description,
+      url: `https://www.vedvikmachinery.com/solutions/${slug}`,
+      type: "website",
+      images: product.heroImage
+        ? [{ url: product.heroImage, alt: `${product.name} – Vedvik Machinery` }]
+        : undefined,
+    },
   };
 }
 
@@ -626,8 +643,36 @@ export default async function ProductPage({ params }: PageProps) {
   }
 
   // ─── STANDARD PRODUCT LAYOUT ──────────────────────────────────────────────
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.heroImage,
+    brand: { "@type": "Brand", name: product.brand },
+    url: `https://www.vedvikmachinery.com/solutions/${slug}`,
+    additionalProperty: product.specs.map((spec) => ({
+      "@type": "PropertyValue",
+      name: spec.parameter,
+      value: spec.rating,
+    })),
+    manufacturer: { "@type": "Organization", name: product.brand },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.vedvikmachinery.com" },
+      { "@type": "ListItem", position: 2, name: "Solutions", item: "https://www.vedvikmachinery.com/solutions" },
+      { "@type": "ListItem", position: 3, name: product.name, item: `https://www.vedvikmachinery.com/solutions/${slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
       <ScrollReveal />
       <style>{animationStyles}</style>
@@ -654,7 +699,7 @@ export default async function ProductPage({ params }: PageProps) {
           {product.heroImage && (
             <div className="lg:col-span-5 hero-img">
               <div className="aspect-square bg-slate-50 overflow-hidden border border-slate-100">
-                <img className="w-full h-full object-cover" src={product.heroImage} alt={product.name} />
+                <img className="w-full h-full object-cover" src={product.heroImage} alt={`${product.name} – ${product.brand} | Vedvik Machinery India`} />
               </div>
             </div>
           )}
@@ -725,7 +770,7 @@ export default async function ProductPage({ params }: PageProps) {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {product.showcaseImages.map((src, i) => (
                     <div key={i} className="aspect-square bg-slate-100 overflow-hidden">
-                      <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src={src} alt={`Showcase ${i + 1}`} />
+                      <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src={src} alt={`${product.name} by ${product.brand} – application example ${i + 1}`} />
                     </div>
                   ))}
                 </div>

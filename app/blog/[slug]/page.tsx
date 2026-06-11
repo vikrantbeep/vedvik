@@ -14,8 +14,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = blogs.find((b) => b.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} – Vedvik Machinery`,
+    title: post.title,
     description: post.description,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://www.vedvikmachinery.com/blog/${slug}`,
+      type: "article",
+      images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
+    },
   };
 }
 
@@ -80,8 +88,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const otherPosts = blogs.filter((b) => b.slug !== slug).slice(0, 2);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: post.image,
+    datePublished: post.date,
+    author: { "@id": "https://www.vedvikmachinery.com/#organization" },
+    publisher: { "@id": "https://www.vedvikmachinery.com/#organization" },
+    mainEntityOfPage: `https://www.vedvikmachinery.com/blog/${slug}`,
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Navbar />
       <main className="pt-24 flex-grow">
 

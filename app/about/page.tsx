@@ -3,8 +3,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "About Vedvik Machinery – Packaging Machinery Manufacturer, Ahmedabad",
+  title: "About Us – Packaging Machinery Manufacturer in Ahmedabad",
   description: "Vedvik Machinery is an Ahmedabad-based manufacturer of packaging systems and official Indian representative of Effytec (Spain) and other European machinery brands. 30+ years of team expertise.",
+  alternates: { canonical: "/about" },
 };
 
 export default function About() {

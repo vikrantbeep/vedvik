@@ -5,9 +5,10 @@ import type { Metadata } from "next";
 import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Packaging Machinery Solutions – Vedvik Machinery",
+  title: "Packaging Machinery Solutions",
   description:
     "Explore Vedvik Machinery's full range: HFFS pouch packers, liquid filling lines, checkweighers, X-ray inspection, vision systems, printers, and more. European technology, Indian support.",
+  alternates: { canonical: "/solutions" },
 };
 
 type Product = {

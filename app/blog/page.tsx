@@ -5,8 +5,9 @@ import { blogs } from "../data/blogs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog – Vedvik Machinery",
-  description: "Insights on packaging machinery, technology, and industry trends from the Vedvik Machinery team.",
+  title: "Blog – Packaging Machinery Guides & Insights",
+  description: "Buying guides and technical explainers on packaging machinery, checkweighing, filling, and inspection from the Vedvik Machinery team.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

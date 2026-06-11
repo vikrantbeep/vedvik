@@ -5,8 +5,9 @@ import ScrollReveal from "../components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve – Vedvik Machinery",
+  title: "Industries We Serve – Packaging Solutions by Sector",
   description: "Vedvik Machinery provides packaging and inspection solutions across pharmaceuticals, food, beverages, agrochemicals, personal care, and more.",
+  alternates: { canonical: "/industries" },
 };
 
 const industries = [

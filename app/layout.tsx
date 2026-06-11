@@ -2,21 +2,31 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 
+const OG_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/Primary_Logo_1_zjdriv.png";
+
 export const metadata: Metadata = {
-  title: "Vedvik Machinery – Packaging Machinery Solutions",
-  description: "Vedvik Machinery manufactures packaging systems and represents leading international brands in India.",
+  metadataBase: new URL("https://www.vedvikmachinery.com"),
+  title: {
+    default: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
+    template: "%s | Vedvik Machinery",
+  },
+  description: "Packaging machinery manufacturer in Ahmedabad, India. Official representative of Effytec, Varpe, Filtec, E2M Couth, MF Tecno & MapleJet. HFFS, liquid filling, checkweighers & inspection systems.",
   keywords: "packaging machinery India, HFFS machine, liquid filling machine, checkweigher, vision inspection, Effytec India, Varpe India, Ahmedabad packaging machinery",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Vedvik Machinery – Packaging Machinery Solutions",
-    description: "Vedvik Machinery manufactures packaging systems and represents leading international brands in India.",
-    url: "https://vedvikmachinery.com",
+    description: "Packaging machinery manufacturer in Ahmedabad, India. Official representative of Effytec, Varpe, Filtec, E2M Couth, MF Tecno & MapleJet.",
+    url: "https://www.vedvikmachinery.com",
     siteName: "Vedvik Machinery",
+    locale: "en_IN",
     images: [
       {
-        url: "https://vedvikmachinery.com/og-thumbnail.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Vedvik Machinery",
+        alt: "Vedvik Machinery – Packaging Machinery Solutions",
       },
     ],
     type: "website",
@@ -25,13 +35,63 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
     description: "Vedvik Machinery manufactures packaging systems and represents Effytec, Varpe, Filtec and other leading brands in India.",
-    images: ["https://vedvikmachinery.com/og-thumbnail.jpg"],
+    images: [OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": "https://www.vedvikmachinery.com/#organization",
+  name: "Vedvik Machinery",
+  url: "https://www.vedvikmachinery.com",
+  logo: OG_IMAGE,
+  image: OG_IMAGE,
+  description:
+    "Packaging machinery manufacturer and supplier based in Ahmedabad, India. Manufactures pick-fill-seal machines, secondary automation and film processing machines in-house, and is the official Indian representative of Effytec (Spain), Varpe (Spain), Filtec Automation (South Africa), E2M Couth (Spain), MF Tecno (Italy), MapleJet (Canada), Comipack (Italy), Boato Pack (Italy), GMS (Italy) and Kraus (Germany).",
+  email: "vikrant@vedvikmachinery.com",
+  telephone: "+918155892080",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "E401, Savvy Swaraaj Aakanksha Phase 1, Gota",
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    postalCode: "382481",
+    addressCountry: "IN",
+  },
+  areaServed: { "@type": "Country", name: "India" },
+  knowsAbout: [
+    "packaging machinery",
+    "horizontal form fill seal machines",
+    "liquid filling machines",
+    "checkweighers",
+    "X-ray inspection",
+    "vision inspection systems",
+    "pick fill seal machines",
+    "film slitting, printing and lamination machines",
+  ],
+  brand: [
+    { "@type": "Brand", name: "Effytec" },
+    { "@type": "Brand", name: "Varpe" },
+    { "@type": "Brand", name: "Filtec Automation" },
+    { "@type": "Brand", name: "E2M Couth" },
+    { "@type": "Brand", name: "MF Tecno" },
+    { "@type": "Brand", name: "MapleJet" },
+    { "@type": "Brand", name: "Comipack" },
+    { "@type": "Brand", name: "Boato Pack" },
+    { "@type": "Brand", name: "GMS" },
+    { "@type": "Brand", name: "Kraus" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -62,7 +122,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   `}
 </Script>
       </head>
-      <body style={{ background: 'white', backgroundImage: 'none' }}>{children}</body>
+      <body style={{ background: 'white', backgroundImage: 'none' }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {children}
+      </body>
     
     </html>
   );
