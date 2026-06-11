@@ -32,17 +32,21 @@ const inspectionSlugMap: Record<string, string> = {
   "Slitting, Printing and Lamination": "roller-unwinders",
 };
 
+// slugs must match the keys in app/industries/[slug]/page.tsx
 const industries = [
-  { label: "Juices & Beverages", icon: "water_drop" },
-  { label: "Bakery & Snacks", icon: "bakery_dining" },
-  { label: "Pet Food", icon: "pets" },
-  { label: "Pharmaceuticals", icon: "medication" },
-  { label: "Edible Oils", icon: "oil_barrel" },
-  { label: "Dairy", icon: "egg" },
-  { label: "Agrochemicals", icon: "agriculture" },
-  { label: "Personal Care", icon: "soap" },
-  { label: "Detergents", icon: "cleaning_services" },
-  { label: "Spices & Powders", icon: "set_meal" },
+  { label: "Juices & Beverages", icon: "water_drop", slug: "beverages" },
+  { label: "Bakery & Snacks", icon: "bakery_dining", slug: "bakery" },
+  { label: "Pet Food", icon: "pets", slug: "pet-food" },
+  { label: "Pharmaceuticals", icon: "medication", slug: "pharmaceuticals" },
+  { label: "Edible Oils", icon: "oil_barrel", slug: "edible-oils" },
+  { label: "Dairy", icon: "egg", slug: "dairy" },
+  { label: "Agrochemicals", icon: "agriculture", slug: "agrochemicals" },
+  { label: "Personal Care", icon: "soap", slug: "personal-care" },
+  { label: "Detergents", icon: "cleaning_services", slug: "detergents" },
+  { label: "Spices & Powders", icon: "set_meal", slug: "spices-powders" },
+  { label: "Chemicals", icon: "science", slug: "chemicals" },
+  { label: "Nutraceuticals", icon: "nutrition", slug: "nutraceuticals" },
+  { label: "Coffee & Tea", icon: "local_cafe", slug: "coffee-tea" },
 ];
 
 const heroBrands = [
@@ -195,10 +199,15 @@ export default function Home() {
             <div className="overflow-hidden pb-3 md:pb-4">
               <div className="ticker-track">
                 {[...industries, ...industries].map((industry, i) => (
-                  <div key={i} className="flex items-center gap-2 md:gap-3 px-6 md:px-10 border-r border-slate-200 h-10 md:h-12" style={{ minWidth: "160px" }}>
+                  <Link
+                    key={i}
+                    href={`/industries/${industry.slug}`}
+                    className="flex items-center gap-2 md:gap-3 px-6 md:px-10 border-r border-slate-200 h-10 md:h-12 cursor-pointer hover:opacity-80 transition-opacity duration-150"
+                    style={{ minWidth: "160px" }}
+                  >
                     <span className="material-symbols-outlined text-slate-400 text-sm md:text-base flex-shrink-0">{industry.icon}</span>
                     <span className="text-slate-600 text-[10px] md:text-[11px] font-medium uppercase tracking-widest whitespace-nowrap">{industry.label}</span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
