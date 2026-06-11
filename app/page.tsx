@@ -49,13 +49,6 @@ const industries = [
   { label: "Coffee & Tea", icon: "local_cafe", slug: "coffee-tea" },
 ];
 
-const heroBrands = [
-  { name: "Effytec", origin: "Spain" },
-  { name: "Varpe", origin: "Spain" },
-  { name: "Filtec", origin: "South Africa" },
-  { name: "Comipack", origin: "Italy" },
-];
-
 const packagingMachines: Machine[] = [
   { title: "Twist Tying", description: "Twist tying packaging systems engineered for precision and reliability across FMCG and pharma applications requirements.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780376386/Screenshot_2026-06-02_at_10.29.18_AM_j5z9jz.png" },
   { title: "Stick Packing", description: "Advanced packaging solutions for high production environments for stick and sachet packing.", image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780312396/ChatGPT_Image_Jun_1_2026_04_42_50_PM_gibudi.png" },
@@ -171,21 +164,17 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Brand grid */}
-              <div className="lg:col-span-5 hero-in-4">
-                <p className="text-xs font-medium uppercase tracking-wider text-slate-400 mb-4">
-                  Official Indian Representative
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {heroBrands.map((brand) => (
-                    <div
-                      key={brand.name}
-                      className="v-card flex flex-col items-center justify-center py-8 px-4 !cursor-default"
-                    >
-                      <span className="text-xl font-bold tracking-tight text-slate-800">{brand.name}</span>
-                      <span className="text-xs text-slate-500 mt-1">{brand.origin}</span>
-                    </div>
-                  ))}
+              {/* Machinery image */}
+              <div className="lg:col-span-5 hero-in-4 w-full">
+                <div
+                  className="aspect-[4/3] w-full overflow-hidden rounded-xl md:rounded-2xl"
+                  style={{ boxShadow: "0 20px 60px rgba(12,76,162,0.15)" }}
+                >
+                  <img
+                    src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1781161089/ChatGPT_Image_Jun_11_2026_12_27_37_PM_u2c56h.png"
+                    alt="Vedvik Machinery packaging machine"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
