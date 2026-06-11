@@ -38,7 +38,7 @@ function renderContent(content: string) {
 
     if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="text-2xl md:text-3xl font-extrabold tracking-tight text-primary mt-12 mb-4 font-headline border-l-4 border-secondary pl-6">
+        <h2 key={i} className="text-2xl md:text-3xl font-semibold text-slate-800 mt-12 mb-4 border-l-4 border-[#0C4CA2] pl-6">
           {line.replace("## ", "")}
         </h2>
       );
@@ -117,7 +117,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               <span className="px-4 py-1.5 bg-white/20 text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6 inline-block">
                 {post.category}
               </span>
-              <h1 className="text-3xl md:text-6xl font-extrabold tracking-tighter text-white leading-none mb-6 font-headline">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
                 {post.title}
               </h1>
               <p className="text-white/70 text-lg leading-relaxed max-w-2xl">{post.description}</p>

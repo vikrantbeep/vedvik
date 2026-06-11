@@ -112,6 +112,93 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-8WKGFHWWG6');
           `}
         </Script>
+        {/* Global design system: buttons, links, cards, backgrounds, reveal */}
+        <style>{`
+          /* ── Backgrounds ── */
+          .v-dotgrid {
+            background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+          }
+          .v-tint { background-color: #f8faff; }
+
+          /* ── Buttons ── */
+          .v-btn-primary {
+            display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+            background: #0C4CA2; color: #fff;
+            padding: .75rem 1.5rem; border-radius: .5rem;
+            font-weight: 500; cursor: pointer;
+            transition: all .2s ease;
+            box-shadow: 0 1px 2px rgba(12,76,162,.2);
+          }
+          .v-btn-primary:hover {
+            background: #0a3d8a; transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(12,76,162,.28);
+          }
+          .v-btn-primary:active { transform: translateY(0); box-shadow: 0 1px 3px rgba(12,76,162,.2); }
+          .v-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(12,76,162,.4); }
+
+          .v-btn-secondary {
+            display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+            background: transparent; color: #0C4CA2;
+            border: 2px solid #0C4CA2;
+            padding: .75rem 1.5rem; border-radius: .5rem;
+            font-weight: 500; cursor: pointer;
+            transition: all .2s ease;
+          }
+          .v-btn-secondary:hover { background: #0C4CA2; color: #fff; }
+          .v-btn-secondary:active { transform: scale(.98); }
+          .v-btn-secondary:focus-visible { outline: none; box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(12,76,162,.4); }
+
+          /* ── Ghost / text links: underline slides in from left ── */
+          .v-link { position: relative; cursor: pointer; transition: color .15s ease; }
+          .v-link::after {
+            content: ""; position: absolute; left: 0; bottom: -2px;
+            width: 100%; height: 2px; background: #0C4CA2;
+            transform: scaleX(0); transform-origin: left;
+            transition: transform .15s ease;
+          }
+          .v-link:hover { color: #0C4CA2; }
+          .v-link:hover::after { transform: scaleX(1); }
+          .v-link.v-link-active { color: #0C4CA2; }
+          .v-link.v-link-active::after { transform: scaleX(1); }
+
+          /* ── Cards ── */
+          .v-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: .75rem;
+            cursor: pointer;
+            transition: all .25s ease;
+          }
+          .v-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(12,76,162,.12);
+            border-color: rgba(12,76,162,.3);
+          }
+          .v-card:active { transform: translateY(-2px) scale(.99); }
+
+          /* ── Chips ── */
+          .v-chip {
+            display: inline-flex; align-items: center;
+            padding: .125rem .625rem; border-radius: 9999px;
+            background: #f1f5f9; color: #475569;
+            font-size: .6875rem; font-weight: 500; white-space: nowrap;
+          }
+
+          /* ── Scroll reveal: fadeInUp only ── */
+          .scroll-fade {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity .5s ease-out, transform .5s ease-out;
+          }
+          .scroll-fade.visible { opacity: 1; transform: translateY(0); }
+
+          @keyframes vFadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
+
+          a, button { -webkit-tap-highlight-color: transparent; }
+        `}</style>
         <Script id="microsoft-clarity" strategy="afterInteractive">
   {`
     (function(c,l,a,r,i,t,y){
@@ -122,7 +209,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   `}
 </Script>
       </head>
-      <body style={{ background: 'white', backgroundImage: 'none' }}>
+      <body className="v-dotgrid" style={{ backgroundColor: 'white' }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

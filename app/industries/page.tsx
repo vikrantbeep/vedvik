@@ -147,10 +147,11 @@ export default function IndustriesPage() {
       <main className="flex-grow pt-28 md:pt-32 pb-24 px-5 md:px-12 max-w-screen-2xl mx-auto w-full">
 
         <header className="mb-12 md:mb-20">
-          <p className="page-header-label text-[#0C4CA2] font-semibold tracking-widest uppercase text-xs mb-4 font-['Montserrat']">Industries</p>
-<h1 className="page-header-animate text-4xl md:text-7xl font-black tracking-tighter text-[#0C4CA2] leading-none mb-4 md:mb-6 font-['Montserrat']">            SECTORS<br />WE SERVE
+          <p className="page-header-label text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">Industries</p>
+          <h1 className="page-header-animate text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 md:mb-6">
+            Sectors We Serve
           </h1>
-          <p className="page-header-animate text-slate-500 max-w-xl text-base md:text-lg leading-relaxed font-light" style={{ animationDelay: "0.3s" }}>
+          <p className="page-header-animate text-base text-slate-600 max-w-xl leading-relaxed" style={{ animationDelay: "0.3s" }}>
             From pharmaceuticals to pet food, Vedvik Machinery delivers tailored packaging and inspection systems across 15 industries — built around the specific requirements of each sector.
           </p>
         </header>
@@ -160,10 +161,10 @@ export default function IndustriesPage() {
             <Link
               key={industry.slug}
               href={`/industries/${industry.slug}`}
-              className="scroll-fade group block overflow-hidden border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              style={{ animationDelay: `${i * 80}ms` }}
+              className="scroll-fade v-card group block overflow-hidden"
+              data-delay={(i % 3) * 100}
             >
-              <div className="aspect-[16/9] overflow-hidden bg-slate-100">
+              <div className="aspect-[16/9] overflow-hidden bg-slate-50">
                 <img
                   src={industry.image}
                   alt={industry.name}
@@ -171,9 +172,11 @@ export default function IndustriesPage() {
                 />
               </div>
               <div className="p-6">
-<h2 className="font-['Montserrat'] font-black text-lg text-[#0C4CA2] mb-2">{industry.name}</h2>                <p className="text-slate-500 text-sm leading-relaxed">{industry.description}</p>
-                <div className="mt-4 flex items-center gap-2 text-[#0C4CA2] text-[10px] font-black uppercase tracking-widest">
-                  View Solutions <span className="material-symbols-outlined text-sm transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+                <span className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2]">Industry</span>
+                <h2 className="text-lg font-semibold text-slate-800 mt-1 mb-2">{industry.name}</h2>
+                <p className="text-sm text-slate-600 leading-relaxed">{industry.description}</p>
+                <div className="mt-4 flex items-center gap-1.5 text-[#0C4CA2] text-sm font-medium">
+                  View Solutions <span className="material-symbols-outlined text-base transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                 </div>
               </div>
             </Link>

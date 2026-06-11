@@ -367,11 +367,11 @@ export default async function IndustryPage({ params }: PageProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           </div>
           <div className="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12 pb-12 w-full">
-            <Link href="/industries" className="inline-flex items-center gap-1 text-white/70 text-xs font-bold uppercase tracking-widest font-['Montserrat'] mb-4 hover:text-white transition-colors">
+            <Link href="/industries" className="inline-flex items-center gap-1 text-white/70 text-xs font-medium uppercase tracking-wider mb-4 hover:text-white transition-colors duration-150 cursor-pointer">
               <span className="material-symbols-outlined text-sm">arrow_back</span> Industries
             </Link>
-            <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-white leading-none font-['Montserrat']">
-              {industry.name.toUpperCase()}
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+              {industry.name}
             </h1>
             <p className="text-white/80 text-base md:text-lg mt-3 max-w-2xl">{industry.description}</p>
           </div>
@@ -380,28 +380,28 @@ export default async function IndustryPage({ params }: PageProps) {
         {/* Overview */}
         <section className="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 md:py-24">
           <div className="max-w-3xl">
-            <p className="text-xs font-bold text-[#0C4CA2] uppercase tracking-widest font-['Montserrat'] mb-4">Overview</p>
-            <p className="text-slate-600 text-lg leading-relaxed">{industry.overview}</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">Overview</p>
+            <p className="text-base text-slate-600 leading-relaxed">{industry.overview}</p>
           </div>
         </section>
 
         {/* Pain Points */}
-        <section className="bg-slate-50 py-16 md:py-24">
+        <section className="v-tint py-16 md:py-24">
           <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <p className="text-xs font-bold text-[#0C4CA2] uppercase tracking-widest font-['Montserrat'] mb-4">Challenges</p>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-[#020062] font-['Montserrat'] mb-12">
-              INDUSTRY REQUIREMENTS
+            <p className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">Challenges</p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mb-12">
+              Industry Requirements
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {industry.painPoints.map((point, i) => (
-                <div key={i} className="bg-white border border-slate-200 p-8">
+                <div key={i} className="v-card !cursor-default p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-[#0C4CA2] flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-xs font-black font-['Montserrat']">{String(i + 1).padStart(2, "0")}</span>
+                    <div className="w-8 h-8 rounded-lg bg-[#0C4CA2] flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-semibold">{String(i + 1).padStart(2, "0")}</span>
                     </div>
-                    <h3 className="font-['Montserrat'] font-black text-[#020062] text-lg">{point.title}</h3>
+                    <h3 className="text-lg font-semibold text-slate-800">{point.title}</h3>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed">{point.detail}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{point.detail}</p>
                 </div>
               ))}
             </div>
@@ -411,21 +411,21 @@ export default async function IndustryPage({ params }: PageProps) {
         {/* Machines */}
         <section className="py-16 md:py-24">
           <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <p className="text-xs font-bold text-[#0C4CA2] uppercase tracking-widest font-['Montserrat'] mb-4">Equipment</p>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-[#020062] font-['Montserrat'] mb-12">
-              RECOMMENDED SYSTEMS
+            <p className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">Equipment</p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mb-12">
+              Recommended Systems
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {industry.machines.map((machine, i) => (
-                <Link key={i} href={`/solutions/${machine.slug}`} className="group block border border-slate-200 hover:shadow-lg transition-all duration-300">
-                  <div className="aspect-video bg-slate-100 overflow-hidden">
+                <Link key={i} href={`/solutions/${machine.slug}`} className="v-card group block overflow-hidden">
+                  <div className="aspect-video bg-slate-50 overflow-hidden">
                     <img src={machine.image} alt={machine.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="p-6">
-                    <h3 className="font-['Montserrat'] font-black text-lg text-[#020062] mb-1">{machine.name}</h3>
-                    <p className="text-slate-400 text-xs uppercase tracking-widest font-['Montserrat'] font-bold mb-4">{machine.brand}</p>
-                    <div className="flex items-center gap-2 text-[#0C4CA2] text-[10px] font-black uppercase tracking-widest font-['Montserrat']">
-                      View Specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <h3 className="text-lg font-semibold text-slate-800 mb-1">{machine.name}</h3>
+                    <p className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">{machine.brand}</p>
+                    <div className="flex items-center gap-1.5 text-[#0C4CA2] text-sm font-medium">
+                      View Specifications <span className="material-symbols-outlined text-base transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                     </div>
                   </div>
                 </Link>
@@ -435,11 +435,11 @@ export default async function IndustryPage({ params }: PageProps) {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#020062] py-16 text-white">
+        <section className="bg-[#0C4CA2] py-16 text-white">
           <div className="max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
-            <h2 className="font-['Montserrat'] font-black text-3xl md:text-5xl mb-4">NEED A SOLUTION FOR {industry.name.toUpperCase()}?</h2>
-            <p className="text-blue-200 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will recommend the right system.</p>
-            <Link href="/contact" className="inline-block bg-white text-[#020062] px-10 py-4 font-['Montserrat'] font-black text-sm uppercase tracking-widest hover:bg-blue-50 transition-colors">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Need a solution for {industry.name}?</h2>
+            <p className="text-blue-100 text-lg max-w-xl mx-auto mb-8">Tell us your product, output speed, and pack format — our team will recommend the right system.</p>
+            <Link href="/contact" className="inline-block bg-white text-[#0C4CA2] px-6 py-3 rounded-lg font-medium cursor-pointer hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 transition-all duration-200">
               Talk to Our Team
             </Link>
           </div>

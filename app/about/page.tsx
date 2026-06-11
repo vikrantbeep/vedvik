@@ -19,10 +19,10 @@ export default function About() {
               <span className="inline-block py-1 px-4 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
                 Our Mission
               </span>
-              <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-                ABOUT VEDVIK<br />MACHINERY
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 md:mb-6">
+                About Vedvik Machinery
               </h1>
-              <div className="space-y-6 text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+              <div className="space-y-6 text-base text-slate-600 max-w-2xl leading-relaxed">
                 <p>
                   Vedvik Machinery is a trusted provider of advanced packaging and inspection solutions for the food, beverage, pharmaceutical, chemical, and consumer goods industries. We represent leading international manufacturers and deliver high-quality machinery designed to improve production efficiency, product quality, and operational reliability.
                 </p>

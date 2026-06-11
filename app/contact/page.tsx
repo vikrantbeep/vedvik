@@ -17,11 +17,11 @@ export default function ContactPage() {
           {/* Left: Form */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-              <p className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Inquiry Channel</p>
-              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-                GET IN TOUCH.
+              <p className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">Inquiry Channel</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 md:mb-6">
+                Get in Touch
               </h1>
-              <p className="text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
+              <p className="text-base text-slate-600 max-w-xl leading-relaxed">
                 Share your machinery requirement and we'll respond within one business day with a recommendation.
               </p>
             </div>

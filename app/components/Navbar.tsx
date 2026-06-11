@@ -20,39 +20,36 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-      <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-16">
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
+      <div className="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center cursor-pointer">
           <Image
             src={LOGO_URL}
             alt="Vedvik Machinery"
-            width={180}
-height={60}
+            width={190}
+            height={64}
             className="object-contain"
             priority
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-10">
+        <div className="hidden md:flex items-center space-x-8">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`font-['Montserrat'] font-bold uppercase tracking-tight text-sm transition-colors ${
+              className={`v-link font-medium text-sm cursor-pointer ${
                 pathname === link.href
-                  ? "text-[#020062] border-b-2 border-[#020062] pb-1"
-                  : "text-slate-500 hover:text-[#020062]"
+                  ? "v-link-active"
+                  : "text-slate-600"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="bg-[#0C4CA2] text-white px-5 py-2 font-['Montserrat'] font-bold text-xs uppercase tracking-widest hover:bg-[#020062] transition-colors"
-          >
+          <Link href="/contact" className="v-btn-primary text-sm !px-5 !py-2.5">
             Request Quote
           </Link>
         </div>
@@ -61,42 +58,43 @@ height={60}
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          className="flex md:hidden flex-col justify-center items-center gap-1.5 w-8 h-8"
+          aria-expanded={open}
+          className="flex md:hidden flex-col justify-center items-center gap-1.5 w-8 h-8 cursor-pointer active:scale-95 transition-transform duration-150"
         >
-          <span className={`block w-6 h-0.5 bg-[#020062] transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-[#020062] transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-[#020062] transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-[#0C4CA2] transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-[#0C4CA2] transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-[#0C4CA2] transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
-      {open && (
-        <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
-          <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col items-end gap-4">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`font-['Montserrat'] font-bold uppercase tracking-tight text-sm transition-colors ${
-                  pathname === link.href
-                    ? "text-[#020062]"
-                    : "text-slate-500 hover:text-[#020062]"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+      {/* Mobile Dropdown — CSS max-height slide-down */}
+      <div
+        className={`md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
+          open ? "max-h-96 opacity-100 shadow-lg" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col items-end gap-4">
+          {links.map((link) => (
             <Link
-              href="/contact"
+              key={link.href}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className="bg-[#0C4CA2] text-white px-5 py-2 font-['Montserrat'] font-bold text-xs uppercase tracking-widest"
+              className={`v-link font-medium text-sm cursor-pointer ${
+                pathname === link.href ? "v-link-active" : "text-slate-600"
+              }`}
             >
-              Request Quote
+              {link.label}
             </Link>
-          </div>
+          ))}
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="v-btn-primary text-sm !px-5 !py-2.5"
+          >
+            Request Quote
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

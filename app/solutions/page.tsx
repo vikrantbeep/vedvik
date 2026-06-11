@@ -40,7 +40,7 @@ const products: Product[] = [
 
 export default function SolutionsPage() {
   return (
-    <div className="bg-background text-on-surface min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       <ScrollReveal />
 
@@ -70,40 +70,34 @@ export default function SolutionsPage() {
       <main className="flex-grow pt-28 md:pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full">
 
         <header className="mb-12 md:mb-20">
-          <p className="hero-badge text-secondary font-semibold tracking-widest uppercase text-xs mb-4">Systems</p>
-          <h1 className="hero-heading text-4xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-4 md:mb-6 font-headline">
-            PACKAGING &<br />INSPECTION SYSTEMS
+          <p className="hero-badge text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-4">Systems</p>
+          <h1 className="hero-heading text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 md:mb-6">
+            Packaging & Inspection Systems
           </h1>
-          <p className="hero-sub text-on-surface-variant max-w-xl text-base md:text-lg leading-relaxed font-light">
+          <p className="hero-sub text-base text-slate-600 max-w-xl leading-relaxed">
             Vedvik Machinery represents leading global manufacturers across 10 product categories — from pouch packaging and liquid filling to vision inspection and X-ray detection.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, i) => {
-            const delay = (i % 3) * 80;
+            const delay = (i % 3) * 100;
 
             if (product.disabled) {
               return (
-                <div key={i} className="scroll-fade block cursor-not-allowed" data-delay={delay}>
-                  <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg opacity-50 grayscale">
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700" />
-                    <div className="absolute top-6 left-6 flex gap-2">
-                      <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
-                      <span className="px-4 py-1.5 bg-black/60 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-white rounded-full">Coming Soon</span>
-                    </div>
+                <div key={i} className="scroll-fade v-card block overflow-hidden !cursor-not-allowed opacity-60 grayscale" data-delay={delay}>
+                  <div className="aspect-[4/3] overflow-hidden bg-slate-50">
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                   </div>
-                  <div className="flex justify-between items-start opacity-50">
-                    <div>
-                      <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline">{product.name}</h2>
-                      <div className="flex items-center gap-3">
-                        <span className="text-sm font-medium text-secondary">{product.brand}</span>
-                        <span className="w-1 h-1 bg-outline-variant rounded-full" />
-                        <span className="text-sm text-on-surface-variant">{product.origin}</span>
-                      </div>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2]">{product.category}</span>
+                      <span className="v-chip">Coming Soon</span>
                     </div>
-                    <div className="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-full flex-shrink-0">
-                      <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                    <h2 className="text-lg font-semibold text-slate-800 mb-3">{product.name}</h2>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="v-chip">{product.brand}</span>
+                      <span className="v-chip">{product.origin}</span>
                     </div>
                   </div>
                 </div>
@@ -111,24 +105,19 @@ export default function SolutionsPage() {
             }
 
             return (
-              <Link key={i} href={`/solutions/${product.slug}`} className="scroll-fade group block" data-delay={delay}>
-                <div className="aspect-[4/5] overflow-hidden bg-surface-container relative mb-6 rounded-lg">
+              <Link key={i} href={`/solutions/${product.slug}`} className="scroll-fade v-card group block overflow-hidden" data-delay={delay}>
+                <div className="aspect-[4/3] overflow-hidden bg-slate-50">
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute top-6 left-6">
-                    <span className="px-4 py-1.5 bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary rounded-full">{product.category}</span>
-                  </div>
                 </div>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h2 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 font-headline group-hover:text-secondary transition-colors duration-200">{product.name}</h2>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium text-secondary">{product.brand}</span>
-                      <span className="w-1 h-1 bg-outline-variant rounded-full" />
-                      <span className="text-sm text-on-surface-variant">{product.origin}</span>
-                    </div>
+                <div className="p-6">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2]">{product.category}</span>
+                  <h2 className="text-lg font-semibold text-slate-800 mt-1 mb-3">{product.name}</h2>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="v-chip">{product.brand}</span>
+                    <span className="v-chip">{product.origin}</span>
                   </div>
-                  <div className="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-full group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-200 flex-shrink-0">
-                    <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                  <div className="flex items-center gap-1.5 text-[#0C4CA2] text-sm font-medium">
+                    Learn More <span className="material-symbols-outlined text-base transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                   </div>
                 </div>
               </Link>
