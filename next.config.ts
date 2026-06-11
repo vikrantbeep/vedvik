@@ -4,6 +4,12 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   redirects: async () => [
+    // Legacy URLs from the old Hostinger site only.
+    // NOTE: Do NOT add redirects whose source differs from an existing route
+    // only by letter case (e.g. /solutions/comipack -> /solutions/Comipack).
+    // Next.js matches redirect sources case-insensitively, so such a redirect
+    // also matches its own destination and causes ERR_TOO_MANY_REDIRECTS.
+    // Lowercase slug correction is handled inside app/solutions/[slug]/page.tsx.
     {
       source: '/solutions/pouch-packing-systems',
       destination: '/solutions/HFFS',
@@ -19,20 +25,6 @@ const nextConfig = {
       destination: '/solutions',
       permanent: true,
     },
-    // Lowercase variants were published in an earlier sitemap and may be
-    // indexed — redirect them to the canonical case-sensitive URLs.
-    { source: '/solutions/hffs', destination: '/solutions/HFFS', permanent: true },
-    { source: '/solutions/liquid-filling', destination: '/solutions/Liquid-Filling', permanent: true },
-    { source: '/solutions/pfs', destination: '/solutions/PFS', permanent: true },
-    { source: '/solutions/bulk-packing', destination: '/solutions/Bulk-Packing', permanent: true },
-    { source: '/solutions/secondary-automation', destination: '/solutions/Secondary-Automation', permanent: true },
-    { source: '/solutions/inspection', destination: '/solutions/Inspection', permanent: true },
-    { source: '/solutions/checkweighers', destination: '/solutions/Checkweighers', permanent: true },
-    { source: '/solutions/printing', destination: '/solutions/Printing', permanent: true },
-    { source: '/solutions/comipack', destination: '/solutions/Comipack', permanent: true },
-    { source: '/solutions/boato-pack', destination: '/solutions/Boato-Pack', permanent: true },
-    { source: '/solutions/gms', destination: '/solutions/GMS', permanent: true },
-    { source: '/solutions/kraus', destination: '/solutions/Kraus', permanent: true },
   ],
 };
 

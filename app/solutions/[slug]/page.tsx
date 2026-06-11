@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ScrollReveal from "../../components/ScrollReveal";
 import Link from "next/link";
+
+// Case-insensitive lookup: returns the exact product key for a slug that
+// differs only by letter case (e.g. "comipack" -> "Comipack"), else null.
+// Never returns the same string, so redirecting to it cannot loop.
+function findCanonicalSlug(slug: string): string | null {
+  const match = Object.keys(products).find(
+    (key) => key !== slug && key.toLowerCase() === slug.toLowerCase()
+  );
+  return match ?? null;
+}
 
 export async function generateStaticParams() {
   return Object.keys(products).map((slug) => ({ slug }));
@@ -560,6 +571,12 @@ const animationStyles = `
 export default async function ProductPage({ params }: PageProps) {
   const { slug } = await params;
   const product = products[slug];
+
+  if (!product) {
+    // Old lowercase URLs (from an earlier sitemap) -> exact-case canonical URL
+    const canonical = findCanonicalSlug(slug);
+    if (canonical) permanentRedirect(`/solutions/${canonical}`);
+  }
 
   if (!product) {
     return (
