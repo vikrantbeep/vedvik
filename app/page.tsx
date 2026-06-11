@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import ScrollReveal from "./components/ScrollReveal";
+import HeroCarousel from "./components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: { absolute: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India" },
@@ -164,18 +165,9 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Machinery image */}
+              {/* Machinery image carousel */}
               <div className="lg:col-span-5 hero-in-4 w-full">
-                <div
-                  className="aspect-[4/3] w-full overflow-hidden rounded-xl md:rounded-2xl"
-                  style={{ boxShadow: "0 20px 60px rgba(12,76,162,0.15)" }}
-                >
-                  <img
-                    src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1781161089/ChatGPT_Image_Jun_11_2026_12_27_37_PM_u2c56h.png"
-                    alt="Vedvik Machinery packaging machine"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <HeroCarousel />
               </div>
             </div>
           </div>
