@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Packaging Machinery Solutions",
+  title: "Packaging Machinery Solutions in Ahmedabad, Gujarat",
   description:
     "Explore Vedvik Machinery's full range: HFFS pouch packers, liquid filling lines, checkweighers, X-ray inspection, vision systems, printers, and more. European technology, Indian support.",
   alternates: { canonical: "/solutions" },

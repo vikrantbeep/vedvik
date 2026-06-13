@@ -7,8 +7,8 @@ const OG_IMAGE = "https://res.cloudinary.com/dnts8gzbh/image/upload/v1778775822/
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedvikmachinery.com"),
   title: {
-    default: "Vedvik Machinery – Packaging Machinery Manufacturer & Supplier in India",
-    template: "%s | Vedvik Machinery",
+    default: "Vedvik Machinery – Packaging Machinery Manufacturer in Ahmedabad, Gujarat",
+    template: "%s | Vedvik Machinery, Ahmedabad",
   },
   description: "Packaging machinery manufacturer in Ahmedabad, India. Official representative of Effytec, Varpe, Filtec, E2M Couth, MF Tecno & MapleJet. HFFS, liquid filling, checkweighers & inspection systems.",
   keywords: "packaging machinery India, HFFS machine, liquid filling machine, checkweigher, vision inspection, Effytec India, Varpe India, Ahmedabad packaging machinery",
