@@ -143,21 +143,21 @@ export default function Home() {
         `}</style>
 
         {/* ── Hero ── */}
-        <section className="hero-gradient flex flex-col pt-16">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex-grow flex items-center py-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center w-full">
+        <section className="hero-gradient min-h-[85vh] flex flex-col pt-16">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex-grow flex items-center py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center w-full">
               {/* Copy */}
               <div className="lg:col-span-7">
-                <div className="hero-in-1 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white/70 text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-5">
+                <div className="hero-in-1 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white/70 text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0C4CA2]" />
                   Precision Engineering
                 </div>
-                <h1 className="hero-in-1 text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-4">
+                <h1 className="hero-in-1 text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.07] mb-5">
                   Advanced packaging and inspection systems engineered for{" "}
                   <span className="text-[#0C4CA2]">efficiency</span> and{" "}
                   <span className="text-[#0C4CA2]">reliability.</span>
                 </h1>
-                <p className="hero-in-2 text-base text-slate-600 leading-relaxed max-w-xl mb-7">
+                <p className="hero-in-2 text-lg text-slate-600 leading-relaxed max-w-xl mb-8">
                   Advanced packaging and inspection systems for FMCG and pharmaceutical lines — built with precision, backed by local support.
                 </p>
                 <div className="hero-in-3 flex flex-col sm:flex-row gap-4">
