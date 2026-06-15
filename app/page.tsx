@@ -153,8 +153,9 @@ export default function Home() {
                   Precision Engineering
                 </div>
                 <h1 className="hero-in-1 text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05] mb-6">
-                  Packaging machinery,<br />
-                  <span className="text-[#0C4CA2]">engineered to last.</span>
+                  Advanced packaging and inspection systems engineered for{" "}
+                  <span className="text-[#0C4CA2]">efficiency</span> and{" "}
+                  <span className="text-[#0C4CA2]">reliability.</span>
                 </h1>
                 <p className="hero-in-2 text-lg text-slate-600 leading-relaxed max-w-xl mb-10">
                   Advanced packaging and inspection systems for FMCG and pharmaceutical lines — built with precision, backed by local support.
