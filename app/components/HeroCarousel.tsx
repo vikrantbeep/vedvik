@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const IMAGES = [
   "https://res.cloudinary.com/dnts8gzbh/image/upload/v1781161089/ChatGPT_Image_Jun_11_2026_12_27_37_PM_u2c56h.png",
@@ -11,17 +11,36 @@ const IMAGES = [
   "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png",
 ];
 
+// Render a clone of the first image at the end so the loop is seamless.
+// When the clone is reached, we snap back to index 0 without animation.
+const SLIDES = [...IMAGES, IMAGES[0]];
+
 export default function HeroCarousel() {
   const [index, setIndex] = useState(0);
+  const [animated, setAnimated] = useState(true);
   const [paused, setPaused] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const advance = () => {
+    setIndex((i) => i + 1);
+    setAnimated(true);
+  };
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % IMAGES.length);
-    }, 2000);
-    return () => clearInterval(id);
+    intervalRef.current = setInterval(advance, 2500);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [paused]);
+
+  // When the clone finishes transitioning, instantly jump to real index 0.
+  const onTransitionEnd = () => {
+    if (index === IMAGES.length) {
+      setAnimated(false);
+      setIndex(0);
+    }
+  };
 
   return (
     <div
@@ -30,14 +49,18 @@ export default function HeroCarousel() {
       onMouseLeave={() => setPaused(false)}
     >
       <div
-        className="flex h-full transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${index * 100}%)` }}
+        className="flex h-full"
+        style={{
+          transform: `translateX(-${index * 100}%)`,
+          transition: animated ? "transform 700ms ease-in-out" : "none",
+        }}
+        onTransitionEnd={onTransitionEnd}
       >
-        {IMAGES.map((src, i) => (
+        {SLIDES.map((src, i) => (
           <div key={i} className="w-full h-full flex-shrink-0">
             <img
               src={src}
-              alt={`Vedvik Machinery equipment ${i + 1}`}
+              alt={`Vedvik Machinery equipment ${(i % IMAGES.length) + 1}`}
               className="w-full h-full object-contain"
               loading={i === 0 ? "eager" : "lazy"}
             />
