@@ -2,16 +2,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { blogs } from "../../data/blogs";
+import { getAllBlogs } from "../../lib/getAllBlogs";
 import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return blogs.map((post) => ({ slug: post.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogs.find((b) => b.slug === slug);
+  const post = getAllBlogs().find((b) => b.slug === slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -36,22 +34,68 @@ function renderContent(content: string) {
     const line = lines[i].trim();
     if (!line) { i++; continue; }
 
+    // H2 heading
     if (line.startsWith("## ")) {
       elements.push(
         <h2 key={i} className="text-2xl md:text-3xl font-semibold text-slate-800 mt-12 mb-4 border-l-4 border-[#0C4CA2] pl-6">
           {line.replace("## ", "")}
         </h2>
       );
-    } else if (line.startsWith("**") && line.endsWith("**")) {
+      i++;
+      continue;
+    }
+
+    // Markdown table — collect all consecutive | lines
+    if (line.startsWith("|")) {
+      const tableLines: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        tableLines.push(lines[i].trim());
+        i++;
+      }
+
+      const parseRow = (row: string) =>
+        row.split("|")
+          .slice(1, -1)
+          .map((cell) => cell.trim());
+
+      const isSeparator = (row: string) => /^\|[-|:\s]+\|$/.test(row);
+      const dataRows = tableLines.filter((row) => !isSeparator(row));
+      const [headerRow, ...bodyRows] = dataRows;
+
       elements.push(
-        <p key={i} className="font-bold text-primary mt-6 mb-1">
-          {line.replace(/\*\*/g, "")}
-        </p>
+        <div key={`table-${i}`} className="overflow-x-auto my-8 rounded-lg border border-slate-200">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="bg-[#0C4CA2]">
+                {parseRow(headerRow).map((h, j) => (
+                  <th key={j} className="px-4 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider whitespace-nowrap">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {bodyRows.map((row, j) => (
+                <tr key={j} className={j % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                  {parseRow(row).map((cell, k) => (
+                    <td key={k} className={`px-4 py-3 border-b border-slate-100 text-slate-700 ${k === 0 ? "font-medium text-slate-800" : ""}`}>
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       );
-    } else if (line.startsWith("- ")) {
+      continue;
+    }
+
+    // Unordered list
+    if (line.startsWith("- ")) {
       const listItems: string[] = [];
       while (i < lines.length && lines[i].trim().startsWith("- ")) {
-        listItems.push(lines[i].trim().replace("- ", ""));
+        listItems.push(lines[i].trim().replace(/^- /, ""));
         i++;
       }
       elements.push(
@@ -59,23 +103,35 @@ function renderContent(content: string) {
           {listItems.map((item, j) => {
             const parts = item.split(/\*\*(.*?)\*\*/);
             return (
-              <li key={j} className="flex items-start gap-3 text-on-surface-variant text-sm leading-relaxed">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                <span>{parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-primary">{p}</strong> : p)}</span>
+              <li key={j} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0C4CA2] mt-2 flex-shrink-0" />
+                <span>{parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-slate-800">{p}</strong> : p)}</span>
               </li>
             );
           })}
         </ul>
       );
       continue;
-    } else {
-      const parts = line.split(/\*\*(.*?)\*\*/);
+    }
+
+    // Entire line bold (e.g. **Common applications:**)
+    if (line.startsWith("**") && line.endsWith("**")) {
       elements.push(
-        <p key={i} className="text-on-surface-variant leading-relaxed text-base my-4">
-          {parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-primary">{p}</strong> : p)}
+        <p key={i} className="font-bold text-slate-800 mt-6 mb-1">
+          {line.replace(/\*\*/g, "")}
         </p>
       );
+      i++;
+      continue;
     }
+
+    // Regular paragraph (supports inline **bold**)
+    const parts = line.split(/\*\*(.*?)\*\*/);
+    elements.push(
+      <p key={i} className="text-slate-600 leading-relaxed text-base my-4">
+        {parts.map((p, k) => k % 2 === 1 ? <strong key={k} className="text-slate-800">{p}</strong> : p)}
+      </p>
+    );
     i++;
   }
   return elements;
@@ -83,10 +139,11 @@ function renderContent(content: string) {
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = blogs.find((b) => b.slug === slug);
+  const allBlogs = getAllBlogs();
+  const post = allBlogs.find((b) => b.slug === slug);
   if (!post) notFound();
 
-  const otherPosts = blogs.filter((b) => b.slug !== slug).slice(0, 2);
+  const otherPosts = allBlogs.filter((b) => b.slug !== slug).slice(0, 2);
 
   const articleSchema = {
     "@context": "https://schema.org",

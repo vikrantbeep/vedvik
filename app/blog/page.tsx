@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { blogs } from "../data/blogs";
+import { getAllBlogs } from "../lib/getAllBlogs";
 import type { Metadata } from "next";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog – Packaging Machinery Guides & Insights",
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const allBlogs = getAllBlogs();
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -27,7 +30,7 @@ export default function BlogPage() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((post) => (
+          {allBlogs.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="v-card group block overflow-hidden">
               <div className="aspect-[4/3] overflow-hidden bg-slate-50 relative">
                 {post.image ? (
