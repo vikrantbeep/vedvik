@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getAllBlogs().find((b) => b.slug === slug);
+  const post = (await getAllBlogs()).find((b) => b.slug === slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -139,7 +139,7 @@ function renderContent(content: string) {
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const allBlogs = getAllBlogs();
+  const allBlogs = await getAllBlogs();
   const post = allBlogs.find((b) => b.slug === slug);
   if (!post) notFound();
 

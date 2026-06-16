@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-export default function BlogPage() {
-  const allBlogs = getAllBlogs();
+export default async function BlogPage() {
+  const allBlogs = await getAllBlogs();
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />

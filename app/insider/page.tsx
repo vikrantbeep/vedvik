@@ -2,8 +2,6 @@
 import { useState } from "react";
 import { publishBlog } from "./actions";
 
-export const metadata = { robots: { index: false } };
-
 const CATEGORIES = ["Buying Guide", "Technology", "Industry Insights", "Case Study", "News"];
 
 function slugify(title: string) {
