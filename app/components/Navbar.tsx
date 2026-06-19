@@ -35,12 +35,12 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-9">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`v-link font-medium text-sm cursor-pointer ${
+              className={`v-link font-medium text-[15px] cursor-pointer ${
                 pathname === link.href
                   ? "v-link-active"
                   : "text-slate-600"
@@ -49,7 +49,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact" className="v-btn-primary text-sm !px-5 !py-2.5">
+          <Link href="/contact" className="v-btn-primary !text-[15px] !px-5 !py-2.5">
             Request Quote
           </Link>
         </div>
@@ -79,7 +79,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`v-link font-medium text-sm cursor-pointer ${
+              className={`v-link font-medium text-[15px] cursor-pointer ${
                 pathname === link.href ? "v-link-active" : "text-slate-600"
               }`}
             >
@@ -89,7 +89,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="v-btn-primary text-sm !px-5 !py-2.5"
+            className="v-btn-primary !text-[15px] !px-5 !py-2.5"
           >
             Request Quote
           </Link>

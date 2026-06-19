@@ -143,40 +143,51 @@ export default function Home() {
         `}</style>
 
         {/* ── Hero ── */}
-        <section className="hero-gradient min-h-[85vh] flex flex-col pt-16">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 w-full flex-grow flex items-center py-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center w-full">
-              {/* Copy */}
-              <div className="lg:col-span-7">
-                <div className="hero-in-1 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white/70 text-xs font-medium uppercase tracking-wider text-[#0C4CA2] mb-6">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#0C4CA2]" />
-                  Precision Engineering
-                </div>
-                <h1 className="hero-in-1 text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.07] mb-5">
-                  Advanced packaging and inspection systems engineered for{" "}
-                  <span className="text-[#0C4CA2]">efficiency</span> and{" "}
-                  <span className="text-[#0C4CA2]">reliability.</span>
-                </h1>
-                <p className="hero-in-2 text-lg text-slate-600 leading-relaxed max-w-xl mb-8">
-                  Advanced packaging and inspection systems for FMCG and pharmaceutical lines — built with precision, backed by local support.
-                </p>
-                <div className="hero-in-3 flex flex-col sm:flex-row gap-4">
-                  <Link href="/solutions" className="v-btn-primary">View Solutions</Link>
-                  <Link href="/contact" className="v-btn-secondary">Contact Us</Link>
-                </div>
-              </div>
+        <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden">
 
-              {/* Machinery image carousel */}
-              <div className="lg:col-span-5 hero-in-4 w-full">
-                <HeroCarousel />
+          {/* Background image + dark overlay */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://res.cloudinary.com/dnts8gzbh/image/upload/v1780300324/ChatGPT_Image_Jun_1_2026_01_20_59_PM_d2j0ob.png"
+              alt=""
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-slate-900/72" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex-grow flex items-center py-20">
+            <div className="max-w-4xl">
+              <h1 className="hero-in-1 text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.06] mb-6">
+                Advanced packaging and inspection systems engineered for{" "}
+                <span className="text-blue-300">efficiency</span> and{" "}
+                <span className="text-blue-300">reliability.</span>
+              </h1>
+              <p className="hero-in-2 text-xl text-white/75 leading-relaxed max-w-2xl mb-10">
+                Advanced packaging and inspection systems for FMCG and pharmaceutical lines — built with precision, backed by local support.
+              </p>
+              <div className="hero-in-3 flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-[#0C4CA2] text-white text-base font-semibold rounded-md hover:bg-[#0a3d87] transition-colors min-w-[180px]"
+                >
+                  View Solutions
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white text-base font-semibold rounded-md hover:bg-white hover:text-slate-900 transition-colors min-w-[180px]"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
           </div>
 
           {/* Industries ticker */}
-          <div className="w-full bg-white/70 backdrop-blur-sm border-t border-slate-200">
+          <div className="relative z-10 w-full bg-black/40 backdrop-blur-sm border-t border-white/15">
             <div className="max-w-7xl mx-auto px-6 md:px-8 pt-3 pb-2">
-              <p className="text-xs font-medium uppercase tracking-wider text-[#0C4CA2]">Industries We Serve</p>
+              <p className="text-xs font-medium uppercase tracking-wider text-white/50">Industries We Serve</p>
             </div>
             <div className="overflow-hidden pb-3 md:pb-4">
               <div className="ticker-track">
@@ -184,11 +195,11 @@ export default function Home() {
                   <Link
                     key={i}
                     href={`/industries/${industry.slug}`}
-                    className="flex items-center gap-2 md:gap-3 px-6 md:px-10 border-r border-slate-200 h-10 md:h-12 cursor-pointer hover:opacity-80 transition-opacity duration-150"
+                    className="flex items-center gap-2 md:gap-3 px-6 md:px-10 border-r border-white/15 h-10 md:h-12 cursor-pointer hover:opacity-70 transition-opacity duration-150"
                     style={{ minWidth: "160px" }}
                   >
-                    <span className="material-symbols-outlined text-slate-400 text-sm md:text-base flex-shrink-0">{industry.icon}</span>
-                    <span className="text-slate-600 text-[10px] md:text-[11px] font-medium uppercase tracking-widest whitespace-nowrap">{industry.label}</span>
+                    <span className="material-symbols-outlined text-white/40 text-sm md:text-base flex-shrink-0">{industry.icon}</span>
+                    <span className="text-white/65 text-[10px] md:text-[11px] font-medium uppercase tracking-widest whitespace-nowrap">{industry.label}</span>
                   </Link>
                 ))}
               </div>
