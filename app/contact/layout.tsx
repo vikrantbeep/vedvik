@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us – Packaging Machinery Supplier in Ahmedabad, Gujarat",
+  title: "Contact Us",
   description:
     "Contact Vedvik Machinery in Ahmedabad, Gujarat for packaging machinery quotes, technical consultations, and service support across India. Call +91 8155892080.",
   alternates: { canonical: "/contact" },

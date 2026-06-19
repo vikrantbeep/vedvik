@@ -5,7 +5,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve – Packaging Solutions by Sector",
+  title: "Industries We Serve",
   description: "Vedvik Machinery provides packaging and inspection solutions across pharmaceuticals, food, beverages, agrochemicals, personal care, and more.",
   alternates: { canonical: "/industries" },
 };
@@ -151,8 +151,14 @@ export default function IndustriesPage() {
           <h1 className="page-header-animate text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 md:mb-6">
             Sectors We Serve
           </h1>
-          <p className="page-header-animate text-base text-slate-600 max-w-xl leading-relaxed" style={{ animationDelay: "0.3s" }}>
+          <p className="page-header-animate text-base text-slate-600 max-w-2xl leading-relaxed" style={{ animationDelay: "0.3s" }}>
             From pharmaceuticals to pet food, Vedvik Machinery delivers tailored packaging and inspection systems across 15 industries — built around the specific requirements of each sector.
+          </p>
+          <p className="page-header-animate text-base text-slate-600 max-w-2xl leading-relaxed mt-4" style={{ animationDelay: "0.4s" }}>
+            Each industry carries its own regulatory environment, pack format requirements, and production speeds. A pharmaceutical line running at 200 units per minute demands a fundamentally different machine specification than a spice sachet line producing 4,000 packs per hour. Vedvik Machinery applies this sector-specific understanding at every stage — from initial machine selection through installation, commissioning, and after-sales support.
+          </p>
+          <p className="page-header-animate text-base text-slate-600 max-w-2xl leading-relaxed mt-4" style={{ animationDelay: "0.5s" }}>
+            Our partnerships with Effytec, Varpe, E2M Couth, Filtec, MF Tecno, MapleJet, Comipack, Boato-Pack, GMS, and Kraus give us the range to match the right machine to the right application — regardless of sector, output speed, or pack format. All solutions are supported locally from our Ahmedabad office, serving manufacturers across India.
           </p>
         </header>
 

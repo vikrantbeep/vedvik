@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const industry = industries[slug];
   if (!industry) return { title: "Industry Not Found" };
   return {
-    title: `${industry.name} Packaging Solutions in Ahmedabad, Gujarat`,
+    title: `${industry.name} Packaging Solutions`,
     description: industry.description,
     alternates: { canonical: `/industries/${slug}` },
   };

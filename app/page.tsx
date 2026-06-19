@@ -6,7 +6,7 @@ import ScrollReveal from "./components/ScrollReveal";
 import HeroCarousel from "./components/HeroCarousel";
 
 export const metadata: Metadata = {
-  title: { absolute: "Vedvik Machinery – Packaging Machinery Manufacturer in Ahmedabad, Gujarat" },
+  title: { absolute: "Vedvik Machinery – Packaging & Inspection Machinery" },
   description: "Packaging machinery manufacturer in Ahmedabad, India. HFFS pouch packing, liquid filling, checkweighers, X-ray & vision inspection. Official representative of Effytec, Varpe, Filtec & more.",
   alternates: { canonical: "/" },
 };

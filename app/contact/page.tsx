@@ -174,6 +174,27 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              <div className="pt-8 border-t border-outline-variant/20">
+                <h3 className="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">What to Expect</h3>
+                <div className="space-y-5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#0C4CA2] font-bold text-sm mt-0.5 flex-shrink-0">01</span>
+                    <p className="text-sm text-on-surface-variant leading-relaxed"><span className="font-semibold text-on-surface">Initial response within 1 business day.</span> We review every enquiry personally and respond with an initial recommendation or follow-up questions.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#0C4CA2] font-bold text-sm mt-0.5 flex-shrink-0">02</span>
+                    <p className="text-sm text-on-surface-variant leading-relaxed"><span className="font-semibold text-on-surface">Technical consultation call.</span> For shortlisted machines we schedule a video call to walk through specifications, output targets, and pack formats — no cost, no obligation.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#0C4CA2] font-bold text-sm mt-0.5 flex-shrink-0">03</span>
+                    <p className="text-sm text-on-surface-variant leading-relaxed"><span className="font-semibold text-on-surface">Quotation and technical datasheet.</span> Once requirements are confirmed we provide a detailed quotation with machine specs, lead time, installation scope, and warranty terms.</p>
+                  </div>
+                </div>
+                <div className="mt-6 p-4 bg-surface-container-highest/30 rounded">
+                  <p className="text-xs text-on-surface-variant leading-relaxed"><span className="font-semibold">Helpful to include:</span> product type, target output speed (packs/min), pack format and material, and whether you need inspection integration alongside the packaging line.</p>
+                </div>
+              </div>
+
               <div className="p-6 bg-surface-container-highest/30">
                 <p className="text-sm font-medium text-on-surface-variant italic leading-snug">
                   &quot;If you know your product and output target, we know the machine. Let&apos;s talk.&quot;

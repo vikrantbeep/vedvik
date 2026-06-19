@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blog – Packaging Machinery Guides & Insights",
+  title: "Packaging Machinery Blog & Guides",
   description: "Buying guides and technical explainers on packaging machinery, checkweighing, filling, and inspection from the Vedvik Machinery team.",
   alternates: { canonical: "/blog" },
 };
@@ -24,8 +24,14 @@ export default async function BlogPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 md:mb-6">
             Packaging Knowledge Hub
           </h1>
-          <p className="text-base text-slate-600 max-w-xl leading-relaxed">
-            Technical guides, buying advice, and industry insights from the Vedvik Machinery team.
+          <p className="text-base text-slate-600 max-w-2xl leading-relaxed">
+            Technical guides, buying advice, and industry insights from the Vedvik Machinery team. We publish practical content for production managers, procurement heads, and business owners evaluating packaging and inspection machinery for their lines.
+          </p>
+          <p className="text-base text-slate-600 max-w-2xl leading-relaxed mt-4">
+            Our articles cover the full machinery decision cycle — from understanding the difference between VFFS and HFFS machines, to selecting the right checkweigher for your regulatory environment, to knowing when a vision inspection system makes financial sense. Each post is written from direct field experience working with manufacturers across pharmaceuticals, food, beverages, agrochemicals, and personal care.
+          </p>
+          <p className="text-base text-slate-600 max-w-2xl leading-relaxed mt-4">
+            Vedvik Machinery represents European brands including Effytec, Varpe, E2M Couth, Boato-Pack, MF Tecno, Filtec, Comipack, Kraus, and MapleJet — giving us cross-brand perspective that generic machinery guides cannot offer. If an article raises a question specific to your product or line, use the contact form and we'll respond directly.
           </p>
         </header>
 

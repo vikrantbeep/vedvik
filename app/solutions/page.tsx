@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Packaging Machinery Solutions in Ahmedabad, Gujarat",
+  title: "Packaging & Inspection Solutions",
   description:
     "Explore Vedvik Machinery's full range: HFFS pouch packers, liquid filling lines, checkweighers, X-ray inspection, vision systems, printers, and more. European technology, Indian support.",
   alternates: { canonical: "/solutions" },
@@ -77,6 +77,20 @@ export default function SolutionsPage() {
           <p className="hero-sub text-base text-slate-600 max-w-xl leading-relaxed">
             Vedvik Machinery represents leading global manufacturers across 10 product categories — from pouch packaging and liquid filling to vision inspection and X-ray detection.
           </p>
+          <div className="hero-sub mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+            <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <p className="text-xs font-semibold text-[#0C4CA2] uppercase tracking-widest mb-2">Division 01 — Packaging</p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                High-speed form-fill-seal machines, liquid filling lines, stick pack, and secondary automation systems from Effytec, Boato-Pack, MF Tecno, Filtec, Comipack, GMS, and Kraus — covering outputs from 20 packs/min to 320 packs/min across all formats.
+              </p>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <p className="text-xs font-semibold text-[#0C4CA2] uppercase tracking-widest mb-2">Division 02 — Inspection</p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Inline checkweighers, vision inspection cameras, X-ray and metal detection systems, industrial coders, and film slitting and lamination machines from Varpe, E2M Couth, and MapleJet — all OIML, CE, and FDA-compliant where applicable.
+              </p>
+            </div>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

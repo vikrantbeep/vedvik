@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return { title: "Product Not Found – Vedvik Machinery" };
   const title =
     "categoryPage" in product
-      ? `${product.name} Machines in Ahmedabad – ${product.subtitle}`
-      : `${product.name} by ${product.brand} – Supplier in Ahmedabad, Gujarat`;
+      ? `${product.name} Machines`
+      : `${product.name} by ${product.brand}`;
   return {
     title,
     description: product.description,

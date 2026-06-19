@@ -65,7 +65,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/company/vedvik-machinery-india/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 flex items-center justify-center bg-slate-800 text-slate-300 rounded-lg cursor-pointer hover:bg-[#0C4CA2] hover:text-white active:scale-95 transition-all duration-200">
               <span className="material-symbols-outlined text-[18px]">share</span>
             </a>
-            <a href="mailto:vikrant@vedvikmachinery.com" aria-label="Email" className="w-10 h-10 flex items-center justify-center bg-slate-800 text-slate-300 rounded-lg cursor-pointer hover:bg-[#0C4CA2] hover:text-white active:scale-95 transition-all duration-200">
+            <a href="/contact" aria-label="Contact Us" className="w-10 h-10 flex items-center justify-center bg-slate-800 text-slate-300 rounded-lg cursor-pointer hover:bg-[#0C4CA2] hover:text-white active:scale-95 transition-all duration-200">
               <span className="material-symbols-outlined text-[18px]">mail</span>
             </a>
           </div>

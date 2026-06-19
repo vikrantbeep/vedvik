@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = (await getAllBlogs()).find((b) => b.slug === slug);
   if (!post) return {};
   return {
-    title: post.title,
+    title: { absolute: post.title },
     description: post.description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
