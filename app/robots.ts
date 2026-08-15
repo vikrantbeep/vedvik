@@ -1,13 +1,13 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://www.vedvikmachinery.com";
+const BASE_URL = "https://vedvikmachinery.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // All crawlers welcome
+      // All search crawlers welcome
       { userAgent: "*", allow: "/" },
-      // Explicitly allow AI search / answer engine crawlers (GEO)
+      // Explicitly allow AI search / answer-engine crawlers (generative engine optimisation)
       {
         userAgent: [
           "GPTBot",

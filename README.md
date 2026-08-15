@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vedvik Site
 
-## Getting Started
+Marketing site for **Vedvik Machinery** — a manufacturer of advanced packaging and inspection systems for FMCG and pharmaceutical lines, based in Ahmedabad, India.
 
-First, run the development server:
+The homepage is the approved "WE BUILD THE LINE" design: a light blue-gradient cinematic hero, a dark count-up stats band, a packaging section opening with a scrolling industries marquee and machine cards, an inspection section with custom line-icon cards, a contact section, and a persistent bottom progress bar that tracks the active section.
+
+## Stack
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **Tailwind CSS v4** (base reset only — the homepage uses self-contained inline styles)
+- **TypeScript**
+- Fonts: **Montserrat** (display) + **Inter** (body), loaded via Google Fonts
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+app/
+  layout.tsx          # metadata, font <link>s
+  page.tsx            # renders <VedvikSite />
+  globals.css         # Tailwind import + minimal base reset
+components/
+  VedvikSite.tsx      # the full approved homepage (client component)
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Design tokens (in components/VedvikSite.tsx)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Token  | Value     | Use                          |
+| ------ | --------- | ---------------------------- |
+| `NAVY` | `#020062` | Deep anchor / headings        |
+| `BLUE` | `#3969C4` | Accents, links, buttons       |
+| `SKY`  | `#80AFE8` | Highlights, hero gradient     |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy to Vercel
 
-## Deploy on Vercel
+1. Push this repo to GitHub.
+2. In Vercel, **New Project → Import** the repo. Framework auto-detects as Next.js (`vercel.json` included).
+3. No env vars are required for the homepage.
+4. Deploy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes / next steps
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Machine card images load from Cloudinary (`res.cloudinary.com/dnts8gzbh`). Swap to your own asset host or `public/` if you move them.
+- Nav links and CTA buttons currently point to `#` — wire them to real routes when inner pages exist.
+- Inner pages (`/solutions`, `/industries`, `/about`, `/contact`) are not built yet — homepage first, per the approved direction.
