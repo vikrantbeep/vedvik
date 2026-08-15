@@ -3,7 +3,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vedvikmachinery.com"),
+  metadataBase: new URL("https://www.vedvikmachinery.com"),
   title: {
     default: "Packaging Machines Manufacturer in Ahmedabad — Vedvik Machinery",
     template: "%s · Vedvik Machinery",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Vedvik Machinery",
-    url: "https://vedvikmachinery.com",
+    url: "https://www.vedvikmachinery.com",
     images: [{ url: "/og-thumbnail.jpg", width: 1200, height: 630, alt: "Vedvik Machinery — packaging machines manufacturer in Ahmedabad, India" }],
   },
   twitter: {
@@ -71,7 +71,7 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Vedvik Machinery",
-  url: "https://vedvikmachinery.com",
+  url: "https://www.vedvikmachinery.com",
   logo: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780846274/Vedvik_Logo_TightCrop_ght0v2.svg",
   description:
     "Packaging machines manufacturer and supplier in Ahmedabad, India — HFFS pouch packing, pick fill seal (PFS), liquid filling, stick packing and inspection systems for food, pharmaceutical and FMCG production lines.",
@@ -88,7 +88,7 @@ const businessSchema = {
   "@type": ["LocalBusiness", "Manufacturer"],
   name: "Vedvik Machinery",
   image: "https://res.cloudinary.com/dnts8gzbh/image/upload/v1780846274/Vedvik_Logo_TightCrop_ght0v2.svg",
-  url: "https://vedvikmachinery.com",
+  url: "https://www.vedvikmachinery.com",
   email: "vikrant@vedvikmachinery.com",
   telephone: "+91-8155892080",
   address: ADDRESS,
@@ -129,7 +129,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Vedvik Machinery",
-  url: "https://vedvikmachinery.com",
+  url: "https://www.vedvikmachinery.com",
   publisher: { "@type": "Organization", name: "Vedvik Machinery" },
 };
 

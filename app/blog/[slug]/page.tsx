@@ -36,7 +36,7 @@ export default async function BlogSlugPage({ params }: { params: Promise<{ slug:
     datePublished: post.date,
     author: { "@type": "Organization", name: "Vedvik Machinery" },
     publisher: { "@type": "Organization", name: "Vedvik Machinery" },
-    mainEntityOfPage: `https://vedvikmachinery.com/blog/${post.slug}`,
+    mainEntityOfPage: `https://www.vedvikmachinery.com/blog/${post.slug}`,
   };
 
   return (

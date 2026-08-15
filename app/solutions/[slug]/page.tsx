@@ -57,9 +57,9 @@ export default async function SolutionSlugPage({ params }: { params: Promise<{ s
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://vedvikmachinery.com" },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: "https://vedvikmachinery.com/solutions" },
-      { "@type": "ListItem", position: 3, name: solution.name, item: `https://vedvikmachinery.com/solutions/${solution.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.vedvikmachinery.com" },
+      { "@type": "ListItem", position: 2, name: "Solutions", item: "https://www.vedvikmachinery.com/solutions" },
+      { "@type": "ListItem", position: 3, name: solution.name, item: `https://www.vedvikmachinery.com/solutions/${solution.slug}` },
     ],
   };
 

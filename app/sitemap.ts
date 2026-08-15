@@ -3,7 +3,7 @@ import { solutionSlugs } from "@/lib/solutions";
 import { industrySlugs } from "@/lib/industries";
 import { posts } from "@/lib/blog";
 
-const BASE_URL = "https://vedvikmachinery.com";
+const BASE_URL = "https://www.vedvikmachinery.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
