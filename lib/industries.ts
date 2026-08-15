@@ -228,31 +228,46 @@ export function getIndustry(slug: string): Industry | undefined {
   return industries.find((i) => i.slug === slug);
 }
 
-// Curated Unsplash photos per industry — each shows the industry's *packaged* product
-// (pouches, bottles, sacks, blister packs...), fitting for a packaging machinery company.
+// ── Vedvik's own photography (Cloudinary) ──────────────────────────────
+// Stored as "version/public-id" so transformations can be injected before them.
+// Preferred over stock: these are our images, on our CDN, and can't disappear.
+const CLOUDINARY_CLOUD = "dnts8gzbh";
+const cloudinaryImages: Record<string, string> = {
+  "pet-food": "v1786771990/Pet_food_oh4w44.jpg",
+  "food-snacks": "v1786771988/packed_snacks_n1ri20.jpg",
+  beverages: "v1786771988/beverages_rxfvss.webp",
+  detergents: "v1786771987/Home_care_e3970h.jpg",
+  "personal-care": "v1786771987/Personal_care_swwsno.jpg",
+  "seeds-grains": "v1786771987/seeds_iyszhk.jpg",
+  "edible-oils": "v1786771987/edible_oil_abhudx.jpg",
+  "coffee-tea": "v1786772283/DancingGoatsBlend-2021_jlropn.webp",
+};
+
+// Stock photos for the industries we don't yet have our own imagery for.
+// These are the same photos the previous vedvikmachinery.com used, served from
+// Unsplash's stable image CDN (images.unsplash.com), which supports sizing and
+// quality parameters directly.
 const imageIds: Record<string, string> = {
-  pharmaceuticals: "m1Hq4ibP9rc", // pile of medicine blister packs
-  "food-snacks": "BK_DI2rHApU", // potato chips in a golden packet
-  beverages: "_bQxQlLpoVY", // juice bottles on a shelf
-  dairy: "2dzhYsVhLVA", // milk bottles
-  "edible-oils": "c_xqdv4QIcU", // bottled cooking oil
-  agrochemicals: "qHo65Xyzcvo", // warehouse stacked with white sacks
-  "seeds-grains": "BuEWD0IbTKQ", // sacks of legumes and grains
-  "personal-care": "5eoYsqzmDW4", // pump bottles of shampoo & conditioner
-  detergents: "9ASolF48rzE", // detergent bottle at washing machine
-  "spices-powders": "AdErRzhuv2U", // jars of spices
-  "pet-food": "HONSlXP3bpE", // pet food bag
-  "industrial-chemicals": "_hOkO9ooc0A", // blue chemical drums on pallets
-  bakery: "XNNurImW1xM", // bread in paper bag
-  nutraceuticals: "PSiWzYyLwuQ", // whey protein container & shaker
-  "coffee-tea": "GllXcy74_Y8", // coffee pouch pack
+  pharmaceuticals: "photo-1584308666744-24d5c474f2ae",
+  dairy: "photo-1550583724-b2692b85b150",
+  agrochemicals: "photo-1464226184884-fa280b87c399",
+  "spices-powders": "photo-1596040033229-a9821ebd058d",
+  "industrial-chemicals": "photo-1532187863486-abf9dbad1b69",
+  bakery: "photo-1555507036-ab1f4038808a",
+  nutraceuticals: "photo-1607619056574-7b8d3ee536b2",
 };
 
 export function industryImage(slug: string, w = 700, h = 500): string {
+  // Our own Cloudinary photography first. f_auto serves AVIF/WebP where supported,
+  // q_auto picks the lightest acceptable quality, and c_fill/g_auto crops to the
+  // requested box keeping the most interesting part of the frame.
+  const cld = cloudinaryImages[slug];
+  if (cld) {
+    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD}/image/upload/f_auto,q_auto,c_fill,g_auto,w_${w},h_${h}/${cld}`;
+  }
   const id = imageIds[slug];
   if (!id) return industryImageFallback(slug, w, h);
-  // Unsplash's download endpoint redirects to the optimized image at the requested width.
-  return `https://unsplash.com/photos/${id}/download?force=true&w=${w}`;
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 }
 
 // Reliable high-quality fallback if an Unsplash photo ever fails to load.
