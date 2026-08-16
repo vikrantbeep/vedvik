@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -7,27 +6,6 @@ import SmoothScroll from "@/components/SmoothScroll";
 // Analytics IDs — carried over from the previous site so history is unbroken.
 const GA_ID = "G-8WKGFHWWG6";
 const CLARITY_ID = "x36lcs1018";
-
-
-/**
- * Fonts are self-hosted by Next at build time — no request to Google at page
- * load, so they can never fail to arrive or fall back to a system font.
- * Weight 700 is included because the partner tiles and article headings use it;
- * previously it wasn't loaded and browsers faked the bold.
- */
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedvikmachinery.com"),
@@ -164,8 +142,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en">
       <head>
+        {/* Google Fonts. Weight 700 is included because the partner tiles and
+            several headings use it — it was previously missing, so browsers
+            synthesised a fake bold. preconnect keeps the request fast. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />

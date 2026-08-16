@@ -125,11 +125,11 @@ function Stat({ value, suffix, label, run, index }: { value: number; suffix: str
       transition: `opacity 1s cubic-bezier(.2,.7,.2,1) ${index * 0.15}s, transform 1s cubic-bezier(.2,.7,.2,1) ${index * 0.15}s`,
     }}>
       <div style={{
-        fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300,
+        fontFamily: "'Montserrat',sans-serif", fontWeight: 300,
         fontSize: "clamp(2.6rem,5.5vw,4rem)", lineHeight: 1, color: "#fff",
         fontVariantNumeric: "tabular-nums", letterSpacing: "-0.03em",
       }}>{display}<span style={{ color: SKY }}>{suffix}</span></div>
-      <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.84rem", lineHeight: 1.45, color: "rgba(255,255,255,.72)", marginTop: "0.7rem", maxWidth: "15rem" }}>{label}</div>
+      <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.84rem", lineHeight: 1.45, color: "rgba(255,255,255,.72)", marginTop: "0.7rem", maxWidth: "15rem" }}>{label}</div>
     </div>
   );
 }
@@ -138,8 +138,8 @@ function Eyebrow({ label, num, color }: { label: string; num: string; color: str
   const line = color === "#fff" ? "rgba(255,255,255,.28)" : "rgba(2,0,98,.16)";
   return (
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${line}`, paddingBottom: "0.9rem", marginBottom: "clamp(2rem,5vw,3.6rem)" }}>
-      <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color }}>{label}</span>
-      <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "0.74rem", letterSpacing: "0.1em", color }}>[{num}]</span>
+      <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color }}>{label}</span>
+      <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "0.74rem", letterSpacing: "0.1em", color }}>[{num}]</span>
     </div>
   );
 }
@@ -184,10 +184,10 @@ function PackagingCard({ name, desc, brand, img, slug }: Item) {
           style={{ width: "100%", height: "100%", objectFit: "cover", transform: hover ? "scale(1.05)" : "scale(1)", transition: "transform 1.2s ease" }} />
       </div>
       <div style={{ padding: "1.5rem 1.5rem 1.6rem", display: "flex", flexDirection: "column", flex: 1 }}>
-        <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "1.25rem", margin: "0 0 0.6rem", color: NAVY, letterSpacing: "-0.01em" }}>{name}</h3>
-        <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.88rem", lineHeight: 1.55, flex: 1, margin: 0, color: "rgba(14,23,80,.6)" }}>{desc}</p>
+        <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "1.25rem", margin: "0 0 0.6rem", color: NAVY, letterSpacing: "-0.01em" }}>{name}</h3>
+        <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.88rem", lineHeight: 1.55, flex: 1, margin: 0, color: "rgba(14,23,80,.6)" }}>{desc}</p>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.3rem" }}>
-          <span style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.03em", color: BLUE }}>{brand}</span>
+          <span style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.03em", color: BLUE }}>{brand}</span>
           <span style={{ color: BLUE, transform: hover ? "translateX(4px)" : "translateX(0)", transition: "transform .6s ease" }}>→</span>
         </div>
       </div>
@@ -216,9 +216,9 @@ function InspectionCard({ name, desc, brand, icon, slug }: Item) {
       }}>
         {icon ? <InspectionIcon type={icon} color={hover ? "#fff" : BLUE} size={22} /> : null}
       </div>
-      <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "1.05rem", margin: "0 0 0.5rem", color: NAVY, letterSpacing: "-0.01em" }}>{name}</h3>
-      <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.84rem", lineHeight: 1.5, flex: 1, margin: 0, color: "rgba(14,23,80,.6)" }}>{desc}</p>
-      <span style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.03em", color: BLUE, marginTop: "1rem" }}>{brand}</span>
+      <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "1.05rem", margin: "0 0 0.5rem", color: NAVY, letterSpacing: "-0.01em" }}>{name}</h3>
+      <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.84rem", lineHeight: 1.5, flex: 1, margin: 0, color: "rgba(14,23,80,.6)" }}>{desc}</p>
+      <span style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.03em", color: BLUE, marginTop: "1rem" }}>{brand}</span>
     </a>
   );
 }
@@ -339,15 +339,15 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
   });
 
   return (
-    <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", color: INK_TEXT, background: "#fff" }}>
+    <div style={{ fontFamily: "'Inter',sans-serif", color: INK_TEXT, background: "#fff" }}>
       <style>{`
         @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
-        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
+        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
         .nav-link:hover{color:${NAVY}}
         @keyframes scrollX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
         .marquee{display:flex;gap:.8rem;width:max-content;animation:scrollX 75s linear infinite}
         .marquee-wrap:hover .marquee{animation-play-state:paused}
-        .chip{white-space:nowrap;border:1px solid rgba(2,0,98,.16);border-radius:2rem;padding:.75rem 1.6rem;font-size:1.1rem;color:${NAVY};font-weight:500;font-family:var(--font-inter, 'Inter'), sans-serif;text-decoration:none;display:inline-flex;align-items:center;transition:background .5s ease,color .5s ease,border-color .5s ease}
+        .chip{white-space:nowrap;border:1px solid rgba(2,0,98,.16);border-radius:2rem;padding:.75rem 1.6rem;font-size:1.1rem;color:${NAVY};font-weight:500;font-family:'Inter',sans-serif;text-decoration:none;display:inline-flex;align-items:center;transition:background .5s ease,color .5s ease,border-color .5s ease}
         .chip:hover{background:${BLUE};color:#fff;border-color:${BLUE}}
         ${BTN_CSS}
         .show-mobile{display:none}
@@ -389,17 +389,17 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
         <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(8,18,52,.42) 0%, rgba(8,18,52,.12) 28%, rgba(8,18,52,.30) 66%, rgba(16,44,118,.62) 100%)" }} />
 
         {/* eyebrow top */}
-        <div style={{ position: "absolute", top: "clamp(1.4rem,4vw,2.4rem)", left: 0, right: 0, textAlign: "center", ...reveal(0.1), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,.9)" }}>
+        <div style={{ position: "absolute", top: "clamp(1.4rem,4vw,2.4rem)", left: 0, right: 0, textAlign: "center", ...reveal(0.1), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,.9)" }}>
           Packaging machinery manufacturer · Ahmedabad
         </div>
 
         {/* giant headline + CTAs anchored at the bottom */}
         <div style={{ position: "absolute", left: 0, right: 0, bottom: "clamp(3.6rem,7vw,5rem)", padding: `0 ${PAD}`, ...reveal(0.3) }}>
           <TextEffect as="h1" per="word" preset="fade-in-blur" trigger={loaded} speedReveal={1.1} speedSegment={0.3}
-            style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,10vw,8.5rem)", lineHeight: 0.93, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>
+            style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,10vw,8.5rem)", lineHeight: 0.93, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>
             PACKAGING, ENGINEERED.
           </TextEffect>
-          <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontWeight: 400, fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.6, color: "rgba(255,255,255,.92)", maxWidth: "42rem", margin: "clamp(1rem,2.2vw,1.5rem) 0 0" }}>
+          <p style={{ fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.6, color: "rgba(255,255,255,.92)", maxWidth: "42rem", margin: "clamp(1rem,2.2vw,1.5rem) 0 0" }}>
             Packaging machines and inspection systems for FMCG and pharmaceutical lines —
             HFFS pouch packing, pick fill seal, liquid filling and stick packing, manufactured
             and serviced from Ahmedabad.
@@ -411,7 +411,7 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
         </div>
 
         {/* Palladio-style bottom strip */}
-        <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, borderTop: "1px solid rgba(255,255,255,.3)", padding: `0.85rem ${PAD}`, display: "flex", alignItems: "center", justifyContent: "space-between", color: "rgba(255,255,255,.85)", fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase" }}>
+        <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, borderTop: "1px solid rgba(255,255,255,.3)", padding: `0.85rem ${PAD}`, display: "flex", alignItems: "center", justifyContent: "space-between", color: "rgba(255,255,255,.85)", fontFamily: "'Montserrat',sans-serif", fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase" }}>
           <span className="hide-mobile" style={{ display: "flex", alignItems: "center", gap: "0.7rem" }}>
             WE BUILD <span style={{ width: "26px", height: "1px", background: "rgba(255,255,255,.5)" }} /> THE LINE
           </span>
@@ -425,7 +425,7 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <Eyebrow label="Data" num="01" color="#fff" />
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr)", gap: "clamp(2rem,6vw,5rem)", alignItems: "start", marginBottom: "clamp(3rem,7vw,5rem)" }} className="data-grid">
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,4.6vw,3.7rem)", lineHeight: 1.08, letterSpacing: "-0.02em", margin: 0, color: "#fff" }}>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,4.6vw,3.7rem)", lineHeight: 1.08, letterSpacing: "-0.02em", margin: 0, color: "#fff" }}>
               Two generations of packaging expertise, bringing precision European technology to Indian production floors.
             </ScrollText>
             <div>
@@ -451,7 +451,7 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
       {/* ── Industries we serve (own strip, above Packaging) ── */}
       <section style={{ background: "#fff", padding: `clamp(2.4rem,5vw,3.4rem) 0`, borderBottom: "1px solid rgba(2,0,98,.07)" }}>
         <div style={{ maxWidth: MAXW, margin: "0 auto", padding: `0 ${PAD}`, marginBottom: "1.4rem" }}>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.6rem,4vw,2.6rem)", letterSpacing: "-0.01em", color: NAVY, margin: 0 }}>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.6rem,4vw,2.6rem)", letterSpacing: "-0.01em", color: NAVY, margin: 0 }}>
             Industries we serve
           </ScrollText>
         </div>
@@ -469,7 +469,7 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <Eyebrow label="Packaging Machines" num="02" color={NAVY} />
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1.3fr) minmax(0,1fr)", gap: "clamp(2rem,6vw,5rem)", alignItems: "end", marginBottom: "clamp(2.6rem,5vw,3.6rem)" }} className="data-grid">
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.1rem,5vw,4rem)", lineHeight: 1.04, letterSpacing: "-0.02em", margin: 0, color: NAVY, maxWidth: "13ch" }}>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.1rem,5vw,4rem)", lineHeight: 1.04, letterSpacing: "-0.02em", margin: 0, color: NAVY, maxWidth: "13ch" }}>
               Every product has its line.
             </ScrollText>
             <ScrollRise delay={0.15}>
@@ -494,7 +494,7 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <Eyebrow label="Inspection Systems" num="03" color={NAVY} />
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1.3fr) minmax(0,1fr)", gap: "clamp(2rem,6vw,5rem)", alignItems: "end", marginBottom: "clamp(2.6rem,5vw,3.6rem)" }} className="data-grid">
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.1rem,5vw,4rem)", lineHeight: 1.04, letterSpacing: "-0.02em", margin: 0, color: NAVY, maxWidth: "13ch" }}>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.1rem,5vw,4rem)", lineHeight: 1.04, letterSpacing: "-0.02em", margin: 0, color: NAVY, maxWidth: "13ch" }}>
               Precision you can verify.
             </ScrollText>
             <ScrollRise delay={0.15}>
@@ -515,11 +515,11 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
       {/* ── CTA (separate from footer) ── */}
       <section id="contact" style={{ background: BRAND_GRADIENT, padding: `clamp(5rem,10vw,8rem) ${PAD}`, textAlign: "center", color: "#fff" }}>
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.2rem,6vw,4.6rem)", letterSpacing: "-0.03em", margin: "0 auto 1.6rem", maxWidth: "20rem", lineHeight: 1.02, color: "#fff", textAlign: "center" }}>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.2rem,6vw,4.6rem)", letterSpacing: "-0.03em", margin: "0 auto 1.6rem", maxWidth: "20rem", lineHeight: 1.02, color: "#fff", textAlign: "center" }}>
             {"Let's talk"}
           </ScrollText>
           <ScrollRise delay={0.15}>
-            <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1.08rem", lineHeight: 1.6, color: "rgba(255,255,255,.88)", maxWidth: "34rem", margin: "0 auto 2.6rem" }}>
+            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1.08rem", lineHeight: 1.6, color: "rgba(255,255,255,.88)", maxWidth: "34rem", margin: "0 auto 2.6rem" }}>
               Tell us your product, output speed and pack format — our team will
               suggest the right system and arrange a demonstration.
             </p>
@@ -543,8 +543,8 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
             ].map(([title, body], i) => (
               <ScrollRise key={title} delay={i * 0.1}>
                 <div style={{ borderTop: `2px solid ${BLUE}`, paddingTop: "1.1rem" }}>
-                  <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "1rem", color: NAVY, marginBottom: "0.5rem" }}>{title}</div>
-                  <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.88rem", lineHeight: 1.6, color: "rgba(14,23,80,.66)" }}>{body}</div>
+                  <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "1rem", color: NAVY, marginBottom: "0.5rem" }}>{title}</div>
+                  <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.88rem", lineHeight: 1.6, color: "rgba(14,23,80,.66)" }}>{body}</div>
                 </div>
               </ScrollRise>
             ))}
@@ -555,10 +555,10 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
       {/* ── International partners ribbon ── */}
       <section style={{ background: "#fff", padding: `clamp(3.5rem,7vw,5.5rem) ${PAD}`, borderTop: "1px solid rgba(2,0,98,.06)" }}>
         <div style={{ maxWidth: MAXW, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.8rem" }}>
+          <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.8rem" }}>
             Our international partners
           </div>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.6rem,4vw,2.6rem)", letterSpacing: "-0.02em", color: NAVY, margin: "0 0 clamp(2rem,4vw,3rem)", textAlign: "center" }}>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.6rem,4vw,2.6rem)", letterSpacing: "-0.02em", color: NAVY, margin: "0 0 clamp(2rem,4vw,3rem)", textAlign: "center" }}>
             European technology, represented in India.
           </ScrollText>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
@@ -567,7 +567,7 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
                 style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "150px", height: "76px", borderRadius: "12px", border: "1px solid rgba(2,0,98,.1)", background: "#fff", overflow: "hidden", transition: "transform .9s cubic-bezier(.2,.7,.2,1), box-shadow 1s ease, border-color 1s ease" }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 34px rgba(2,0,98,.12)"; e.currentTarget.style.borderColor = "rgba(57,105,196,.4)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "rgba(2,0,98,.1)"; }}>
-                <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 700, fontSize: "1.05rem", letterSpacing: "0.02em", color: NAVY, textTransform: "uppercase" }}>{p.name}</span>
+                <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 700, fontSize: "1.05rem", letterSpacing: "0.02em", color: NAVY, textTransform: "uppercase" }}>{p.name}</span>
               </a>
             ))}
           </div>
@@ -577,16 +577,16 @@ export default function VedvikSite({ faqs, settings }: { faqs: Faq[]; settings: 
       {/* ── FAQ ── */}
       <section style={{ background: "#fff", padding: `clamp(4rem,8vw,7rem) ${PAD}`, borderTop: "1px solid rgba(2,0,98,.06)" }}>
         <div style={{ maxWidth: "880px", margin: "0 auto" }}>
-          <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.8rem", textAlign: "center" }}>FAQ</div>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4.5vw,3rem)", letterSpacing: "-0.02em", color: NAVY, margin: "0 0 clamp(2rem,4vw,3rem)", textAlign: "center" }}>
+          <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.8rem", textAlign: "center" }}>FAQ</div>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4.5vw,3rem)", letterSpacing: "-0.02em", color: NAVY, margin: "0 0 clamp(2rem,4vw,3rem)", textAlign: "center" }}>
             Packaging machines — common questions
           </ScrollText>
           <div>
             {faqs.map((f, i) => (
               <ScrollRise key={i}>
                 <div style={{ borderTop: "1px solid rgba(2,0,98,.1)", padding: "1.5rem 0" }}>
-                  <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "1.15rem", color: NAVY, margin: "0 0 0.6rem" }}>{f.q}</h3>
-                  <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1rem", lineHeight: 1.65, color: "rgba(14,23,80,.7)", margin: 0 }}>{f.a}</p>
+                  <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "1.15rem", color: NAVY, margin: "0 0 0.6rem" }}>{f.q}</h3>
+                  <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1rem", lineHeight: 1.65, color: "rgba(14,23,80,.7)", margin: 0 }}>{f.a}</p>
                 </div>
               </ScrollRise>
             ))}

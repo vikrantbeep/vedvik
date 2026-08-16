@@ -19,12 +19,12 @@ export const BRAND_GRADIENT = "linear-gradient(140deg,#80afe8 0%,#3969c4 55%,#02
 
 // ── Shared button styles: blue or white, hover inverts (blue↔white) ──
 export const BTN_CSS = `
-.nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
+.nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
 .nav-link:hover{color:#020062}
 .nav-link-light{color:rgba(255,255,255,.92)}
 .nav-link-light:hover{color:#fff}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;text-align:center;text-decoration:none;font-family:var(--font-inter, 'Inter'), sans-serif;font-weight:600;font-size:.95rem;padding:.9rem 1.9rem;border-radius:2rem;transition:background .5s ease,color .5s ease,border-color .5s ease;box-sizing:border-box;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;text-align:center;text-decoration:none;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;padding:.9rem 1.9rem;border-radius:2rem;transition:background .5s ease,color .5s ease,border-color .5s ease;box-sizing:border-box;cursor:pointer}
 .btn-blue{background:${BLUE};color:#fff;border:1px solid ${BLUE}}
 .btn-blue:hover{background:#fff;color:${BLUE}}
 .btn-white{background:#fff;color:${BLUE};border:1px solid #fff}
@@ -109,10 +109,10 @@ export const LINKEDIN_URL = "https://www.linkedin.com/company/vedvik-machinery-i
 export const YOUTUBE_URL = "https://www.youtube.com/@Vedvik_Machinery";
 
 export function SiteFooter({ settings = defaultSettings }: { settings?: SiteSettings } = {}) {
-  const colStyle: React.CSSProperties = { fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.88rem", lineHeight: 2, color: "rgba(255,255,255,.6)" };
-  const headStyle: React.CSSProperties = { fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: SKY, marginBottom: "1rem" };
+  const colStyle: React.CSSProperties = { fontFamily: "'Inter',sans-serif", fontSize: "0.88rem", lineHeight: 2, color: "rgba(255,255,255,.6)" };
+  const headStyle: React.CSSProperties = { fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: SKY, marginBottom: "1rem" };
   const linkStyle: React.CSSProperties = { color: "rgba(255,255,255,.6)", textDecoration: "none" };
-  const socialStyle: React.CSSProperties = { display: "inline-flex", alignItems: "center", gap: "0.6rem", color: "rgba(255,255,255,.75)", textDecoration: "none", fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.9rem", fontWeight: 500 };
+  const socialStyle: React.CSSProperties = { display: "inline-flex", alignItems: "center", gap: "0.6rem", color: "rgba(255,255,255,.75)", textDecoration: "none", fontFamily: "'Inter',sans-serif", fontSize: "0.9rem", fontWeight: 500 };
   return (
     <footer style={{ position: "relative", overflow: "hidden", background: BRAND_GRADIENT, color: "#fff" }}>
       <div style={{ position: "relative", zIndex: 1, maxWidth: MAXW, margin: "0 auto", padding: `clamp(3.5rem,7vw,5rem) ${PAD} 2.5rem`, display: "grid", gridTemplateColumns: "minmax(0,1.6fr) repeat(2, minmax(0,1fr))", gap: "clamp(2rem,5vw,4rem)" }} className="footer-grid">
@@ -156,7 +156,7 @@ export function SiteFooter({ settings = defaultSettings }: { settings?: SiteSett
         </div>
       </div>
       <div style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,.12)" }}>
-        <div style={{ maxWidth: MAXW, margin: "0 auto", padding: `1.4rem ${PAD}`, fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,.85)", display: "flex", flexWrap: "wrap", gap: "0.5rem 1.4rem", justifyContent: "space-between" }}>
+        <div style={{ maxWidth: MAXW, margin: "0 auto", padding: `1.4rem ${PAD}`, fontFamily: "'Inter',sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,.85)", display: "flex", flexWrap: "wrap", gap: "0.5rem 1.4rem", justifyContent: "space-between" }}>
           <span>© {new Date().getFullYear()} Vedvik Machinery · Manufacturer of Packaging Machines · Ahmedabad, India</span>
           <span style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
             <a href="/privacy" style={{ color: "rgba(255,255,255,.85)", textDecoration: "none" }}>Privacy Policy</a>

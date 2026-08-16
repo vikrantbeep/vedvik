@@ -138,9 +138,9 @@ export default function About() {
   });
 
   return (
-    <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", color: INK_TEXT, background: "#fff" }}>
+    <div style={{ fontFamily: "'Inter',sans-serif", color: INK_TEXT, background: "#fff" }}>
       <style>{`
-        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
+        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
         .nav-link:hover{color:${NAVY}}
         .show-mobile{display:none}
         .map-pin{animation:pinPulse 2.6s ease-in-out infinite}
@@ -157,14 +157,14 @@ export default function About() {
       <section className="page-hero" style={{ position: "relative", height: "100svh", minHeight: "560px", overflow: "hidden" }}>
         <AnimatedGradient />
         <div style={{ position: "relative", zIndex: 2, maxWidth: MAXW, margin: "0 auto", padding: `0 ${PAD}`, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div style={{ ...reveal(0.1), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1.4rem" }}>
+          <div style={{ ...reveal(0.1), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1.4rem" }}>
             About Vedvik Machinery
           </div>
           <TextEffect as="h1" per="word" preset="fade-in-blur" trigger={loaded} speedReveal={1.1} speedSegment={0.3}
-            style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,7vw,5.6rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff", maxWidth: "20ch" }}>
+            style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,7vw,5.6rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff", maxWidth: "20ch" }}>
             Engineered to keep your line running.
           </TextEffect>
-          <p style={{ ...reveal(0.42), fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.65, color: "rgba(255,255,255,.85)", maxWidth: "44rem", marginTop: "1.6rem" }}>
+          <p style={{ ...reveal(0.42), fontFamily: "'Inter',sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.65, color: "rgba(255,255,255,.85)", maxWidth: "44rem", marginTop: "1.6rem" }}>
             Vedvik Machinery is a packaging machinery manufacturer and supplier in Ahmedabad,
             India — delivering packaging machines and inspection systems for food, pharmaceutical
             and FMCG production lines. We manufacture our own systems in-house, supply proven
@@ -177,10 +177,10 @@ export default function About() {
       {/* ── VISION / MISSION / VALUES ── */}
       <section style={{ background: "#fff", padding: `clamp(4rem,9vw,7rem) ${PAD}` }}>
         <div ref={vmvRef} style={{ maxWidth: MAXW, margin: "0 auto" }}>
-          <div style={{ ...rise(vmvIn, 0), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.9rem" }}>
+          <div style={{ ...rise(vmvIn, 0), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.9rem" }}>
             What drives us
           </div>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0 0 clamp(2.5rem,5vw,3.8rem)", color: NAVY, maxWidth: "20ch" }}>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0 0 clamp(2.5rem,5vw,3.8rem)", color: NAVY, maxWidth: "20ch" }}>
             Built on a simple idea: precision should be local.
           </ScrollText>
 
@@ -203,9 +203,9 @@ export default function About() {
                   transform: vmvIn ? "scaleX(1)" : "scaleX(0)",
                   transition: `transform 1.5s cubic-bezier(.2,.7,.2,1) ${0.35 + i * 0.25}s`,
                 }} />
-                <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.1em", color: BLUE, marginBottom: "0.8rem" }}>[{v.label}]</div>
-                <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "clamp(1.5rem,2.5vw,2rem)", margin: "0 0 0.9rem", color: NAVY, letterSpacing: "-0.01em" }}>{v.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.98rem", lineHeight: 1.65, color: "rgba(14,23,80,.66)", margin: 0 }}>{v.body}</p>
+                <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.1em", color: BLUE, marginBottom: "0.8rem" }}>[{v.label}]</div>
+                <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "clamp(1.5rem,2.5vw,2rem)", margin: "0 0 0.9rem", color: NAVY, letterSpacing: "-0.01em" }}>{v.title}</h3>
+                <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.98rem", lineHeight: 1.65, color: "rgba(14,23,80,.66)", margin: 0 }}>{v.body}</p>
               </div>
             ))}
           </div>
@@ -215,8 +215,8 @@ export default function About() {
       {/* ── PROOF / CREDENTIALS ── */}
       <section style={{ background: BRAND_GRADIENT, color: "#fff", padding: `clamp(4rem,9vw,7rem) ${PAD}` }}>
         <div ref={numRef} style={{ maxWidth: MAXW, margin: "0 auto" }}>
-          <div style={{ ...rise(numIn, 0), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: SKY, marginBottom: "0.9rem" }}>By the numbers</div>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: "#fff", margin: "0 0 clamp(2.5rem,5vw,3.5rem)", maxWidth: "24ch" }}>
+          <div style={{ ...rise(numIn, 0), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: SKY, marginBottom: "0.9rem" }}>By the numbers</div>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: "#fff", margin: "0 0 clamp(2.5rem,5vw,3.5rem)", maxWidth: "24ch" }}>
             28+ years bringing European packaging technology to India.
           </ScrollText>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: "clamp(1.6rem,3vw,3rem)" }}>
@@ -227,12 +227,12 @@ export default function About() {
               ["14", "machine & inspection systems"],
             ].map(([num, lbl], i) => (
               <div key={lbl} style={{ ...rise(numIn, 0.2 + i * 0.1), borderTop: "1px solid rgba(255,255,255,.3)", paddingTop: "1.1rem" }}>
-                <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.6rem,5.5vw,4rem)", lineHeight: 1, color: "#fff", letterSpacing: "-0.03em" }}>{num}</div>
-                <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.84rem", lineHeight: 1.45, color: "rgba(255,255,255,.72)", marginTop: "0.7rem", maxWidth: "15rem" }}>{lbl}</div>
+                <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.6rem,5.5vw,4rem)", lineHeight: 1, color: "#fff", letterSpacing: "-0.03em" }}>{num}</div>
+                <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.84rem", lineHeight: 1.45, color: "rgba(255,255,255,.72)", marginTop: "0.7rem", maxWidth: "15rem" }}>{lbl}</div>
               </div>
             ))}
           </div>
-          <p style={{ ...rise(numIn, 0.45), fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1rem,1.5vw,1.12rem)", lineHeight: 1.7, color: "rgba(255,255,255,.82)", maxWidth: "54rem", marginTop: "clamp(2.5rem,5vw,3.5rem)" }}>
+          <p style={{ ...rise(numIn, 0.45), fontFamily: "'Inter',sans-serif", fontSize: "clamp(1rem,1.5vw,1.12rem)", lineHeight: 1.7, color: "rgba(255,255,255,.82)", maxWidth: "54rem", marginTop: "clamp(2.5rem,5vw,3.5rem)" }}>
             Vedvik Machinery manufactures packaging machines in Ahmedabad and supplies European
             packaging and inspection systems across India. From pouch packing and liquid filling
             to checkweighing, X-ray, vision inspection and coding, we supply, install, commission
@@ -245,23 +245,23 @@ export default function About() {
       {/* ── LEADERSHIP / EXPERTISE ── */}
       <section style={{ background: "#fff", padding: `clamp(4rem,9vw,7rem) ${PAD}` }}>
         <div ref={leadRef} style={{ maxWidth: MAXW, margin: "0 auto" }}>
-          <div style={{ ...rise(leadIn, 0), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.9rem" }}>
+          <div style={{ ...rise(leadIn, 0), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.9rem" }}>
             Our Expertise
           </div>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: NAVY, margin: "0 0 clamp(2rem,4vw,3rem)", maxWidth: "22ch" }}>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: NAVY, margin: "0 0 clamp(2rem,4vw,3rem)", maxWidth: "22ch" }}>
             The experience behind every recommendation.
           </ScrollText>
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0,2.2fr) minmax(0,1fr)", gap: "clamp(2rem,5vw,4rem)", alignItems: "start" }} className="lead-grid">
             <div style={rise(leadIn, 0.22)}>
-              <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "clamp(1.3rem,2.5vw,1.7rem)", color: NAVY, margin: "0 0 1.3rem" }}>28+ years on the shop floor</h3>
-              <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1.05rem", lineHeight: 1.75, color: "rgba(14,23,80,.78)", margin: "0 0 1.1rem" }}>
+              <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "clamp(1.3rem,2.5vw,1.7rem)", color: NAVY, margin: "0 0 1.3rem" }}>28+ years on the shop floor</h3>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1.05rem", lineHeight: 1.75, color: "rgba(14,23,80,.78)", margin: "0 0 1.1rem" }}>
                 Across more than 28 years, our team has worked hands-on with packaging machines
                 and inspection systems — specifying, commissioning and servicing production
                 lines for India&apos;s pharmaceutical, food, beverage and FMCG manufacturers.
                 That accumulated experience is the reason customers get a configuration matched
                 to their product and pack, not a catalogue answer.
               </p>
-              <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1.05rem", lineHeight: 1.75, color: "rgba(14,23,80,.78)", margin: 0 }}>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1.05rem", lineHeight: 1.75, color: "rgba(14,23,80,.78)", margin: 0 }}>
                 All of it is focused on a single aim: high-quality packaging machines backed by
                 reliable, prompt service — every machine sized to real throughput, installed
                 properly, and kept running with fast local support from our Ahmedabad head
@@ -270,12 +270,12 @@ export default function About() {
             </div>
             <div style={{ ...rise(leadIn, 0.34), display: "flex", flexDirection: "column", gap: "2rem" }}>
               <div style={{ borderTop: "2px solid rgba(57,105,196,.25)", paddingTop: "1.4rem" }}>
-                <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.6rem,5vw,3.8rem)", lineHeight: 1, color: NAVY, letterSpacing: "-0.03em" }}>28+</div>
-                <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.9rem", lineHeight: 1.5, color: "rgba(14,23,80,.66)", marginTop: "0.7rem" }}>years of experience in packaging &amp; inspection machinery</div>
+                <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.6rem,5vw,3.8rem)", lineHeight: 1, color: NAVY, letterSpacing: "-0.03em" }}>28+</div>
+                <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.9rem", lineHeight: 1.5, color: "rgba(14,23,80,.66)", marginTop: "0.7rem" }}>years of experience in packaging &amp; inspection machinery</div>
               </div>
               <div style={{ borderTop: "2px solid rgba(57,105,196,.25)", paddingTop: "1.4rem" }}>
-                <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.6rem,5vw,3.8rem)", lineHeight: 1, color: NAVY, letterSpacing: "-0.03em" }}>2</div>
-                <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.9rem", lineHeight: 1.5, color: "rgba(14,23,80,.66)", marginTop: "0.7rem" }}>locations in India — Ahmedabad (head office) and Pune</div>
+                <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.6rem,5vw,3.8rem)", lineHeight: 1, color: NAVY, letterSpacing: "-0.03em" }}>2</div>
+                <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.9rem", lineHeight: 1.5, color: "rgba(14,23,80,.66)", marginTop: "0.7rem" }}>locations in India — Ahmedabad (head office) and Pune</div>
               </div>
             </div>
           </div>
@@ -287,14 +287,14 @@ export default function About() {
         <div ref={mapRef} style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ ...rise(mapIn, 0), display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1.5rem", marginBottom: "1.5rem" }}>
             <div>
-              <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.9rem" }}>
+              <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "0.9rem" }}>
                 Locations
               </div>
-              <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: 0, color: NAVY, maxWidth: "16ch" }}>
+              <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: 0, color: NAVY, maxWidth: "16ch" }}>
                 Ten partners. Six countries. One point of contact.
               </ScrollText>
             </div>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "0.74rem", letterSpacing: "0.1em", color: "rgba(2,0,98,.4)" }}>[ 03 ]</span>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "0.74rem", letterSpacing: "0.1em", color: "rgba(2,0,98,.4)" }}>[ 03 ]</span>
           </div>
 
           <div style={{ ...rise(mapIn, 0.15), position: "relative", margin: "clamp(1rem,3vw,2.5rem) 0" }}>
@@ -311,8 +311,8 @@ export default function About() {
               ["Canada", "Toronto"],
             ].map(([country, list]) => (
               <div key={country}>
-                <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.82rem", color: NAVY }}>{country}</div>
-                <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.82rem", lineHeight: 1.55, color: "rgba(14,23,80,.6)", marginTop: "0.25rem" }}>{list}</div>
+                <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.82rem", color: NAVY }}>{country}</div>
+                <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.82rem", lineHeight: 1.55, color: "rgba(14,23,80,.6)", marginTop: "0.25rem" }}>{list}</div>
               </div>
             ))}
           </div>

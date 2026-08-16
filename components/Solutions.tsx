@@ -43,17 +43,17 @@ function SolutionCard({ item, kind, show, index, image }: { item: Solution; kind
           </div>
         )}
         <div style={{ padding: "1.7rem 1.8rem 1.6rem", display: "flex", flexDirection: "column", flex: 1 }}>
-          <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: hover ? SKY : BLUE, transition: "color 1.2s ease" }}>
+          <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: hover ? SKY : BLUE, transition: "color 1.2s ease" }}>
             {kind}
           </span>
-          <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "1.3rem", margin: "0.8rem 0 0.6rem", letterSpacing: "-0.01em", color: hover ? "#fff" : NAVY, transition: "color 1.2s ease" }}>
+          <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "1.3rem", margin: "0.8rem 0 0.6rem", letterSpacing: "-0.01em", color: hover ? "#fff" : NAVY, transition: "color 1.2s ease" }}>
             {item.name}
           </h3>
-          <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.9rem", lineHeight: 1.6, margin: 0, flex: 1, color: hover ? "rgba(255,255,255,.82)" : "rgba(14,23,80,.62)", transition: "color 1.2s ease" }}>
+          <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.9rem", lineHeight: 1.6, margin: 0, flex: 1, color: hover ? "rgba(255,255,255,.82)" : "rgba(14,23,80,.62)", transition: "color 1.2s ease" }}>
             {item.desc}
           </p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.5rem" }}>
-            <span style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.03em", color: hover ? "rgba(255,255,255,.9)" : BLUE, transition: "color 1.2s ease" }}>
+            <span style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.03em", color: hover ? "rgba(255,255,255,.9)" : BLUE, transition: "color 1.2s ease" }}>
               {item.partner}
             </span>
             <span style={{ color: hover ? "#fff" : BLUE, transform: hover ? "translateX(4px)" : "translateX(0)", transition: "transform .6s ease, color 1.2s ease" }}>→</span>
@@ -94,9 +94,9 @@ export default function Solutions() {
   });
 
   return (
-    <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", color: INK_TEXT, background: "#fff" }}>
+    <div style={{ fontFamily: "'Inter',sans-serif", color: INK_TEXT, background: "#fff" }}>
       <style>{`
-        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
+        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
         .nav-link:hover{color:${NAVY}}
         .show-mobile{display:none}
         .sol-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
@@ -113,14 +113,14 @@ export default function Solutions() {
       <section className="page-hero" style={{ position: "relative", height: "100svh", minHeight: "560px", overflow: "hidden" }}>
         <AnimatedGradient />
         <div style={{ position: "relative", zIndex: 1, maxWidth: MAXW, margin: "0 auto", padding: `0 ${PAD}`, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div style={{ ...reveal(0.1), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1.4rem" }}>
+          <div style={{ ...reveal(0.1), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1.4rem" }}>
             Our Solutions
           </div>
           <TextEffect as="h1" per="word" preset="fade-in-blur" trigger={loaded} speedReveal={1.1} speedSegment={0.3}
-            style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,7vw,5.4rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff", maxWidth: "18ch" }}>
+            style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,7vw,5.4rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff", maxWidth: "18ch" }}>
             Every product has its line.
           </TextEffect>
-          <p style={{ ...reveal(0.42), fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.65, color: "rgba(255,255,255,.85)", maxWidth: "44rem", marginTop: "1.6rem" }}>
+          <p style={{ ...reveal(0.42), fontFamily: "'Inter',sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.65, color: "rgba(255,255,255,.85)", maxWidth: "44rem", marginTop: "1.6rem" }}>
             From pouches and bottles to bulk sacks, vision and X-ray — a complete range of packaging
             and inspection systems, matched to your product, speed and format.
           </p>
@@ -131,8 +131,8 @@ export default function Solutions() {
       <section style={{ background: "#fff", padding: `clamp(4rem,8vw,7rem) ${PAD}` }}>
         <div ref={packRef} style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ ...reveal(0), marginBottom: "clamp(2rem,4vw,3rem)" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Division 01</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0.6rem 0 0", color: NAVY }}>Packaging Machines</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Division 01</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0.6rem 0 0", color: NAVY }}>Packaging Machines</ScrollText>
           </div>
           <div className="sol-grid">
             {packaging.map((item, i) => (
@@ -146,8 +146,8 @@ export default function Solutions() {
       <section style={{ background: "#f5f8ff", padding: `clamp(4rem,8vw,7rem) ${PAD}` }}>
         <div ref={inspRef} style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ marginBottom: "clamp(2rem,4vw,3rem)" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Division 02</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0.6rem 0 0", color: NAVY }}>Inspection Systems</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Division 02</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.4rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0.6rem 0 0", color: NAVY }}>Inspection Systems</ScrollText>
           </div>
           <div className="sol-grid">
             {inspection.map((item, i) => (

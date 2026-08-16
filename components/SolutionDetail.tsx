@@ -50,9 +50,9 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
       : "What this system verifies and protects against on the line, at full production speed.";
 
   return (
-    <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", color: INK_TEXT, background: "#fff" }}>
+    <div style={{ fontFamily: "'Inter',sans-serif", color: INK_TEXT, background: "#fff" }}>
       <style>{`
-        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
+        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
         .nav-link:hover{color:${NAVY}}
         .show-mobile{display:none}
         .sd-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
@@ -72,18 +72,18 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
         <AnimatedGradient />
         <div className="sd-hero" style={{ position: "relative", zIndex: 1, maxWidth: MAXW, margin: "0 auto", width: "100%" }}>
           <div>
-            <div style={{ ...reveal(0.08), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1rem" }}>
+            <div style={{ ...reveal(0.08), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1rem" }}>
               {solution.category}
             </div>
             <TextEffect as="h1" per="word" preset="fade-in-blur" trigger={loaded} speedReveal={1.1} speedSegment={0.3}
-              style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.3rem,6vw,4.6rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>
+              style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.3rem,6vw,4.6rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>
               {solution.name}
             </TextEffect>
-            <div style={{ ...reveal(0.3), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "clamp(1.05rem,2vw,1.4rem)", color: "rgba(255,255,255,.85)", marginTop: "0.7rem" }}>
+            <div style={{ ...reveal(0.3), fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "clamp(1.05rem,2vw,1.4rem)", color: "rgba(255,255,255,.85)", marginTop: "0.7rem" }}>
               {solution.tagline}
             </div>
             <div style={{ ...reveal(0.36), width: "64px", height: "2px", background: "rgba(255,255,255,.45)", margin: "1.6rem 0" }} />
-            <p style={{ ...reveal(0.44), fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1rem,1.5vw,1.12rem)", lineHeight: 1.65, color: "rgba(255,255,255,.86)", maxWidth: "34rem", margin: 0 }}>
+            <p style={{ ...reveal(0.44), fontFamily: "'Inter',sans-serif", fontSize: "clamp(1rem,1.5vw,1.12rem)", lineHeight: 1.65, color: "rgba(255,255,255,.86)", maxWidth: "34rem", margin: 0 }}>
               {solution.desc}
             </p>
             <div style={{ ...reveal(0.54), display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "2rem" }}>
@@ -91,7 +91,7 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
               {solution.brochureUrl ? (
                 <a href={solution.brochureUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost-light" style={{ minWidth: "190px", padding: "0.9rem 1.8rem" }}>Download Brochure</a>
               ) : (
-                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: "190px", padding: "0.9rem 1.8rem", borderRadius: "2rem", border: "1px solid rgba(255,255,255,.3)", color: "rgba(255,255,255,.45)", fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontWeight: 600, fontSize: "0.95rem", cursor: "not-allowed" }}>Download Brochure</span>
+                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: "190px", padding: "0.9rem 1.8rem", borderRadius: "2rem", border: "1px solid rgba(255,255,255,.3)", color: "rgba(255,255,255,.45)", fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: "0.95rem", cursor: "not-allowed" }}>Download Brochure</span>
               )}
             </div>
           </div>
@@ -109,11 +109,11 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
       {solutionOverview[solution.slug] && (
         <section style={{ background: "#fff", padding: `clamp(3.5rem,7vw,6rem) ${PAD} 0` }}>
           <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Overview</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.8rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 1.4rem", color: NAVY }}>{solution.tagline}</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Overview</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.8rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 1.4rem", color: NAVY }}>{solution.tagline}</ScrollText>
             {solutionOverview[solution.slug].map((para, i) => (
               <ScrollRise key={i} delay={i * 0.1}>
-                <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1.08rem", lineHeight: 1.75, color: "rgba(14,23,80,.78)", margin: "0 0 1.2rem" }}>{para}</p>
+                <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1.08rem", lineHeight: 1.75, color: "rgba(14,23,80,.78)", margin: "0 0 1.2rem" }}>{para}</p>
               </ScrollRise>
             ))}
           </div>
@@ -124,8 +124,8 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
       <section style={{ background: "#fff", padding: `clamp(3.5rem,7vw,6rem) ${PAD} 0` }}>
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ marginBottom: "clamp(1.5rem,3vw,2.2rem)" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Demo</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.8rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 0", color: NAVY }}>See it in action</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Demo</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.8rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 0", color: NAVY }}>See it in action</ScrollText>
           </div>
           <div style={{ position: "relative", aspectRatio: "16 / 9", borderRadius: "18px", overflow: "hidden", background: INK_TEXT, boxShadow: "0 24px 60px rgba(2,0,98,.18)" }}>
             <iframe
@@ -143,9 +143,9 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
       <section style={{ background: "#fff", padding: `clamp(4rem,8vw,7rem) ${PAD}` }}>
         <div ref={showcase.ref} style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ ...rise(showcase.seen, 0), marginBottom: "clamp(2rem,4vw,3rem)" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Capabilities</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.2rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0.6rem 0 0.8rem", color: NAVY }}>{showcaseTitle}</ScrollText>
-            <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1rem", lineHeight: 1.6, color: "rgba(14,23,80,.62)", maxWidth: "40rem", margin: 0 }}>{showcaseLead}</p>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Capabilities</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.2rem)", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0.6rem 0 0.8rem", color: NAVY }}>{showcaseTitle}</ScrollText>
+            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1rem", lineHeight: 1.6, color: "rgba(14,23,80,.62)", maxWidth: "40rem", margin: 0 }}>{showcaseLead}</p>
           </div>
 
           <div className="sd-grid">
@@ -164,13 +164,13 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
       <section style={{ background: "#f5f8ff", padding: `clamp(4rem,8vw,7rem) ${PAD}` }}>
         <div ref={specs.ref} className="sd-two" style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ ...rise(specs.seen, 0) }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Technical</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.8rem)", letterSpacing: "-0.02em", margin: "0.6rem 0 1.6rem", color: NAVY }}>Specifications</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Technical</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.8rem)", letterSpacing: "-0.02em", margin: "0.6rem 0 1.6rem", color: NAVY }}>Specifications</ScrollText>
             <div style={{ borderTop: "1px solid rgba(2,0,98,.12)" }}>
               {solution.specs.map((sp) => (
                 <div key={sp.label} style={{ display: "flex", justifyContent: "space-between", gap: "1.5rem", padding: "1rem 0", borderBottom: "1px solid rgba(2,0,98,.1)" }}>
-                  <span style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.92rem", color: "rgba(14,23,80,.6)" }}>{sp.label}</span>
-                  <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "0.95rem", color: NAVY, textAlign: "right" }}>{sp.value}</span>
+                  <span style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.92rem", color: "rgba(14,23,80,.6)" }}>{sp.label}</span>
+                  <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "0.95rem", color: NAVY, textAlign: "right" }}>{sp.value}</span>
                 </div>
               ))}
             </div>
@@ -178,13 +178,13 @@ export default function SolutionDetail({ solution }: { solution: Solution }) {
 
           <div style={{ ...rise(specs.seen, 0.15) }}>
             <div style={{ background: "#fff", border: "1px solid rgba(2,0,98,.1)", borderRadius: "16px", padding: "1.8rem" }}>
-              <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.16em", textTransform: "uppercase", color: BLUE, marginBottom: "0.7rem" }}>Manufacturer</div>
-              <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "1.25rem", color: NAVY }}>{solution.partner}</div>
-              <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.92rem", color: "rgba(14,23,80,.6)", marginTop: "0.4rem" }}>{solution.partnerNote}</div>
+              <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.16em", textTransform: "uppercase", color: BLUE, marginBottom: "0.7rem" }}>Manufacturer</div>
+              <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "1.25rem", color: NAVY }}>{solution.partner}</div>
+              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.92rem", color: "rgba(14,23,80,.6)", marginTop: "0.4rem" }}>{solution.partnerNote}</div>
             </div>
             <div style={{ marginTop: "1.2rem", background: BRAND_GRADIENT, borderRadius: "16px", padding: "1.8rem", color: "#fff" }}>
-              <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "1.05rem", marginBottom: "0.6rem" }}>Custom configurations</div>
-              <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.92rem", lineHeight: 1.6, color: "rgba(255,255,255,.85)", margin: 0 }}>
+              <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "1.05rem", marginBottom: "0.6rem" }}>Custom configurations</div>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.92rem", lineHeight: 1.6, color: "rgba(255,255,255,.85)", margin: 0 }}>
                 Modular tooling allows rapid format changeovers. We adapt the system to your product,
                 output and integration requirements — and support it locally from Ahmedabad.
               </p>
@@ -219,7 +219,7 @@ function ShowcaseTile({ image, label, show, delay, rise }: { image?: string; lab
           </div>
         ) : (
           <div style={{ aspectRatio: "4 / 3", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "1.4rem 1rem" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "0.95rem", letterSpacing: "-0.01em", color: NAVY }}>{label}</span>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "0.95rem", letterSpacing: "-0.01em", color: NAVY }}>{label}</span>
           </div>
         )}
       </div>

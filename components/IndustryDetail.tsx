@@ -35,16 +35,16 @@ function MiniSolutionCard({ s, show, delay }: { s: NonNullable<ReturnType<typeof
             style={{ width: "100%", height: "100%", objectFit: "cover", transform: hover ? "scale(1.05)" : "scale(1)", transition: "transform 1.2s ease" }} />
         </div>
         <div style={{ padding: "1.1rem 1.2rem 1.2rem", display: "flex", flexDirection: "column", flex: 1 }}>
-          <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: hover ? SKY : BLUE, transition: "color 1.2s ease" }}>
+          <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: hover ? SKY : BLUE, transition: "color 1.2s ease" }}>
             {s.category}
           </span>
-          <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "1.05rem", margin: "0.5rem 0 0.3rem", letterSpacing: "-0.01em", color: hover ? "#fff" : NAVY, transition: "color 1.2s ease" }}>
+          <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "1.05rem", margin: "0.5rem 0 0.3rem", letterSpacing: "-0.01em", color: hover ? "#fff" : NAVY, transition: "color 1.2s ease" }}>
             {s.name}
           </h3>
-          <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.03em", flex: 1, color: hover ? "rgba(255,255,255,.9)" : BLUE, transition: "color 1.2s ease" }}>
+          <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.03em", flex: 1, color: hover ? "rgba(255,255,255,.9)" : BLUE, transition: "color 1.2s ease" }}>
             {s.partner}
           </div>
-          <span style={{ marginTop: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.4rem", fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontWeight: 600, fontSize: "0.78rem", color: hover ? "#fff" : BLUE, transition: "color 1.2s ease" }}>
+          <span style={{ marginTop: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.4rem", fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: "0.78rem", color: hover ? "#fff" : BLUE, transition: "color 1.2s ease" }}>
             View specifications <span style={{ transform: hover ? "translateX(4px)" : "translateX(0)", transition: "transform .6s ease, color 1.2s ease" }}>→</span>
           </span>
         </div>
@@ -86,9 +86,9 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
   const systems = industry.recommended.map((slug) => getSolution(slug)).filter(Boolean);
 
   return (
-    <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", color: INK_TEXT, background: "#fff" }}>
+    <div style={{ fontFamily: "'Inter',sans-serif", color: INK_TEXT, background: "#fff" }}>
       <style>{`
-        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
+        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
         .nav-link:hover{color:${NAVY}}
         .show-mobile{display:none}
         .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
@@ -111,19 +111,19 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
         <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(8,18,52,.45) 0%, rgba(8,18,52,.35) 45%, rgba(8,18,52,.8) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: MAXW, margin: "0 auto", width: "100%", padding: `clamp(2.5rem,6vw,4.5rem) ${PAD}` }}>
-          <a href="/industries" style={{ ...reveal(0.05), display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", marginBottom: "1.2rem" }}>← Industries</a>
+          <a href="/industries" style={{ ...reveal(0.05), display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", marginBottom: "1.2rem" }}>← Industries</a>
           <TextEffect as="h1" per="word" preset="fade-in-blur" trigger={loaded} speedReveal={1.1} speedSegment={0.3}
-            style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.3rem,6vw,4.6rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>{industry.name}</TextEffect>
-          <p style={{ ...reveal(0.3), fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.6, color: "rgba(255,255,255,.85)", maxWidth: "40rem", marginTop: "1rem" }}>{industry.desc}</p>
+            style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.3rem,6vw,4.6rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>{industry.name}</TextEffect>
+          <p style={{ ...reveal(0.3), fontFamily: "'Inter',sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.6, color: "rgba(255,255,255,.85)", maxWidth: "40rem", marginTop: "1rem" }}>{industry.desc}</p>
         </div>
       </section>
 
       {/* ── OVERVIEW ── */}
       <section style={{ background: "#fff", padding: `clamp(4rem,8vw,6.5rem) ${PAD}` }}>
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
-          <div style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "1.2rem" }}>Overview</div>
+          <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: "1.2rem" }}>Overview</div>
           <ScrollRise delay={0.1}>
-            <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1.1rem,2vw,1.5rem)", lineHeight: 1.6, color: INK_TEXT, maxWidth: "52rem", margin: 0, fontWeight: 300 }}>{industry.overview}</p>
+            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "clamp(1.1rem,2vw,1.5rem)", lineHeight: 1.6, color: INK_TEXT, maxWidth: "52rem", margin: 0, fontWeight: 300 }}>{industry.overview}</p>
           </ScrollRise>
         </div>
       </section>
@@ -132,17 +132,17 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
       <section style={{ background: "#f5f8ff", padding: `clamp(4rem,8vw,7rem) ${PAD}` }}>
         <div ref={req.ref} style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ ...rise(req.seen, 0), marginBottom: "clamp(2rem,4vw,3rem)" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Challenges</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.2rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 0", color: NAVY }}>Industry requirements</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Challenges</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.2rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 0", color: NAVY }}>Industry requirements</ScrollText>
           </div>
           <div className="req-grid">
             {industry.requirements.map((r, i) => (
               <div key={r.title} style={{ ...rise(req.seen, 0.12 + i * 0.1), background: "#fff", border: "1px solid rgba(2,0,98,.1)", borderRadius: "16px", padding: "1.8rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.9rem", marginBottom: "0.9rem" }}>
-                  <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "9px", background: BLUE, color: "#fff", fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.8rem" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "1.15rem", margin: 0, color: NAVY }}>{r.title}</h3>
+                  <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "9px", background: BLUE, color: "#fff", fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.8rem" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "1.15rem", margin: 0, color: NAVY }}>{r.title}</h3>
                 </div>
-                <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.92rem", lineHeight: 1.6, color: "rgba(14,23,80,.62)", margin: 0 }}>{r.desc}</p>
+                <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.92rem", lineHeight: 1.6, color: "rgba(14,23,80,.62)", margin: 0 }}>{r.desc}</p>
               </div>
             ))}
           </div>
@@ -153,8 +153,8 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
       <section style={{ background: "#fff", padding: `clamp(4rem,8vw,7rem) ${PAD}` }}>
         <div ref={sys.ref} style={{ maxWidth: MAXW, margin: "0 auto" }}>
           <div style={{ ...rise(sys.seen, 0), marginBottom: "clamp(2rem,4vw,3rem)" }}>
-            <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Equipment</span>
-            <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.2rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 0", color: NAVY }}>Recommended systems</ScrollText>
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE }}>Equipment</span>
+            <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2rem,5vw,3.2rem)", letterSpacing: "-0.02em", margin: "0.5rem 0 0", color: NAVY }}>Recommended systems</ScrollText>
           </div>
           <div className="sys-grid">
             {systems.map((s, i) => s && (
@@ -167,9 +167,9 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
       {/* ── CTA ── */}
       <section style={{ background: BRAND_GRADIENT, padding: `clamp(4rem,9vw,6.5rem) ${PAD}`, textAlign: "center", color: "#fff" }}>
         <div style={{ maxWidth: MAXW, margin: "0 auto" }}>
-          <ScrollText style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(1.9rem,5vw,3.4rem)", letterSpacing: "-0.03em", color: "#fff", margin: "0 auto 1.4rem", maxWidth: "24ch", textAlign: "center" }}>{`Packaging a ${industry.name.toLowerCase()} product?`}</ScrollText>
+          <ScrollText style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(1.9rem,5vw,3.4rem)", letterSpacing: "-0.03em", color: "#fff", margin: "0 auto 1.4rem", maxWidth: "24ch", textAlign: "center" }}>{`Packaging a ${industry.name.toLowerCase()} product?`}</ScrollText>
           <ScrollRise delay={0.15}>
-            <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "1.05rem", lineHeight: 1.6, color: "rgba(255,255,255,.88)", maxWidth: "34rem", margin: "0 auto 2.2rem" }}>Tell us your product and output — we&apos;ll recommend the right line for your sector.</p>
+            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "1.05rem", lineHeight: 1.6, color: "rgba(255,255,255,.88)", maxWidth: "34rem", margin: "0 auto 2.2rem" }}>Tell us your product and output — we&apos;ll recommend the right line for your sector.</p>
           </ScrollRise>
           <a href="/contact" className="btn btn-white" style={{ minWidth: "190px" }}>Talk to our team</a>
         </div>
