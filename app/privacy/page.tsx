@@ -49,7 +49,9 @@ const sections = [
   {
     heading: "Cookies and analytics",
     paragraphs: [
-      "This website does not use advertising cookies or third-party tracking cookies. Some pages embed content from third parties — a Google Maps location map on our contact page and YouTube product demonstration videos on our solutions pages. These providers may set their own cookies when that embedded content loads, governed by their respective privacy policies.",
+      "We use Google Analytics and Microsoft Clarity to understand how visitors use this website — which pages are read, how people arrive, and where they encounter difficulty. These services set cookies and record anonymised usage data. We use this only to improve the website; we do not use it to identify individual visitors, and we do not sell or share it for advertising.",
+      "You can opt out of Google Analytics across all websites using Google's browser add-on at tools.google.com/dlpage/gaoptout, or by using your browser's Do Not Track and cookie settings.",
+      "We do not use advertising cookies or retargeting. Some pages also embed third-party content — a Google Maps location map on our contact page and YouTube product demonstration videos on our solutions pages — and those providers may set their own cookies when that content loads, governed by their respective privacy policies.",
     ],
   },
   {

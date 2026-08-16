@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Blog from "@/components/Blog";
+import { getPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Packaging Machinery Guides & Insights",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-export default function BlogPage() {
-  return <Blog />;
+export default async function BlogPage() {
+  const posts = await getPosts();
+  return <Blog posts={posts} />;
 }

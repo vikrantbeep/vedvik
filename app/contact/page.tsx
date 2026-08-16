@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Contact from "@/components/Contact";
+import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact — Packaging Machines in Ahmedabad",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
-  return <Contact />;
+export default async function ContactPage() {
+  const settings = await getSiteSettings();
+  return <Contact settings={settings} />;
 }

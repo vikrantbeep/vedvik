@@ -6,6 +6,15 @@
 html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Belt and braces: nothing on this site should ever render in a serif. */
+  font-family: var(--font-inter, "Inter"), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-montserrat, "Montserrat"), system-ui, sans-serif;
 }
 
 body {

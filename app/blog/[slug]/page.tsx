@@ -1,22 +1,33 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPost from "@/components/BlogPost";
-import { getPost, postSlugs } from "@/lib/blog";
+import { getPost, getPostSlugs } from "@/lib/content";
 
-export function generateStaticParams() {
-  return postSlugs.map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getPostSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return { title: "Article not found" };
-  return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${post.slug}` } };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      ...(post.image ? { images: [post.image] } : {}),
+    },
+  };
 }
 
 export default async function BlogSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
 
   const faqSchema = {
@@ -34,6 +45,7 @@ export default async function BlogSlugPage({ params }: { params: Promise<{ slug:
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    ...(post.image ? { image: post.image } : {}),
     author: { "@type": "Organization", name: "Vedvik Machinery" },
     publisher: { "@type": "Organization", name: "Vedvik Machinery" },
     mainEntityOfPage: `https://www.vedvikmachinery.com/blog/${post.slug}`,

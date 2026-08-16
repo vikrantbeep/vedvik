@@ -36,10 +36,10 @@ function IndustryCard({ slug, name, desc, show, index }: { slug: string; name: s
             style={{ width: "100%", height: "100%", objectFit: "cover", transform: hover ? "scale(1.05)" : "scale(1)", transition: "transform 1.2s ease" }} />
         </div>
         <div style={{ padding: "1.6rem 1.7rem 1.7rem", display: "flex", flexDirection: "column", flex: 1 }}>
-          <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: BLUE }}>Industry</span>
-          <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 500, fontSize: "1.3rem", margin: "0.8rem 0 0.6rem", letterSpacing: "-0.01em", color: NAVY }}>{name}</h3>
-          <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.9rem", lineHeight: 1.6, margin: 0, flex: 1, color: "rgba(14,23,80,.62)" }}>{desc}</p>
-          <span style={{ marginTop: "1.5rem", display: "inline-flex", alignItems: "center", gap: "0.4rem", fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.03em", color: BLUE }}>
+          <span style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: BLUE }}>Industry</span>
+          <h3 style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 500, fontSize: "1.3rem", margin: "0.8rem 0 0.6rem", letterSpacing: "-0.01em", color: NAVY }}>{name}</h3>
+          <p style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "0.9rem", lineHeight: 1.6, margin: 0, flex: 1, color: "rgba(14,23,80,.62)" }}>{desc}</p>
+          <span style={{ marginTop: "1.5rem", display: "inline-flex", alignItems: "center", gap: "0.4rem", fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.03em", color: BLUE }}>
             View Solutions <span style={{ transform: hover ? "translateX(4px)" : "translateX(0)", transition: "transform .6s ease" }}>→</span>
           </span>
         </div>
@@ -68,9 +68,9 @@ export default function Industries() {
   });
 
   return (
-    <div style={{ fontFamily: "'Inter',sans-serif", color: INK_TEXT, background: "#fff" }}>
+    <div style={{ fontFamily: "var(--font-inter, 'Inter'), sans-serif", color: INK_TEXT, background: "#fff" }}>
       <style>{`
-        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
+        .nav-link{color:rgba(14,23,80,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .45s;font-family:var(--font-montserrat, 'Montserrat'), sans-serif;letter-spacing:.02em}
         .nav-link:hover{color:${NAVY}}
         .show-mobile{display:none}
         .ind-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
@@ -87,10 +87,10 @@ export default function Industries() {
       <section className="page-hero" style={{ position: "relative", overflow: "hidden", padding: `calc(clamp(3.5rem,8vw,5.5rem) + 68px) ${PAD} clamp(3rem,6vw,4rem)` }}>
         <AnimatedGradient />
         <div style={{ position: "relative", zIndex: 1, maxWidth: MAXW, margin: "0 auto" }}>
-          <div style={{ ...reveal(0.05), fontFamily: "'Montserrat',sans-serif", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1.4rem" }}>Industries</div>
+          <div style={{ ...reveal(0.05), fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.22em", textTransform: "uppercase", color: SKY, marginBottom: "1.4rem" }}>Industries</div>
           <TextEffect as="h1" per="word" preset="fade-in-blur" trigger={loaded} speedReveal={1.1} speedSegment={0.3}
-            style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,7vw,5.4rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>Sectors we serve</TextEffect>
-          <p style={{ ...reveal(0.28), fontFamily: "'Inter',sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.65, color: "rgba(255,255,255,.85)", maxWidth: "44rem", marginTop: "1.6rem" }}>
+            style={{ fontFamily: "var(--font-montserrat, 'Montserrat'), sans-serif", fontWeight: 300, fontSize: "clamp(2.4rem,7vw,5.4rem)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: 0, color: "#fff" }}>Sectors we serve</TextEffect>
+          <p style={{ ...reveal(0.28), fontFamily: "var(--font-inter, 'Inter'), sans-serif", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.65, color: "rgba(255,255,255,.85)", maxWidth: "44rem", marginTop: "1.6rem" }}>
             From pharmaceuticals to pet food, Vedvik Machinery delivers tailored packaging and
             inspection systems across {industries.length} industries — each built around the
             regulatory environment, pack formats and production speeds of the sector.

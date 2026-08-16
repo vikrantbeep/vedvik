@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import VedvikSite from "@/components/VedvikSite";
-import { faqs } from "@/lib/faq";
+import { getFaqs, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: {
@@ -11,7 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function Home() {
+export default async function Home() {
+  const faqs = await getFaqs();
+  const settings = await getSiteSettings();
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -25,7 +27,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <VedvikSite />
+      <VedvikSite faqs={faqs} settings={settings} />
     </>
   );
 }

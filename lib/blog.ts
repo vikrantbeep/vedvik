@@ -12,6 +12,8 @@ export type BlogPost = {
   body: BlogSection[];
   faqs: BlogFAQ[];
   related: RelatedLink[];
+  /** Cover image URL — supplied by the CMS; falls back to a generated placeholder. */
+  image?: string;
 };
 
 export const posts: BlogPost[] = [
