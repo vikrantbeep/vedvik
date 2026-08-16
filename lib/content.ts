@@ -83,6 +83,25 @@ export async function getPostSlugs(): Promise<string[]> {
   return all.map((p) => p.slug);
 }
 
+/**
+ * Articles to show under a post.
+ *
+ * Prefers posts in the same category (most likely to be genuinely relevant),
+ * then fills any remaining slots with the newest other articles — so the
+ * section is never half-empty or missing on a thin category.
+ */
+export async function getRelatedPosts(slug: string, limit = 3): Promise<BlogPost[]> {
+  const all = await getPosts();
+  const current = all.find((p) => p.slug === slug);
+  if (!current) return all.slice(0, limit);
+
+  const others = all.filter((p) => p.slug !== slug);
+  const sameCategory = others.filter((p) => p.category === current.category);
+  const rest = others.filter((p) => p.category !== current.category);
+
+  return [...sameCategory, ...rest].slice(0, limit);
+}
+
 /* ── FAQs (home page) ──────────────────────────────────────────── */
 
 export type Faq = { q: string; a: string };

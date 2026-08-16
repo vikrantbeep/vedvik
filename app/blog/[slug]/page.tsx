@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPost from "@/components/BlogPost";
-import { getPost, getPostSlugs } from "@/lib/content";
+import { getPost, getPostSlugs, getRelatedPosts } from "@/lib/content";
 
 export async function generateStaticParams() {
   const slugs = await getPostSlugs();
@@ -30,6 +30,8 @@ export default async function BlogSlugPage({ params }: { params: Promise<{ slug:
   const post = await getPost(slug);
   if (!post) notFound();
 
+  const related = await getRelatedPosts(slug, 3);
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -55,7 +57,7 @@ export default async function BlogSlugPage({ params }: { params: Promise<{ slug:
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <BlogPost post={post} />
+      <BlogPost post={post} related={related} />
     </>
   );
 }
