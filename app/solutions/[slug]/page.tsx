@@ -43,15 +43,36 @@ export default async function SolutionSlugPage({ params }: { params: Promise<{ s
   }
   solution = solution!;
 
-  const productSchema = {
+  /**
+   * NOT Product schema.
+   *
+   * Google requires Product markup to carry `offers`, `review` or
+   * `aggregateRating`, because it's meant for pages where someone can buy.
+   * These are enquiry pages for capital equipment — no published price, no
+   * reviews — so Product markup was being reported as invalid in Search
+   * Console (181 items) and could never produce a rich result anyway.
+   *
+   * WebPage + `about` describes the page accurately, stays valid, and still
+   * tells search engines and AI crawlers what the page covers.
+   */
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: solution.name,
+    "@type": "WebPage",
+    name: `${solution.name} — Vedvik Machinery`,
     description: solution.desc,
-    category: solution.category,
-    brand: { "@type": "Brand", name: solution.partner },
-    image: solution.heroImage,
-    manufacturer: { "@type": "Organization", name: "Vedvik Machinery" },
+    url: `https://www.vedvikmachinery.com/solutions/${solution.slug}`,
+    primaryImageOfPage: { "@type": "ImageObject", url: solution.heroImage },
+    about: {
+      "@type": "Thing",
+      name: solution.name,
+      description: solution.tagline,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Vedvik Machinery",
+      url: "https://www.vedvikmachinery.com",
+    },
+    publisher: { "@type": "Organization", name: "Vedvik Machinery" },
   };
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -65,7 +86,7 @@ export default async function SolutionSlugPage({ params }: { params: Promise<{ s
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <SolutionDetail solution={solution} />
     </>

@@ -114,20 +114,18 @@ const businessSchema = {
     "Vision inspection",
     "Coding and marking",
   ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Packaging machines and inspection systems",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "HFFS Pouch Packing Machine" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Pick Fill Seal (PFS) Machine" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Liquid Filling Machine" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Stick Packing Machine" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Bulk Packing Machine" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Checkweigher" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "X-Ray & Metal Detection System" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Vision Inspection System" } },
-    ],
-  },
+  /**
+   * No hasOfferCatalog here.
+   *
+   * It previously listed each machine as a schema.org Product, on every page
+   * of the site. Google requires Product markup to include `offers`, `review`
+   * or `aggregateRating` — meant for pages where something can be bought — so
+   * every one was reported invalid in Search Console (181 items across the
+   * site). We don't publish prices, so they could never be valid.
+   *
+   * `knowsAbout` above already tells search engines and AI crawlers exactly
+   * what we supply, without claiming to be a shop.
+   */
 };
 
 const websiteSchema = {
